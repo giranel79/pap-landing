@@ -17,9 +17,25 @@
         t.src=v;s=b.getElementsByTagName(e)[0];
         s.parentNode.insertBefore(t,s)}(window, document,'script',
         'https://connect.facebook.net/en_US/fbevents.js');
+        
+        // Inicialización
         fbq('init', '733265212980710');
         fbq('track', 'PageView');
-        fbq('track', 'Purchase', {value: 7.00, currency: 'USD', content_name: 'Guia PAP'});
+
+        // GENERADOR DE EVENT ID PARA DEDUPLICACIÓN
+        // Esto crea un código único para que Meta no duplique la conversión
+        var eventID = 'PAP-PURCHASE-' + Date.now() + '-' + Math.floor(Math.random() * 1000);
+
+        // Disparo de Compra ($7 USD)
+        fbq('track', 'Purchase', 
+            {
+                value: 7.00, 
+                currency: 'USD', 
+                content_name: 'Guia PAP - El Abrazo Invisible',
+                content_type: 'product'
+            }, 
+            {eventID: eventID}
+        );
     </script>
 
     <style>
@@ -33,7 +49,6 @@
         }
         .gold-text { color: #fbbf24; }
         
-        /* Animación de entrada */
         .fade-up { animation: fadeUp 1.2s ease-out forwards; opacity: 0; }
         @keyframes fadeUp {
             from { opacity: 0; transform: translateY(30px); }
@@ -48,7 +63,7 @@
         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#020617]/50 to-[#020617]"></div>
     </div>
 
-    <main class="relative z-10 max-w-2xl w-full glass-panel rounded-[2rem] p-8 md:p-12 my-auto fade-up shadow-2xl">
+    <main class="relative z-10 max-w-2xl w-full glass-panel rounded-[2.5rem] p-8 md:p-14 my-auto fade-up shadow-2xl">
         
         <div class="mb-8 flex justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 gold-text opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -79,9 +94,9 @@
             </p>
         </div>
 
-        <div class="mt-10 pt-6 border-t border-white/5 flex flex-col items-center gap-4 opacity-60">
+        <div class="mt-10 pt-6 border-t border-white/5 flex flex-col items-center gap-4 opacity-60 text-center">
             <p class="text-[10px] uppercase tracking-[0.2em]">Entrega segura vía</p>
-            <img src="hotmart_brand.svg" alt="Hotmart" class="h-6 md:h-8 grayscale hover:grayscale-0 transition-all duration-300">
+            <img src="hotmart_brand.svg" alt="Hotmart" class="h-6 md:h-7 grayscale hover:grayscale-0 transition-all duration-300">
             <p class="text-[10px] uppercase tracking-[0.2em] mt-2">© 2026 Aprendia Tech</p>
         </div>
     </main>
@@ -92,7 +107,6 @@
             const nombre = params.get('n') || params.get('name');
             
             if (nombre) {
-                // Si Hotmart nos pasa el nombre, lo ponemos aquí
                 document.getElementById('personal-welcome').innerHTML = `¡Bienvenido, <strong>${nombre}</strong>!`;
             }
         });
