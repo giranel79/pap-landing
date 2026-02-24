@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El Abrazo Invisible | Primeros Auxilios Psicológicos</title>
+    <title>El Abrazo Invisible | Protocolos de Rescate Emocional</title>
     
     <meta name="facebook-domain-verification" content="TU_CODIGO_AQUI" />
 
@@ -22,82 +22,93 @@
         
         fbq('init', '733265212980710', { em: em, ph: ph });
         fbq('track', 'PageView');
-        fbq('track', 'ViewContent', { content_name: 'LP PAP - Final', content_category: 'Ebook' }, { eventID: 'PAP-LP-' + Date.now() });
+        fbq('track', 'ViewContent', { content_name: 'LP PAP Full Mentores', content_category: 'Ebook' }, { eventID: 'PAP-LP-' + Date.now() });
     </script>
 
     <style>
-        body { font-family: 'Inter', sans-serif; background: #020617; color: white; scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: #020617; color: white; scroll-behavior: smooth; }
         h1, h2, h3 { font-family: 'Merriweather', serif; }
-        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.08); }
-        .btn-pulse { animation: pulse 2s infinite; }
-        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(251,191,36,0.4); } 70% { box-shadow: 0 0 0 15px rgba(251,191,36,0); } 100% { box-shadow: 0 0 0 0 rgba(251,191,36,0); } }
+        .gold-text { color: #fbbf24; }
+        .glass { background: rgba(255, 255, 255, 0.04); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        @keyframes pulse-gold {
+            0% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(251, 191, 36, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0); }
+        }
+        .btn-premium { animation: pulse-gold 2s infinite; }
     </style>
 </head>
 <body class="overflow-x-hidden">
 
-    <section class="relative min-h-screen flex flex-col items-center justify-center px-6 text-center pt-12">
-        <div class="absolute inset-0 -z-10">
-            <img src="PORTADA_mk_PAP.webp" class="w-full h-full object-cover opacity-50 brightness-90" alt="Portada El Abrazo Invisible">
-            <div class="absolute inset-0 bg-gradient-to-b from-[#020617]/10 via-[#020617]/70 to-[#020617]"></div>
+    <section class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6 pt-12 pb-24">
+        <div class="absolute inset-0 z-0">
+            <img src="PORTADA_mk_PAP.webp" class="w-full h-full object-cover opacity-65 brightness-100 scale-100" alt="El Abrazo Invisible">
+            <div class="absolute inset-0 bg-gradient-to-b from-[#020617]/10 via-[#020617]/60 to-[#020617]"></div>
         </div>
-        <div class="max-w-4xl space-y-6 relative z-10">
-            <div class="inline-block bg-blue-600/30 text-blue-300 px-4 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4 backdrop-blur-sm">
-                Más de 3,500 vidas impactadas por este método
+
+        <div class="relative z-10 max-w-4xl text-center space-y-6">
+            <div class="inline-block bg-blue-600/30 text-blue-200 px-4 py-1 rounded-full text-xs font-bold tracking-[0.2em] uppercase backdrop-blur-md">
+                Protocolo de Rescate Emocional
             </div>
-            <h1 class="text-5xl md:text-8xl font-black tracking-tighter leading-none drop-shadow-2xl">
-                EL ABRAZO <span class="text-[#fbbf24] italic block md:inline">INVISIBLE</span>
+            <h1 class="text-5xl md:text-8xl font-black leading-tight tracking-tighter drop-shadow-2xl">
+                EL ABRAZO <span class="gold-text italic block md:inline">INVISIBLE</span>
             </h1>
-            <p class="text-xl md:text-2xl text-slate-100 font-medium max-w-2xl mx-auto italic drop-shadow-lg">
-                El <span class="text-[#fbbf24] font-bold underline decoration-blue-500">Mecanismo Único</span> para calmar cualquier crisis emocional, aunque hoy te sientas impotente y sin palabras.
+            <p class="text-xl md:text-2xl text-slate-100 font-medium max-w-2xl mx-auto leading-relaxed drop-shadow-lg">
+                Domina el <span class="text-[#fbbf24] font-bold">Mecanismo Único</span> de 3 pasos para calmar crisis, aunque hoy te sientas impotente y sin palabras.
             </p>
             <div class="pt-8">
-                <a href="https://pay.hotmart.com/G104548950P?checkoutMode=10" class="btn-pulse inline-block bg-[#fbbf24] text-black font-black text-xl px-12 py-6 rounded-full hover:scale-105 transition-all">SÉ EL FARO POR $7 USD</a>
+                <a href="https://pay.hotmart.com/G104548950P?checkoutMode=10" 
+                   class="btn-premium inline-block bg-[#fbbf24] text-black font-black text-xl px-12 py-6 rounded-full hover:scale-105 transition-transform">
+                   SÉ EL FARO POR $7 USD
+                </a>
                 <div class="flex items-center justify-center gap-4 mt-6">
-                    <img src="hotmart_brand.svg" class="h-5 opacity-70" alt="Hotmart">
-                    <span class="text-slate-300 text-[10px] uppercase tracking-widest font-bold">Compra Segura • Acceso Instantáneo</span>
+                    <img src="hotmart_brand.svg" class="h-5 opacity-80" alt="Hotmart">
+                    <span class="text-slate-300 text-[10px] uppercase tracking-widest font-bold">Pago Seguro • Acceso de por vida</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-12 border-y border-white/5 bg-slate-900/20">
-        <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div><p class="text-3xl font-black text-[#fbbf24]">4.9/5</p><p class="text-[10px] uppercase text-slate-500">Valoración</p></div>
-            <div><p class="text-3xl font-black text-white">3.5k+</p><p class="text-[10px] uppercase text-slate-500">Lectores</p></div>
-            <div><p class="text-3xl font-black text-white">15+</p><p class="text-[10px] uppercase text-slate-500">Países</p></div>
-            <div><p class="text-3xl font-black text-[#fbbf24]">36</p><p class="text-[10px] uppercase text-slate-500">Páginas de Valor</p></div>
+    <section class="py-12 border-y border-white/5 bg-slate-900/40 relative z-20">
+        <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center px-6">
+            <div><p class="text-3xl font-black text-[#fbbf24]">4.9/5</p><p class="text-[10px] uppercase text-slate-500 font-bold tracking-widest">Valoración Media</p></div>
+            <div><p class="text-3xl font-black text-white">3.5k+</p><p class="text-[10px] uppercase text-slate-500 font-bold tracking-widest">Almas Apoyadas</p></div>
+            <div><p class="text-3xl font-black text-white">100%</p><p class="text-[10px] uppercase text-slate-500 font-bold tracking-widest">Acceso Inmediato</p></div>
+            <div><p class="text-3xl font-black text-[#fbbf24]">SÍ</p><p class="text-[10px] uppercase text-slate-500 font-bold tracking-widest">Incluye Talleres</p></div>
         </div>
     </section>
 
     <section class="py-24 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-        <div class="relative">
-            <img src="DATA_CRISIS1.webp" class="rounded-[2rem] shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" alt="Crisis">
-            <div class="absolute -bottom-6 -right-6 glass p-6 rounded-2xl hidden md:block">
-                <p class="text-sm font-bold italic">"Sentía que no podía ayudar... hasta ahora."</p>
-            </div>
+        <div class="relative group">
+            <img src="DATA_CRISIS1.webp" class="rounded-[2.5rem] shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-700" alt="Crisis Emocional">
+            <div class="absolute inset-0 rounded-[2.5rem] ring-1 ring-white/10"></div>
         </div>
         <div class="space-y-6">
             <h2 class="text-3xl md:text-5xl font-bold leading-tight">¿Te has quedado en blanco mientras alguien que amas colapsaba?</h2>
-            <p class="text-slate-400 text-lg leading-relaxed">Ver a un hijo, una pareja o un amigo en crisis y no saber qué decir es una de las formas más dolorosas de impotencia. El miedo a "empeorar las cosas" nos paraliza.</p>
-            <p class="text-[#fbbf24] font-bold text-xl leading-relaxed">"El Abrazo Invisible" es el mapa que quita la neblina y te dice exactamente qué paso dar.</p>
+            <p class="text-slate-400 text-lg leading-relaxed">
+                No saber qué decir no es falta de amor, es falta de herramientas. La impotencia de ver a un hijo o pareja en crisis sin poder ayudar es devastadora.
+            </p>
+            <p class="text-white font-medium border-l-4 border-blue-500 pl-6 py-2">
+                "El Abrazo Invisible" no es teoría psicológica. Es el mapa exacto para saber qué decir y cómo actuar cuando cada segundo cuenta.
+            </p>
         </div>
     </section>
 
-    <section class="py-24 px-6 bg-white/5">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl md:text-5xl font-bold text-center mb-16 italic text-white">Voces de quienes ya son un <span class="text-[#fbbf24]">Faro</span></h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="glass p-8 rounded-[2rem] space-y-4">
-                    <p class="text-slate-300 italic text-sm">"Pensé que se necesitaba ser psicólogo para esto. Esta guía me dio la calma para ayudar a mi hermana en su peor momento. Gracias."</p>
-                    <p class="text-white font-bold text-xs uppercase">— Elena G., Argentina</p>
+    <section class="py-24 px-6 bg-white/5 relative">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-3xl md:text-5xl font-bold mb-16 italic text-white">Voces de quienes ya son un <span class="text-[#fbbf24]">Faro</span></h2>
+            <div class="grid md:grid-cols-3 gap-8 text-left">
+                <div class="glass p-10 rounded-[2.5rem] space-y-4">
+                    <p class="text-slate-300 italic text-sm leading-relaxed">"Lo que más me gustó fue cómo te lleva de la mano. No es teoría, son ejercicios prácticos que te dicen exactamente qué hacer paso a paso."</p>
+                    <p class="text-white font-black text-xs uppercase tracking-widest">— Isabela S., Uruguay</p>
                 </div>
-                <div class="glass p-8 rounded-[2rem] space-y-4 border-[#fbbf24]/20">
-                    <p class="text-slate-300 italic text-sm">"Directo al grano. Sin rellenos. Lo tengo en mi celular y me salvó en una emergencia en el trabajo. Por $7 es un regalo."</p>
-                    <p class="text-white font-bold text-xs uppercase">— Ricardo M., Chile</p>
+                <div class="glass p-10 rounded-[2.5rem] space-y-4 border-[#fbbf24]/20">
+                    <p class="text-slate-300 italic text-sm leading-relaxed">"Los Talleres de Validación que incluye la guía cambiaron mi forma de escuchar. Ahora mi hijo se siente realmente comprendido y seguro."</p>
+                    <p class="text-white font-black text-xs uppercase tracking-widest">— Fernando D., Costa Rica</p>
                 </div>
-                <div class="glass p-8 rounded-[2rem] space-y-4">
-                    <p class="text-slate-300 italic text-sm">"Lo que más me gustó fue la parte de 'qué NO decir'. Cometía todos los errores. Ahora me siento segura de mi apoyo."</p>
-                    <p class="text-white font-bold text-xs uppercase">— Sofía T., Perú</p>
+                <div class="glass p-10 rounded-[2.5rem] space-y-4">
+                    <p class="text-slate-300 italic text-sm leading-relaxed">"Es como tener a un experto al lado. Las Bitácoras de Intervención son oro puro para momentos de alta tensión emocional."</p>
+                    <p class="text-white font-black text-xs uppercase tracking-widest">— Mónica L., Guatemala</p>
                 </div>
             </div>
         </div>
@@ -105,56 +116,80 @@
 
     <section class="py-24 px-6 relative overflow-hidden">
         <div class="max-w-4xl mx-auto glass rounded-[3rem] p-10 md:p-20 relative z-10">
-            <h2 class="text-3xl font-bold text-center mb-12">Lo que vas a dominar en 5 minutos:</h2>
-            <ul class="space-y-8">
-                <li class="flex items-center gap-6">
-                    <div class="bg-[#fbbf24] text-black rounded-full h-8 w-8 flex items-center justify-center font-black shrink-0">1</div>
-                    <p class="text-lg md:text-xl text-slate-200"><strong class="text-white">El Protocolo de Apertura:</strong> La frase exacta para bajar las defensas del cerebro en crisis.</p>
+            <h2 class="text-3xl md:text-4xl font-black text-center mb-12">Mucho más que una lectura... un <span class="gold-text italic">Sistema Guiado</span></h2>
+            <ul class="space-y-10">
+                <li class="flex items-start gap-6">
+                    <div class="bg-[#fbbf24] text-black rounded-full h-10 w-10 flex items-center justify-center font-black shrink-0 text-xl shadow-lg">1</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-2">Protocolos de Acción Inmediata</h3>
+                        <p class="text-slate-400">Exactamente qué decir para bajar las defensas del cerebro en pánico y abrir la puerta a la calma.</p>
+                    </div>
                 </li>
-                <li class="flex items-center gap-6">
-                    <div class="bg-[#fbbf24] text-black rounded-full h-8 w-8 flex items-center justify-center font-black shrink-0">2</div>
-                    <p class="text-lg md:text-xl text-slate-200"><strong class="text-white">Escucha de Rescate:</strong> Cómo estar presente sin absorber el dolor del otro.</p>
+                <li class="flex items-start gap-6">
+                    <div class="bg-blue-500 text-white rounded-full h-10 w-10 flex items-center justify-center font-black shrink-0 text-xl shadow-lg">2</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-2">Talleres de Validación Paso a Paso</h3>
+                        <p class="text-slate-400">Aprende la técnica para validar el dolor sin hundirte con la persona. Te llevamos de la mano en cada paso.</p>
+                    </div>
                 </li>
-                <li class="flex items-center gap-6">
-                    <div class="bg-[#fbbf24] text-black rounded-full h-8 w-8 flex items-center justify-center font-black shrink-0">3</div>
-                    <p class="text-lg md:text-xl text-slate-200"><strong class="text-white">El Blindaje del Faro:</strong> Cómo cerrar la intervención y volver a tu propia paz mental.</p>
+                <li class="flex items-start gap-6">
+                    <div class="bg-green-500 text-white rounded-full h-10 w-10 flex items-center justify-center font-black shrink-0 text-xl shadow-lg">3</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-2">Bitácoras de Blindaje Personal</h3>
+                        <p class="text-slate-400">Cómo proteger tu propia estabilidad emocional para poder seguir siendo el apoyo que ellos necesitan.</p>
+                    </div>
                 </li>
             </ul>
         </div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[100px] -z-0"></div>
     </section>
 
-    <section class="py-24 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
-        <div class="w-full md:w-1/2 overflow-hidden rounded-[3rem] border-4 border-white/5">
-            <img src="image4.webp" class="w-full h-full object-cover scale-[1.5] hover:scale-[1.6] transition-transform duration-700" alt="Intervención">
+    <section class="py-24 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-20">
+        <div class="w-full md:w-1/2">
+            <div class="overflow-hidden rounded-[3rem] border-4 border-white/5 shadow-2xl relative">
+                <img src="image4.webp" class="w-full h-full object-cover scale-[1.5] transition-transform duration-700 hover:scale-[1.6]" alt="Conexión Humana">
+                <div class="absolute inset-0 ring-1 ring-inset ring-white/20 rounded-[3rem]"></div>
+            </div>
         </div>
-        <div class="w-full md:w-1/2 space-y-8 text-left">
-            <h2 class="text-4xl md:text-6xl font-bold tracking-tighter">Tu celular es ahora una <span class="text-[#fbbf24]">Herramienta de Rescate</span>.</h2>
+        <div class="w-full md:w-1/2 space-y-10">
+            <h2 class="text-4xl md:text-6xl font-black tracking-tighter leading-tight">Tu celular es ahora una <span class="gold-text italic">Herramienta de Rescate</span>.</h2>
             <div class="flex gap-4">
-                <img src="image5.webp" class="w-1/3 rounded-2xl shadow-lg border border-white/10" alt="Preview 1">
-                <img src="image6.webp" class="w-1/3 rounded-2xl shadow-lg border border-white/10" alt="Preview 2">
-                <div class="w-1/3 bg-blue-600/20 rounded-2xl flex items-center justify-center border border-blue-500/30">
-                    <p class="text-[10px] text-blue-200 font-bold uppercase text-center">Acceso Inmediato</p>
+                <img src="image5.webp" class="w-1/3 rounded-2xl border border-white/10 shadow-lg" alt="Preview interior">
+                <img src="image6.webp" class="w-1/3 rounded-2xl border border-white/10 shadow-lg" alt="Preview detalle">
+                <div class="w-1/3 bg-blue-600/20 rounded-2xl border border-blue-500/30 flex items-center justify-center text-center p-2">
+                    <p class="text-[10px] font-bold text-blue-200 uppercase leading-tight">Acceso<br>Instantáneo</p>
                 </div>
             </div>
-            <p class="text-slate-400 font-light">Guía digital de 36 páginas diseñada para ser consultada en segundos durante cualquier emergencia real. Sin paja, solo acción.</p>
-            <a href="https://pay.hotmart.com/G104548950P?checkoutMode=10" class="btn-pulse inline-block bg-white text-black font-black px-12 py-5 rounded-full hover:bg-[#fbbf24] transition-all">ACCESO POR $7 USD</a>
+            <p class="text-slate-400 text-lg leading-relaxed">
+                Diseñado para ser consultado en segundos durante cualquier emergencia real. Sin rellenos, solo acción guiada.
+            </p>
+            <a href="https://pay.hotmart.com/G104548950P?checkoutMode=10" 
+               class="btn-premium inline-block bg-white text-black font-black text-lg px-12 py-5 rounded-full hover:bg-[#fbbf24] transition-all">
+               EMPEZAR AHORA $7 USD
+            </a>
         </div>
     </section>
 
-    <footer class="py-24 px-6 border-t border-white/5 text-center space-y-12 bg-[#01040a]">
-        <div class="flex flex-col items-center gap-6">
-            <p class="text-[10px] uppercase tracking-[0.4em] text-slate-500 font-bold">Transacción Segura vía Hotmart</p>
-            <div class="flex gap-8 items-center justify-center opacity-70">
-                <img src="hotmart_brand.svg" class="h-6" alt="Hotmart">
-                <div class="h-4 w-[1px] bg-white/20"></div>
-                <p class="text-[10px] font-bold text-slate-400">SSL ENCRYPTED</p>
+    <footer class="py-24 px-6 border-t border-white/5 bg-[#01040a] text-center">
+        <div class="max-w-4xl mx-auto space-y-12">
+            <div class="flex flex-col items-center gap-4">
+                <p class="text-[10px] uppercase tracking-[0.4em] text-slate-500 font-bold">Transacción Segura procesada por</p>
+                <div class="flex items-center gap-6 opacity-80">
+                    <img src="hotmart_brand.svg" class="h-6" alt="Hotmart Logo">
+                    <div class="h-4 w-[1px] bg-white/20"></div>
+                    <span class="text-[10px] font-black text-slate-400">SSL ENCRYPTED</span>
+                </div>
             </div>
-        </div>
-        <div class="max-w-3xl mx-auto space-y-6">
-            <p class="text-[10px] text-slate-600 leading-relaxed uppercase tracking-tighter opacity-70">
+            
+            <p class="text-[10px] text-slate-600 leading-relaxed max-w-2xl mx-auto uppercase tracking-tighter opacity-70">
                 Este sitio no es parte del sitio web de Facebook o Meta Platforms, Inc. Este sitio no está respaldado por Facebook de ninguna manera. FACEBOOK es una marca comercial de META PLATFORMS, Inc. El contenido y soporte técnico es responsabilidad exclusiva de Aprendia Tech.
             </p>
-            <p class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">© 2026 Aprendia Tech • Todos los derechos reservados</p>
+            
+            <div class="pt-8 border-t border-white/5">
+                <p class="text-[10px] text-slate-500 font-bold uppercase tracking-[0.3em]">
+                    © 2026 Aprendia Tech • Todos los derechos reservados
+                </p>
+            </div>
         </div>
     </footer>
 
