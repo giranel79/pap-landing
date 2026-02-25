@@ -18,6 +18,7 @@
         fbq('init', '733265212980710');
         fbq('track', 'PageView');
 
+        // ID único para que Meta no cuente doble si refrescan la página
         const eventID = 'PAP-PURCHASE-' + Date.now();
         fbq('track', 'Purchase', 
             { value: 7.00, currency: 'USD', content_name: 'El Abrazo Invisible' }, 
@@ -26,69 +27,111 @@
     </script>
 
     <style>
-        body { font-family: 'Inter', sans-serif; background: #020617; }
-        h1, h2 { font-family: 'Merriweather', serif; }
+        body { font-family: 'Inter', sans-serif; background: #020617; color: white; }
+        h1, h2, h3 { font-family: 'Merriweather', serif; }
         
-        /* Panel de cristal con más transparencia para ver el faro */
+        /* Efecto de Cristal Profundo */
         .glass-card { 
-            background: rgba(2, 6, 23, 0.65); 
-            backdrop-filter: blur(8px); 
+            background: rgba(2, 6, 23, 0.75); 
+            backdrop-filter: blur(20px); 
             border: 1px solid rgba(255, 255, 255, 0.1); 
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9);
         }
-        .gold-text { color: #fbbf24; text-shadow: 0 0 15px rgba(251, 191, 36, 0.5); }
         
-        .fade-in { animation: fadeIn 2s ease-out forwards; opacity: 0; }
-        @keyframes fadeIn { 
-            from { opacity: 0; transform: translateY(30px); } 
+        .gold-text { color: #fbbf24; text-shadow: 0 0 20px rgba(251, 191, 36, 0.5); }
+        
+        .fade-up { animation: fadeUp 1.8s ease-out forwards; opacity: 0; }
+        @keyframes fadeUp { 
+            from { opacity: 0; transform: translateY(40px); } 
             to { opacity: 1; transform: translateY(0); } 
         }
 
-        /* Efecto de luz para el haz del faro */
+        /* Resplandor del haz de luz */
         .light-glow {
-            box-shadow: 0 0 60px 10px rgba(251, 191, 36, 0.3);
+            box-shadow: 0 0 50px 10px rgba(251, 191, 36, 0.2);
         }
+        
+        /* Scroll suave */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #020617; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
     </style>
 </head>
-<body class="text-white min-h-screen relative flex flex-col items-center justify-center p-4 md:p-8 overflow-hidden">
+<body class="min-h-screen relative flex flex-col items-center overflow-y-auto overflow-x-hidden">
 
     <div class="fixed inset-0 z-0">
-        <img src="B1.webp" alt="Faro en la tormenta" class="w-full h-full object-cover filter brightness-[0.85] contrast-125">
-        
-        <div class="absolute inset-0 bg-[radial-gradient(circle,_transparent_20%,_#020617_90%)] opacity-80"></div>
+        <img src="B1.webp" alt="El Faro" class="w-full h-full object-cover filter brightness-[0.85] contrast-125 scale-105">
+        <div class="absolute inset-0 bg-[radial-gradient(circle,_transparent_20%,_#020617_95%)] opacity-85"></div>
     </div>
 
-    <main class="relative z-10 max-w-2xl w-full glass-card rounded-[3rem] p-8 md:p-14 text-center fade-in">
+    <main class="relative z-10 max-w-3xl w-full px-6 py-12 md:py-24 flex flex-col items-center">
         
-        <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight tracking-tight">
-            La tormenta ya no asusta cuando hay un <span class="gold-text italic">Faro</span>.
-        </h1>
-        
-        <div class="space-y-6 text-lg md:text-xl text-slate-100 font-light mb-10">
-            <p id="personal-welcome" class="text-2xl font-black text-white uppercase tracking-tighter">¡Bienvenid@ al Faro!</p>
-            <p class="leading-relaxed opacity-90">
-                Has obtenido las herramientas para ser el ancla de quienes hoy están a la deriva. Tu luz acaba de encenderse.
+        <div class="glass-card rounded-[3rem] p-8 md:p-16 text-center fade-up w-full">
+            
+            <div class="mb-10 flex justify-center">
+                <div class="p-5 bg-[#fbbf24]/10 rounded-full light-glow border border-[#fbbf24]/20">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 gold-text" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                </div>
+            </div>
+
+            <h1 class="text-4xl md:text-6xl font-bold mb-8 leading-tight tracking-tight drop-shadow-2xl">
+                La tormenta ya no asusta cuando hay un <span class="gold-text italic">Faro</span>.
+            </h1>
+            
+            <div class="space-y-6 text-xl text-slate-100 font-light mb-12">
+                <p id="personal-welcome" class="text-3xl font-black text-white uppercase tracking-tighter italic">
+                    ¡BIENVENID@ AL FARO!
+                </p>
+                <p class="leading-relaxed opacity-90">
+                    Has dado el paso más importante: obtener las herramientas para ser el ancla de quienes hoy están a la deriva. Tu compromiso con la luz comienza ahora.
+                </p>
+            </div>
+
+            <div class="bg-blue-600/20 p-8 md:p-10 rounded-[2.5rem] border border-blue-500/30 text-left space-y-6 relative overflow-hidden">
+                <div class="relative z-10">
+                    <h2 class="text-2xl font-bold mb-6 gold-text">Tu Protocolo de Acceso:</h2>
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4">
+                            <span class="bg-[#fbbf24] text-black rounded-full h-7 w-7 flex items-center justify-center font-black shrink-0 text-sm">1</span>
+                            <p class="text-slate-100">Busca en tu bandeja de entrada un correo de <strong>Hotmart</strong>. Allí está tu enlace de descarga.</p>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <span class="bg-[#fbbf24] text-black rounded-full h-7 w-7 flex items-center justify-center font-black shrink-0 text-sm">2</span>
+                            <p class="text-slate-100">Dentro encontrarás <strong>El Abrazo Invisible</strong> junto con todas las <strong>Bitácoras y Protocolos</strong> de acción.</p>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <span class="bg-[#fbbf24] text-black rounded-full h-7 w-7 flex items-center justify-center font-black shrink-0 text-sm">3</span>
+                            <p class="text-slate-300 text-xs italic">Si no lo recibes en 5 minutos, revisa tu carpeta de Spam o Promociones.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl"></div>
+            </div>
+
+            <div class="mt-16 pt-10 border-t border-white/10">
+                <h3 class="text-xl font-bold text-white mb-4 uppercase tracking-widest">Ya no eres un espectador.</h3>
+                <p class="text-slate-400 text-sm leading-relaxed italic">
+                    Prepárate para transformar la angustia en paz y el caos en esperanza. Los protocolos que tienes en tus manos han sido diseñados para salvar momentos que parecen perdidos.
+                </p>
+            </div>
+
+            <div class="mt-12 flex flex-col items-center gap-6 pt-10">
+                <img src="hotmart_brand.svg" class="h-6 opacity-80" alt="Hotmart Safe Delivery">
+                <div class="flex gap-4 items-center">
+                    <span class="text-[9px] font-bold text-slate-500 uppercase tracking-[0.3em]">Encriptación SSL 256-bit</span>
+                    <div class="w-1 h-1 bg-slate-700 rounded-full"></div>
+                    <span class="text-[9px] font-bold text-slate-500 uppercase tracking-[0.3em]">Acceso de por vida</span>
+                </div>
+            </div>
+        </div>
+
+        <footer class="mt-12 pb-12 text-center w-full">
+            <p class="text-[10px] text-slate-600 font-bold uppercase tracking-[0.4em]">
+                © 2026 Aprendia Tech • Todos los derechos reservados
             </p>
-        </div>
-
-        <div class="bg-blue-600/20 p-8 rounded-[2.5rem] border border-blue-500/30 text-left light-glow">
-            <h2 class="text-xl font-bold mb-4 gold-text">Tu camino comienza ahora:</h2>
-            <ul class="space-y-4">
-                <li class="flex items-start gap-3">
-                    <span class="text-blue-400 font-bold mt-1 text-xl">→</span>
-                    <p class="text-slate-100">Revisa tu correo. <strong>Hotmart</strong> te ha enviado el acceso a <strong>El Abrazo Invisible</strong>.</p>
-                </li>
-                <li class="flex items-start gap-3">
-                    <span class="text-blue-400 font-bold mt-1 text-xl">→</span>
-                    <p class="text-slate-100">Allí encontrarás tus <strong>Protocolos</strong> y <strong>Bitácoras</strong> de acción inmediata.</p>
-                </li>
-            </ul>
-        </div>
-
-        <div class="mt-10 opacity-70 flex flex-col items-center gap-4">
-            <img src="hotmart_brand.svg" class="h-6 grayscale-0" alt="Hotmart Safe">
-            <p class="text-[9px] uppercase tracking-[0.4em] font-bold text-slate-400">© 2026 Aprendia Tech • Transacción Protegida</p>
-        </div>
+        </footer>
     </main>
 
     <script>
