@@ -6,50 +6,49 @@
     <title>El Abrazo Invisible | Protocolos de Rescate Emocional</title>
     
     <meta name="facebook-domain-verification" content="839413299060107" />
-    <meta name="description" content="Domina el protocolo maestro de 3 pasos para restaurar la calma emocional en momentos de alta tensión. Formación técnica de Aprendia Tech.">
+    <meta name="description" content="Domina el protocolo maestro de 3 pasos para restaurar la calma emocional.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,400&family=Inter:wght@300;400;700;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,400&family=Inter:wght@400;700;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
-        // 🚨 MAPEO ESTRATÉGICO DE PRODUCTOS HOTMART
+        // 🚨 MAPEO DE PRODUCTOS (EBOOK Y CURSO)
         const CHECKOUT_EBOOK = "https://pay.hotmart.com/G104548950P?checkoutMode=10";
         const CHECKOUT_CURSO = "https://pay.hotmart.com/P105245108M?checkoutMode=10";
         
-        // ⚠️ RUTA DE AUDITORÍA (GOOGLE APPS SCRIPT)
+        // ⚠️ RUTA DE AUDITORÍA INTERNA
         const SCRIPT_URL = "TU_URL_DE_GOOGLE_SCRIPT_AQUI"; 
         
-        // Captura de Parámetros de URL para Deduplicación y Oferta
+        // Captura de Parámetros de Rastreo (URL Params)
         const params = new URLSearchParams(window.location.search);
         const em = params.get('em') || ''; 
         const ph = params.get('ph') || ''; 
         const oferta = params.get('oferta') || 'ebook';
 
-        // Inicialización de Interfaz y Datos
         window.addEventListener('load', () => {
-            // DETECTAR OFERTA Y ASIGNAR BOTONES
+            // LÓGICA DE INTERRUPTOR DINÁMICO
             const urlFinal = (oferta === 'curso') ? CHECKOUT_CURSO : CHECKOUT_EBOOK;
-            const botones = document.querySelectorAll('.btn-compra, .btn-premium');
             
+            // Inyectar links en todos los botones con clase 'btn-compra'
+            const botones = document.querySelectorAll('.btn-compra, .btn-premium');
             botones.forEach(boton => {
                 if(boton.tagName === 'A') {
                     boton.href = urlFinal;
                 }
             });
 
-            // Grito de Visita al Dashboard de Aprendia Tech
+            // Grito de Visita al Dashboard Soberano
             fetch(SCRIPT_URL, {
                 method: 'POST',
                 mode: 'no-cors',
                 body: new URLSearchParams({ 
-                    'tipo': 'VISITA_V8_RESPONSIVE_FULL', 
+                    'tipo': 'VISITA_V8.9_FINAL', 
                     'oferta': oferta,
-                    'ref': document.referrer || 'Directo',
-                    'v': '8.7_SOBERANA'
+                    'ref': document.referrer || 'Directo'
                 })
             });
             
@@ -60,7 +59,7 @@
             }
         });
 
-        // 📊 INTEGRACIÓN PIXEL DE META (ID: 733265212980710)
+        // 📊 CONFIGURACIÓN DEL PÍXEL DE META (ID: 733265212980710)
         !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
         n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
         n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
@@ -71,7 +70,6 @@
         fbq('track', 'PageView');
         fbq('track', 'ViewContent', { 
             content_name: (oferta === 'curso') ? 'PAP Curso Online' : 'PAP Ebook Digital', 
-            content_category: 'Capacitación Salud Mental',
             value: 9.00, 
             currency: 'USD' 
         });
@@ -87,7 +85,7 @@
         /* Animaciones Dopamínicas */
         @keyframes pulse-gold {
             0% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.6); }
-            70% { box-shadow: 0 0 0 30px rgba(251, 191, 36, 0); }
+            70% { box-shadow: 0 0 0 25px rgba(251, 191, 36, 0); }
             100% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0); }
         }
         .btn-premium { animation: pulse-gold 2s infinite; }
@@ -96,276 +94,253 @@
         .faq-item[open] summary span { transform: rotate(180deg); color: #fbbf24; }
         summary::-webkit-details-marker { display: none; }
 
-        /* Gradientes y Superposiciones Responsivas */
-        .hero-gradient { background: linear-gradient(180deg, rgba(2,6,23,0.3) 0%, rgba(2,6,23,0.9) 70%, rgba(2,6,23,1) 100%); }
+        /* Gradientes Responsivos */
+        .hero-gradient { background: linear-gradient(180deg, rgba(2,6,23,0.3) 0%, rgba(2,6,23,0.9) 80%, rgba(2,6,23,1) 100%); }
         .offer-gradient { background: radial-gradient(circle at center, rgba(251, 191, 36, 0.1) 0%, rgba(2, 6, 23, 1) 100%); }
     </style>
 </head>
 <body class="overflow-x-hidden">
 
-    <section class="relative min-h-[95vh] md:min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 md:px-6 py-20">
+    <section class="relative min-h-[90vh] md:min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 md:px-6 py-20 text-center">
         <div class="absolute inset-0 z-0">
             <img src="PORTADA_mk_PAP.webp" width="1200" height="800" fetchpriority="high" 
-                 class="w-full h-full object-cover object-center md:object-top opacity-40 brightness-110 scale-105" alt="El Abrazo Invisible">
+                 class="w-full h-full object-cover object-center md:object-top opacity-30 brightness-110" alt="Fondo">
             <div class="absolute inset-0 hero-gradient"></div>
         </div>
 
-        <div class="relative z-10 max-w-6xl text-center space-y-10 md:space-y-16">
-            <div class="inline-block bg-[#fbbf24]/20 text-[#fbbf24] px-6 py-2 rounded-full text-[10px] md:text-[12px] font-black tracking-[0.4em] uppercase border border-[#fbbf24]/30 animate-pulse">
+        <div class="relative z-10 max-w-5xl space-y-8 md:space-y-12">
+            <div class="inline-block bg-[#fbbf24]/20 text-[#fbbf24] px-6 py-1 rounded-full text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase border border-[#fbbf24]/30">
                 SISTEMA DE RESCATE EMOCIONAL • 2026
             </div>
             
-            <h1 class="text-4xl sm:text-6xl md:text-[9rem] font-black leading-[1.1] md:leading-[0.85] tracking-tighter drop-shadow-2xl text-white uppercase">
-                EL ABRAZO <br class="md:hidden"> <span class="gold-text italic block md:inline text-5xl md:text-[10rem]">INVISIBLE</span>
+            <h1 class="text-4xl sm:text-6xl lg:text-8xl font-black leading-tight tracking-tighter text-white uppercase">
+                EL ABRAZO <br class="md:hidden"> <span class="gold-text italic">INVISIBLE</span>
             </h1>
             
-            <p class="text-lg md:text-4xl text-slate-100 font-medium max-w-4xl mx-auto leading-relaxed italic px-4 drop-shadow-lg">
-                Domina la habilidad técnica de <span class="text-[#fbbf24] font-bold underline decoration-wavy">restaurar la calma</span> en segundos, convirtiéndote en el ancla que tu familia necesita.
+            <p class="text-lg md:text-2xl lg:text-3xl text-slate-100 font-medium max-w-3xl mx-auto leading-relaxed italic px-4">
+                Domina la habilidad de <span class="text-[#fbbf24] font-bold underline">restaurar la calma</span> en segundos, convirtiéndote en el ancla que tu familia necesita.
             </p>
             
-            <div class="pt-8 md:pt-14 flex flex-col items-center gap-10">
-                <a href="#oferta" class="btn-compra btn-premium inline-block bg-[#fbbf24] text-black font-black text-xl md:text-4xl px-12 md:px-24 py-7 md:py-14 rounded-full hover:scale-105 transition-all shadow-2xl uppercase tracking-tighter">
+            <div class="pt-8">
+                <a href="#oferta" class="btn-compra btn-premium inline-block bg-[#fbbf24] text-black font-black text-lg md:text-2xl lg:text-3xl px-12 py-6 md:px-20 md:py-10 rounded-full transition-all shadow-2xl uppercase tracking-tighter">
                    ADQUIRIR EL SISTEMA POR $9 USD
                 </a>
-                <div class="flex items-center gap-4 font-mono text-[9px] md:text-[11px] text-slate-500 uppercase tracking-widest opacity-70">
-                    <span class="w-2 h-2 bg-green-500 rounded-full animate-ping"></span>
-                    Acceso Inmediato • Abril 2026 • Aprendia Tech
-                </div>
+                <p class="mt-8 font-mono text-[9px] md:text-[11px] text-slate-500 uppercase tracking-widest opacity-60">Acceso Inmediato • Garantía Aprendia Tech</p>
             </div>
         </div>
     </section>
 
-    <section class="py-12 md:py-28 border-y border-white/5 bg-slate-900/60 relative z-20">
-        <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-20 text-center px-6">
-            <div class="space-y-3">
-                <p class="text-4xl md:text-6xl font-black text-[#fbbf24] tracking-tighter">4.9/5</p>
-                <p class="text-[9px] md:text-[11px] uppercase text-slate-400 font-bold tracking-[0.3em]">Satisfacción</p>
+    <section class="py-12 md:py-20 border-y border-white/5 bg-slate-900/40 relative z-20">
+        <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center px-6">
+            <div class="space-y-1">
+                <p class="text-3xl md:text-5xl font-black text-[#fbbf24]">4.9/5</p>
+                <p class="text-[9px] md:text-[11px] uppercase text-slate-400 font-bold tracking-[0.2em]">Satisfacción</p>
             </div>
-            <div class="space-y-3">
-                <p class="text-4xl md:text-6xl font-black text-white tracking-tighter">3.5k+</p>
-                <p class="text-[9px] md:text-[11px] uppercase text-slate-400 font-bold tracking-[0.3em]">Centinelas</p>
+            <div class="space-y-1">
+                <p class="text-3xl md:text-5xl font-black text-white">3.5k+</p>
+                <p class="text-[9px] md:text-[11px] uppercase text-slate-400 font-bold tracking-[0.2em]">Centinelas</p>
             </div>
-            <div class="space-y-3">
-                <p class="text-4xl md:text-6xl font-black text-white tracking-tighter">100%</p>
-                <p class="text-[9px] md:text-[11px] uppercase text-slate-400 font-bold tracking-[0.3em]">Digital</p>
+            <div class="space-y-1">
+                <p class="text-3xl md:text-5xl font-black text-white">100%</p>
+                <p class="text-[9px] md:text-[11px] uppercase text-slate-400 font-bold tracking-[0.2em]">Digital</p>
             </div>
-            <div class="space-y-3">
-                <p class="text-4xl md:text-6xl font-black text-[#fbbf24] tracking-tighter">SÍ</p>
-                <p class="text-[9px] md:text-[11px] uppercase text-slate-400 font-bold tracking-[0.3em]">3 Bonos</p>
+            <div class="space-y-1">
+                <p class="text-3xl md:text-5xl font-black text-[#fbbf24]">SÍ</p>
+                <p class="text-[9px] md:text-[11px] uppercase text-slate-400 font-bold tracking-[0.2em]">3 Bonos</p>
             </div>
         </div>
     </section>
 
-    <section class="py-24 md:py-48 px-6 max-w-7xl mx-auto grid md:grid-cols-2 gap-16 md:gap-32 items-center">
-        <div class="relative group order-2 md:order-1">
-            <img src="DATA_CRISIS1.webp" width="800" height="600" loading="lazy" 
-                 class="rounded-[2.5rem] md:rounded-[5rem] shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-1000 border border-white/10" alt="Rescate">
-            <div class="absolute -bottom-6 -right-4 md:-bottom-12 md:-right-12 bg-blue-600 text-white font-black px-10 py-5 md:px-16 md:py-8 rounded-2xl md:rounded-[3rem] shadow-2xl skew-x-[-5deg] text-base md:text-2xl uppercase">
-                ¿TE SIENTES IMPOTENTE?
-            </div>
+    <section class="py-20 md:py-32 px-6 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+        <div class="relative order-2 md:order-1">
+            <img src="DATA_CRISIS1.webp" class="rounded-[2.5rem] shadow-2xl grayscale opacity-80" alt="Rescate">
+            <div class="absolute -bottom-4 -right-4 bg-blue-600 text-white font-black px-8 py-4 rounded-xl shadow-xl text-xs md:text-sm uppercase">¿TE SIENTES IMPOTENTE?</div>
         </div>
-        <div class="space-y-10 md:order-2">
-            <h2 class="text-3xl sm:text-4xl md:text-8xl font-bold leading-tight italic uppercase tracking-tighter text-white">
-                Esa parálisis <br><span class="text-blue-400 italic">no es falta de amor...</span>
+        <div class="space-y-8 md:order-2">
+            <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight italic uppercase tracking-tighter text-white">
+                No es falta de amor, <span class="text-blue-400">es falta de técnica.</span>
             </h2>
-            <p class="text-slate-400 text-xl md:text-3xl leading-relaxed font-light">
-                Ver a un ser querido bajo una fuerte tensión y no saber cómo intervenir es desgarrador. No es una falla en tu carácter, es simplemente la falta de un **protocolo técnico de intervención.**
+            <p class="text-slate-400 text-lg md:text-xl font-light leading-relaxed">
+                Ver a un ser querido bajo una fuerte tensión y no saber cómo intervenir es desgarrador. No es una falla en tu carácter, es simplemente la falta de un protocolo técnico de intervención.
             </p>
-            <div class="p-10 md:p-16 glass rounded-[3rem] md:rounded-[4rem] border-l-[10px] md:border-l-[16px] border-blue-500 shadow-inner">
-                <p class="text-white text-lg md:text-2xl font-medium italic leading-relaxed">
-                    "En Aprendia Tech formamos Centinelas: Personas capaces de aplicar neurobiología simplificada para desactivar el caos emocional antes de que escale."
+            <div class="p-8 md:p-12 glass rounded-3xl border-l-[8px] border-blue-500">
+                <p class="text-white text-base md:text-lg italic leading-relaxed">
+                    "Aprendia Tech forma Centinelas: Personas capaces de aplicar neurobiología simplificada para desactivar el caos emocional."
                 </p>
             </div>
         </div>
     </section>
 
-    <section class="py-24 md:py-48 bg-slate-900/30 px-6">
-        <div class="max-w-6xl mx-auto space-y-20 md:space-y-32 text-center">
-            <div class="space-y-8">
-                <h2 class="text-4xl md:text-[9rem] font-black uppercase italic tracking-tighter">TU NUEVO <span class="gold-text">RADAR</span></h2>
-                <p class="text-slate-400 text-xl md:text-3xl font-light italic">Esto es lo que dominas tras el entrenamiento:</p>
+    <section class="py-20 md:py-32 bg-slate-900/20 px-6">
+        <div class="max-w-6xl mx-auto space-y-16 text-center">
+            <div class="space-y-4">
+                <h2 class="text-4xl md:text-6xl font-black uppercase italic tracking-tighter text-white">TU NUEVO <span class="gold-text">RADAR</span></h2>
+                <p class="text-slate-400 text-lg md:text-xl font-light italic">Lo que dominas tras este entrenamiento:</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14 text-left">
-                <div class="flex items-center gap-8 glass p-10 md:p-16 rounded-[2.5rem] md:rounded-[4rem] border-white/5 hover:border-[#fbbf24]/30 transition-all group">
-                    <span class="text-4xl md:text-7xl text-[#fbbf24] font-black group-hover:scale-110 transition-transform">01</span>
-                    <p class="text-lg md:text-2xl font-medium leading-snug">Identificar micro-tensiones faciales antes de la explosión.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 text-left">
+                <div class="flex items-center gap-6 glass p-8 rounded-3xl border-white/5 hover:border-[#fbbf24]/30 transition-all">
+                    <span class="text-3xl md:text-5xl text-[#fbbf24] font-black italic">01</span>
+                    <p class="text-base md:text-lg">Identificar micro-tensiones faciales antes de la explosión emocional.</p>
                 </div>
-                <div class="flex items-center gap-8 glass p-10 md:p-16 rounded-[2.5rem] md:rounded-[4rem] border-white/5 hover:border-[#fbbf24]/30 transition-all group">
-                    <span class="text-4xl md:text-7xl text-[#fbbf24] font-black group-hover:scale-110 transition-transform">02</span>
-                    <p class="text-lg md:text-2xl font-medium leading-snug">Aplicar el anclaje físico de 3 segundos para bajar el cortisol.</p>
+                <div class="flex items-center gap-6 glass p-8 rounded-3xl border-white/5 hover:border-[#fbbf24]/30 transition-all">
+                    <span class="text-3xl md:text-5xl text-[#fbbf24] font-black italic">02</span>
+                    <p class="text-base md:text-lg">Aplicar el anclaje físico de 3 segundos para bajar niveles de cortisol.</p>
                 </div>
-                <div class="flex items-center gap-8 glass p-10 md:p-16 rounded-[2.5rem] md:rounded-[4rem] border-white/5 hover:border-[#fbbf24]/30 transition-all group">
-                    <span class="text-4xl md:text-7xl text-[#fbbf24] font-black group-hover:scale-110 transition-transform">03</span>
-                    <p class="text-lg md:text-2xl font-medium leading-snug">Usar comandos lingüísticos de validación instantánea.</p>
+                <div class="flex items-center gap-6 glass p-8 rounded-3xl border-white/5 hover:border-[#fbbf24]/30 transition-all">
+                    <span class="text-3xl md:text-5xl text-[#fbbf24] font-black italic">03</span>
+                    <p class="text-base md:text-lg">Usar comandos lingüísticos de validación instantánea para frenar la reactividad.</p>
                 </div>
-                <div class="flex items-center gap-8 glass p-10 md:p-16 rounded-[2.5rem] md:rounded-[4rem] border-white/5 hover:border-[#fbbf24]/30 transition-all group">
-                    <span class="text-4xl md:text-7xl text-[#fbbf24] font-black group-hover:scale-110 transition-transform">04</span>
-                    <p class="text-lg md:text-2xl font-medium leading-snug">Mantener tu propia calma para no absorber el estrés ajeno.</p>
+                <div class="flex items-center gap-6 glass p-8 rounded-3xl border-white/5 hover:border-[#fbbf24]/30 transition-all">
+                    <span class="text-3xl md:text-5xl text-[#fbbf24] font-black italic">04</span>
+                    <p class="text-base md:text-lg">Mantener tu propia calma para no absorber el estrés del entorno.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 md:py-48 px-6 bg-[#020617] relative">
-        <div class="max-w-7xl mx-auto space-y-24 md:space-y-44">
-            <div class="text-center space-y-8">
-                <h2 class="text-4xl md:text-[10rem] font-black italic uppercase tracking-tighter">ESTO ES <span class="gold-text">UN ROBO...</span></h2>
-                <p class="text-slate-400 text-xl md:text-3xl max-w-4xl mx-auto font-light italic px-4">
-                    Adquiere hoy la Guía Maestra y llévate estos 3 entrenamientos complementarios de forma gratuita.
-                </p>
+    <section class="py-20 md:py-40 px-6 bg-[#020617] relative">
+        <div class="max-w-7xl mx-auto space-y-20 md:space-y-32">
+            <div class="text-center space-y-6">
+                <h2 class="text-4xl md:text-7xl lg:text-8xl font-black italic uppercase tracking-tighter">ESTO ES <span class="gold-text">UN ROBO...</span></h2>
+                <p class="text-slate-400 text-lg md:text-2xl font-light italic px-4">Llévate estos 3 entrenamientos complementarios de forma gratuita hoy.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
-                <div class="glass p-12 md:p-20 rounded-[3.5rem] md:rounded-[6rem] border-[#fbbf24]/30 space-y-12 relative overflow-hidden group hover:bg-[#fbbf24]/5 transition-all">
-                    <div class="absolute top-0 right-0 bg-[#fbbf24] text-black text-xl md:text-3xl font-black px-10 md:px-16 py-5 md:py-8 uppercase tracking-tighter rounded-bl-[3rem] md:rounded-bl-[4rem] z-30 shadow-2xl">REGALO #1</div>
-                    <div class="w-16 h-16 md:w-24 md:h-24 text-[#fbbf24] mt-12"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 2v20M2 12h20" stroke-linecap="round"/></svg></div>
-                    <h3 class="text-3xl md:text-6xl font-black leading-tight tracking-tighter text-white uppercase italic">RADAR <br><span class="gold-text italic text-4xl md:text-6xl">CENTINELA</span></h3>
-                    <p class="text-slate-400 text-lg md:text-2xl leading-relaxed font-light italic">Aprende a leer los signos invisibles de la angustia antes de que se conviertan en una crisis incontrolable.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+                <div class="glass p-10 md:p-14 rounded-[3rem] border-[#fbbf24]/30 space-y-8 relative overflow-hidden group hover:bg-[#fbbf24]/5 transition-all">
+                    <div class="absolute top-0 right-0 bg-[#fbbf24] text-black text-sm md:text-xl font-black px-8 py-4 uppercase tracking-tighter rounded-bl-3xl shadow-xl z-30">REGALO #1</div>
+                    <div class="w-14 h-14 text-[#fbbf24] mt-6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 2v20M2 12h20" stroke-linecap="round"/></svg></div>
+                    <h3 class="text-2xl md:text-4xl font-black leading-tight text-white uppercase italic">RADAR <br><span class="gold-text italic">CENTINELA</span></h3>
+                    <p class="text-slate-400 text-base md:text-lg leading-relaxed">Aprende a leer los signos invisibles de la angustia antes de que se conviertan en crisis.</p>
                 </div>
-
-                <div class="glass p-12 md:p-20 rounded-[3.5rem] md:rounded-[6rem] border-blue-500/30 space-y-12 relative overflow-hidden group hover:bg-blue-500/5 transition-all">
-                    <div class="absolute top-0 right-0 bg-blue-500 text-white text-xl md:text-3xl font-black px-10 md:px-16 py-5 md:py-8 uppercase tracking-tighter rounded-bl-[3rem] md:rounded-bl-[4rem] z-30 shadow-2xl">REGALO #2</div>
-                    <div class="w-16 h-16 md:w-24 md:h-24 text-blue-500 mt-12"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z" stroke-linecap="round"/></svg></div>
-                    <h3 class="text-3xl md:text-6xl font-black leading-tight tracking-tighter text-white uppercase italic">ABRAZO <br><span class="text-blue-400 italic text-4xl md:text-6xl">MAESTRO</span></h3>
-                    <p class="text-slate-400 text-lg md:text-2xl leading-relaxed font-light italic">Protocolos físicos diseñados para transmitir paz inmediata sin necesidad de articular una sola palabra.</p>
+                <div class="glass p-10 md:p-14 rounded-[3rem] border-blue-500/30 space-y-8 relative overflow-hidden group hover:bg-blue-500/5 transition-all">
+                    <div class="absolute top-0 right-0 bg-blue-500 text-white text-sm md:text-xl font-black px-8 py-4 uppercase tracking-tighter rounded-bl-3xl shadow-xl z-30">REGALO #2</div>
+                    <div class="w-14 h-14 text-blue-500 mt-6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z" stroke-linecap="round"/></svg></div>
+                    <h3 class="text-2xl md:text-4xl font-black leading-tight text-white uppercase italic">ABRAZO <br><span class="text-blue-400 italic">MAESTRO</span></h3>
+                    <p class="text-slate-400 text-base md:text-lg leading-relaxed">Protocolos físicos para transmitir calma inmediata sin articular palabras.</p>
                 </div>
-
-                <div class="glass p-12 md:p-20 rounded-[3.5rem] md:rounded-[6rem] border-green-500/30 space-y-12 relative overflow-hidden group hover:bg-green-500/5 transition-all">
-                    <div class="absolute top-0 right-0 bg-green-500 text-white text-xl md:text-3xl font-black px-10 md:px-16 py-5 md:py-8 uppercase tracking-tighter rounded-bl-[3rem] md:rounded-bl-[4rem] z-30 shadow-2xl">REGALO #3</div>
-                    <div class="w-16 h-16 md:w-24 md:h-24 text-green-500 mt-12"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke-linecap="round"/></svg></div>
-                    <h3 class="text-3xl md:text-6xl font-black leading-tight tracking-tighter text-white uppercase italic">DICCIONARIO <br><span class="text-green-400 italic text-4xl md:text-6xl">DE ORO</span></h3>
-                    <p class="text-slate-400 text-lg md:text-2xl leading-relaxed font-light italic">Una lista táctica de 50 frases que desactivan la reactividad y abren la puerta al diálogo constructivo.</p>
+                <div class="glass p-10 md:p-14 rounded-[3rem] border-green-500/30 space-y-8 relative overflow-hidden group hover:bg-green-500/5 transition-all">
+                    <div class="absolute top-0 right-0 bg-green-500 text-white text-sm md:text-xl font-black px-8 py-4 uppercase tracking-tighter rounded-bl-3xl shadow-xl z-30">REGALO #3</div>
+                    <div class="w-14 h-14 text-green-500 mt-6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke-linecap="round"/></svg></div>
+                    <h3 class="text-2xl md:text-4xl font-black leading-tight text-white uppercase italic">DICCIONARIO <br><span class="text-green-400 italic">DE ORO</span></h3>
+                    <p class="text-slate-400 text-base md:text-lg leading-relaxed">50 frases tácticas que desactivan la reactividad y abren la puerta al diálogo.</p>
                 </div>
             </div>
 
-            <div class="max-w-6xl mx-auto glass rounded-[3rem] md:rounded-[5rem] p-12 md:p-20 text-center border-green-500/40 shadow-[0_0_100px_rgba(34,197,94,0.15)] relative overflow-hidden">
-                <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-green-500 to-transparent"></div>
-                <p class="text-xl md:text-4xl font-bold text-white leading-relaxed italic px-4 drop-shadow-lg">
-                    🔐 El material se entrega de forma <span class="text-green-400 font-black underline italic">INSTANTÁNEA Y AUTOMÁTICA</span> en tu correo tras el pago seguro.
+            <div class="max-w-4xl mx-auto glass rounded-3xl p-10 text-center border-green-500/30 shadow-2xl">
+                <p class="text-lg md:text-2xl font-bold text-white italic leading-relaxed">
+                    🔐 El material se entrega de forma <span class="text-green-400 underline italic">INSTANTÁNEA</span> en tu correo tras el pago en Hotmart.
                 </p>
             </div>
         </div>
     </section>
 
-    <section class="py-24 md:py-48 px-6 bg-slate-900/30">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
-            <div class="glass p-12 md:p-24 rounded-[4rem] md:rounded-[6rem] border-green-500/20 space-y-12 shadow-2xl hover:scale-105 transition-transform">
-                <h3 class="text-4xl md:text-6xl font-black text-green-400 uppercase italic tracking-tighter">Esto ES para ti si:</h3>
-                <ul class="space-y-8 md:space-y-12 text-slate-300 text-xl md:text-3xl font-medium">
-                    <li class="flex items-start gap-8"><span class="bg-green-500/20 text-green-500 rounded-full p-2 text-xl md:text-2xl font-black italic">✓</span> Quieres ser el refugio seguro de tus hijos.</li>
-                    <li class="flex items-start gap-8"><span class="bg-green-500/20 text-green-500 rounded-full p-2 text-xl md:text-2xl font-black italic">✓</span> Buscas herramientas tácticas basadas en neurobiología.</li>
-                    <li class="flex items-start gap-8"><span class="bg-green-500/20 text-green-500 rounded-full p-2 text-xl md:text-2xl font-black italic">✓</span> Entiendes que la calma es una habilidad técnica.</li>
+    <section class="py-20 md:py-32 px-6 bg-slate-900/30">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div class="glass p-10 md:p-16 rounded-[2.5rem] border-green-500/20 space-y-8 shadow-2xl">
+                <h3 class="text-2xl md:text-4xl font-black text-green-400 uppercase italic">Esto ES para ti si:</h3>
+                <ul class="space-y-6 text-slate-300 text-base md:text-xl font-medium">
+                    <li class="flex items-start gap-4"><span>✓</span> Quieres ser el refugio seguro de tus hijos.</li>
+                    <li><span>✓</span> Buscas herramientas tácticas basadas en ciencia real.</li>
+                    <li><span>✓</span> Entiendes que la calma es una habilidad entrenable.</li>
                 </ul>
             </div>
-            <div class="glass p-12 md:p-24 rounded-[4rem] md:rounded-[6rem] border-red-500/20 space-y-12 shadow-2xl hover:scale-105 transition-transform opacity-60">
-                <h3 class="text-4xl md:text-6xl font-black text-red-400 uppercase italic tracking-tighter">Esto NO es para ti:</h3>
-                <ul class="space-y-8 md:space-y-12 text-slate-300 text-xl md:text-3xl font-medium">
-                    <li class="flex items-start gap-8"><span>✕</span> Buscas terapia clínica o diagnósticos médicos.</li>
-                    <li class="flex items-start gap-8"><span>✕</span> No estás dispuesto a aplicar protocolos técnicos.</li>
-                    <li class="flex items-start gap-8"><span>✕</span> Prefieres seguir reaccionando desde el impulso.</li>
+            <div class="glass p-10 md:p-16 rounded-[2.5rem] border-red-500/20 space-y-8 shadow-2xl">
+                <h3 class="text-2xl md:text-4xl font-black text-red-400 uppercase italic">Esto NO es para ti:</h3>
+                <ul class="space-y-6 text-slate-300 text-base md:text-xl opacity-60">
+                    <li>✕ Buscas terapia clínica o diagnósticos médicos.</li>
+                    <li>✕ No estás dispuesto a aplicar protocolos técnicos.</li>
+                    <li>✕ Prefieres seguir reaccionando desde el impulso.</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <section class="py-24 md:py-48 px-6 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto text-center space-y-24 md:space-y-40">
-            <h2 class="text-5xl md:text-[9rem] font-black italic text-white uppercase tracking-tighter text-center">Voces que son <span class="gold-text italic">Faro</span></h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-20 text-left">
-                <div class="glass p-12 md:p-20 rounded-[3rem] md:rounded-[5rem] border-white/5 space-y-10 hover:scale-105 transition-all duration-700 italic">
-                    <p class="text-slate-200 text-xl md:text-3xl leading-relaxed italic">"Calmé a mi hermana durante una crisis laboral usando solo los Comandos de Validación. Es increíble cómo cambia la energía."</p>
-                    <div class="border-t border-white/10 pt-10 font-black text-[10px] md:text-sm uppercase tracking-[0.4em] opacity-60 italic">Marcela G., Colombia 🇨🇴</div>
+    <section class="py-20 md:py-32 px-6 relative">
+        <div class="max-w-6xl mx-auto text-center space-y-16 md:space-y-24">
+            <h2 class="text-4xl md:text-6xl lg:text-7xl font-black italic text-white uppercase tracking-tighter text-center">Voces que son <span class="gold-text italic">Faro</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 text-left italic">
+                <div class="glass p-10 rounded-3xl border-white/5 space-y-6 italic">
+                    <p class="text-slate-200 text-lg md:text-xl leading-relaxed">"Calmé a mi hermana durante una crisis laboral usando solo los Comandos de Validación. Es increíble."</p>
+                    <div class="border-t border-white/10 pt-6 font-bold text-[10px] uppercase tracking-widest opacity-40 italic">Marcela G., Colombia 🇨🇴</div>
                 </div>
-                <div class="glass p-12 md:p-20 rounded-[3rem] md:rounded-[5rem] border-[#fbbf24]/30 shadow-2xl bg-white/5 space-y-10 scale-105 md:scale-110 z-10 italic">
-                    <p class="text-slate-100 text-xl md:text-3xl leading-relaxed italic">"En Miami el ritmo es brutal. Mi pareja usó los protocolos conmigo y salvaron nuestra comunicación familiar."</p>
-                    <div class="border-t border-white/10 pt-10 font-black text-[10px] md:text-sm uppercase tracking-[0.4em] text-[#fbbf24] italic">Santi R., Miami 🇺🇸</div>
+                <div class="glass p-10 rounded-3xl border-[#fbbf24]/30 bg-white/5 space-y-6 scale-105 z-10 italic">
+                    <p class="text-slate-100 text-lg md:text-xl leading-relaxed">"En Miami el ritmo es brutal. Mi pareja usó los protocolos conmigo y salvaron nuestra comunicación."</p>
+                    <div class="border-t border-white/10 pt-6 font-bold text-[10px] uppercase tracking-widest text-[#fbbf24] italic">Santi R., Miami 🇺🇸</div>
                 </div>
-                <div class="glass p-12 md:p-20 rounded-[3rem] md:rounded-[5rem] border-white/5 space-y-10 hover:scale-105 transition-all duration-700 italic">
-                    <p class="text-slate-200 text-xl md:text-3xl leading-relaxed italic">"Pensé que se necesitaba ser psicóloga. La guía táctica me dio la seguridad para apoyar a mi hijo sin desesperarme."</p>
-                    <div class="border-t border-white/10 pt-10 font-black text-[10px] md:text-sm uppercase tracking-[0.4em] opacity-60 italic">Elena G., Argentina 🇦🇷</div>
+                <div class="glass p-10 rounded-3xl border-white/5 space-y-6 italic">
+                    <p class="text-slate-200 text-lg md:text-xl leading-relaxed">"Pensé que se necesitaba ser psicóloga. La guía táctica me dio la seguridad para apoyar a mi hijo."</p>
+                    <div class="border-t border-white/10 pt-6 font-bold text-[10px] uppercase tracking-widest opacity-40 italic">Elena G., Argentina 🇦🇷</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 md:py-48 px-6 max-w-5xl mx-auto space-y-20 md:space-y-32 text-center">
-        <h2 class="text-5xl md:text-[9rem] font-black uppercase italic tracking-tighter">Despejando <span class="gold-text italic text-6xl md:text-[10rem]">Dudas</span></h2>
-        <div class="space-y-10 text-left">
-            <details class="faq-item glass p-10 md:p-16 rounded-[2.5rem] md:rounded-[4rem] border-white/5 cursor-pointer group hover:bg-white/5 transition-all">
-                <summary class="flex justify-between items-center font-bold text-2xl md:text-5xl list-none uppercase italic tracking-tighter">
-                    ¿Es un pago único?
-                    <span class="text-[#fbbf24] transition-transform duration-500 text-3xl md:text-6xl font-bold italic">▼</span>
-                </summary>
-                <p class="mt-10 text-slate-400 text-xl md:text-4xl font-light leading-relaxed italic">Sí. Pago único de $9 USD. Acceso de por vida, sin suscripciones ocultas ni letras pequeñas.</p>
+    <section class="py-20 md:py-32 px-6 max-w-4xl mx-auto space-y-12">
+        <h2 class="text-4xl md:text-6xl font-black text-center uppercase italic text-white">Dudas Frecuentes</h2>
+        <div class="space-y-6 text-left">
+            <details class="faq-item glass p-8 rounded-[2rem] cursor-pointer group">
+                <summary class="flex justify-between items-center font-bold text-xl md:text-2xl uppercase italic">¿Es un pago único? <span>▼</span></summary>
+                <p class="mt-6 text-slate-400 text-base md:text-xl">Sí. Pago único de $9 USD. Acceso de por vida, sin suscripciones.</p>
             </details>
-            <details class="faq-item glass p-10 md:p-16 rounded-[2.5rem] md:rounded-[4rem] border-white/5 cursor-pointer group hover:bg-white/5 transition-all">
-                <summary class="flex justify-between items-center font-bold text-2xl md:text-5xl list-none uppercase italic tracking-tighter">
-                    ¿Necesito ser psicólogo?
-                    <span class="text-[#fbbf24] transition-transform duration-500 text-3xl md:text-6xl font-bold italic">▼</span>
-                </summary>
-                <p class="mt-10 text-slate-400 text-xl md:text-4xl font-light leading-relaxed italic">No. Estos son protocolos tácticos simplificados para humanos de a pie. Si tienes empatía y sabes leer, puedes aplicarlo.</p>
+            <details class="faq-item glass p-8 rounded-[2rem] cursor-pointer group">
+                <summary class="flex justify-between items-center font-bold text-xl md:text-2xl uppercase italic">¿Necesito ser psicólogo? <span>▼</span></summary>
+                <p class="mt-6 text-slate-400 text-base md:text-xl">No. Son protocolos tácticos simplificados para humanos de a pie.</p>
             </details>
-            <details class="faq-item glass p-10 md:p-16 rounded-[2.5rem] md:rounded-[4rem] border-white/5 cursor-pointer group hover:bg-white/5 transition-all">
-                <summary class="flex justify-between items-center font-bold text-2xl md:text-5xl list-none uppercase italic tracking-tighter">
-                    ¿Tiene garantía?
-                    <span class="text-[#fbbf24] transition-transform duration-500 text-3xl md:text-6xl font-bold italic">▼</span>
-                </summary>
-                <p class="mt-10 text-slate-400 text-xl md:text-4xl font-light leading-relaxed italic">Tienes 7 días de garantía incondicional. Si el sistema no es para ti, Hotmart te devuelve el 100% de tu dinero.</p>
+            <details class="faq-item glass p-8 rounded-[2rem] cursor-pointer group">
+                <summary class="flex justify-between items-center font-bold text-xl md:text-2xl uppercase italic">¿Tiene garantía? <span>▼</span></summary>
+                <p class="mt-6 text-slate-400 text-base md:text-xl">7 días de garantía total. Si no te gusta, te devolvemos el dinero.</p>
             </details>
         </div>
     </section>
 
-    <section id="oferta" class="py-32 md:py-60 px-6 relative offer-gradient text-center overflow-hidden">
-        <div class="max-w-6xl mx-auto space-y-20 md:space-y-32">
-            <h2 class="text-6xl sm:text-7xl md:text-[13rem] font-black tracking-tighter uppercase italic leading-[0.85] text-white">LA PAZ EMPIEZA <span class="text-red-500 underline decoration-8 md:decoration-[16px] underline-offset-16">AQUÍ</span></h2>
+    <section id="oferta" class="py-32 md:py-48 px-6 relative offer-gradient text-center overflow-hidden">
+        <div class="max-w-4xl mx-auto space-y-16">
+            <h2 class="text-5xl md:text-7xl lg:text-9xl font-black tracking-tighter uppercase italic text-white leading-none">LA PAZ EMPIEZA <span class="text-red-500 underline decoration-4 underline-offset-8">AQUÍ</span></h2>
             
-            <div class="glass rounded-[5rem] md:rounded-[8rem] p-12 md:p-32 border-[#fbbf24]/20 space-y-16 md:space-y-28 relative shadow-[0_0_200px_rgba(251,191,36,0.3)]">
-                <div class="space-y-10 text-left border-b border-white/10 pb-20 text-2xl md:text-5xl italic font-bold">
-                    <div class="flex justify-between items-center"><span>📔 Manual Maestro "El Abrazo Invisible"</span><span class="line-through opacity-40 font-mono text-xl md:text-4xl">$17.00</span></div>
-                    <div class="flex justify-between items-center mt-6"><span>📡 3 Bonos de Entrenamiento Táctico</span><span class="text-green-400 font-black uppercase text-xs md:text-lg bg-green-500/10 px-6 py-3 rounded-2xl">Incluidos</span></div>
+            <div class="glass rounded-[4rem] p-10 md:p-20 border-[#fbbf24]/20 space-y-12 relative shadow-2xl">
+                <div class="space-y-6 text-left border-b border-white/10 pb-10 text-xl md:text-2xl italic font-bold">
+                    <div class="flex justify-between"><span>📔 Manual Maestro "El Abrazo Invisible"</span><span class="line-through opacity-40 font-mono text-xl">$17.00</span></div>
+                    <div class="flex justify-between mt-4"><span>📡 3 Bonos de Entrenamiento Táctico</span><span class="text-green-400 font-black uppercase text-sm md:text-lg bg-green-500/10 px-6 py-2 rounded-xl italic">Incluidos</span></div>
                 </div>
 
-                <div class="space-y-8 md:space-y-12">
-                    <p class="text-slate-500 text-2xl md:text-5xl font-medium tracking-[0.4em] uppercase italic">VALOR TOTAL: $114 USD</p>
-                    <p class="text-7xl sm:text-8xl md:text-[18rem] font-black text-white drop-shadow-[0_0_100px_rgba(251,191,36,0.5)] uppercase leading-none">SÓLO <span class="gold-text italic text-8xl md:text-[15rem]">$9</span></p>
-                    <p class="text-green-400 font-bold tracking-[0.6em] uppercase text-[10px] md:text-xl animate-bounce italic drop-shadow-lg">Oferta de Lanzamiento • Abril 2026</p>
+                <div class="space-y-6">
+                    <p class="text-slate-500 text-2xl md:text-3xl font-medium tracking-widest uppercase italic">VALOR TOTAL: $114 USD</p>
+                    <p class="text-8xl md:text-[12rem] font-black text-white drop-shadow-[0_0_80px_rgba(251,191,36,0.3)] uppercase leading-none italic">SÓLO <span class="gold-text">$9</span></p>
                 </div>
 
-                <div class="pt-12 md:pt-20">
-                    <a href="#" class="btn-compra btn-premium block w-full bg-[#fbbf24] text-black font-black text-2xl sm:text-3xl md:text-7xl py-10 md:py-24 rounded-[3rem] md:rounded-[6rem] hover:scale-[1.03] transition-all uppercase tracking-tighter shadow-2xl">
-                       ¡SÍ! DAME ACCESO TOTAL POR $9
+                <div class="pt-10">
+                    <a href="#" class="btn-compra btn-premium block w-full bg-[#fbbf24] text-black font-black text-2xl md:text-5xl py-12 md:py-16 rounded-[3rem] md:rounded-[4rem] hover:scale-[1.03] transition-all uppercase tracking-tighter shadow-2xl">
+                       ¡SÍ! ACCESO POR $9
                     </a>
                 </div>
 
-                <div class="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24 pt-20 md:pt-28 opacity-30">
-                    <div class="flex items-center gap-6"><img src="hotmart_brand.svg" class="h-10 md:h-14" alt="Hotmart"><span class="text-[12px] md:text-[16px] font-bold uppercase tracking-widest italic">Pago 100% Seguro</span></div>
-                    <div class="flex items-center gap-6"><span class="text-[12px] md:text-[16px] font-bold uppercase tracking-widest italic">🔐 Blindaje Aprendia Tech 2026</span></div>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16 pt-16 md:pt-20 opacity-30">
+                    <div class="flex items-center gap-4 italic"><img src="hotmart_brand.svg" class="h-10" alt="Hotmart"><span class="text-[10px] font-bold uppercase tracking-widest">Pago Seguro</span></div>
+                    <div class="flex items-center gap-4 italic"><span class="text-[10px] font-bold uppercase tracking-widest">🔐 Aprendia Tech 2026</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="admin-panel" class="hidden py-48 bg-black border-t-[12px] border-[#fbbf24] px-6">
-        <div class="max-w-7xl mx-auto space-y-28 text-center">
-            <h2 class="text-6xl md:text-[11rem] font-black text-[#fbbf24] font-mono tracking-tighter italic uppercase">Centro de Mando Soberano</h2>
-            <div class="glass p-12 md:p-24 rounded-[4rem] md:rounded-[6rem] max-w-5xl mx-auto shadow-2xl">
-                <canvas id="myChart"></canvas>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto font-mono">
-                <div class="glass p-16 rounded-[4rem] text-6xl md:text-9xl font-black italic">x12.5 <br><span class="text-xs uppercase tracking-widest opacity-40 italic">ROI Estimado</span></div>
-                <div class="glass p-16 rounded-[4rem] text-6xl md:text-9xl font-black text-[#fbbf24] italic">2.8k <br><span class="text-xs uppercase tracking-widest opacity-40 italic">Visitas Totales</span></div>
-            </div>
+    <section id="admin-panel" class="hidden py-40 bg-black border-t-[10px] border-[#fbbf24] px-6 text-center">
+        <h2 class="text-5xl md:text-8xl font-black text-[#fbbf24] font-mono tracking-tighter italic uppercase text-center">Centro de Mando</h2>
+        <div class="glass p-12 md:p-24 rounded-[4rem] max-w-5xl mx-auto shadow-2xl mt-16">
+            <canvas id="myChart"></canvas>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-3xl mx-auto font-mono text-5xl md:text-7xl font-black italic mt-16">
+            <div class="glass p-12 rounded-[3rem]">x12 ROI</div>
+            <div class="glass p-12 rounded-[3rem] text-[#fbbf24]">2.8k V</div>
         </div>
     </section>
 
-    <footer class="py-32 md:py-60 px-6 border-t border-white/5 bg-[#01040a] text-center">
-        <div class="max-w-6xl mx-auto space-y-24">
-            <img src="hotmart_brand.svg" class="h-12 mx-auto opacity-10" alt="Hotmart">
-            <p class="text-[10px] md:text-[16px] text-slate-400 font-black uppercase tracking-[0.5em] px-8 leading-relaxed italic opacity-70">
+    <footer class="py-32 px-6 border-t border-white/5 bg-[#01040a] text-center">
+        <div class="max-w-5xl mx-auto space-y-16">
+            <img src="hotmart_brand.svg" class="h-10 mx-auto opacity-10" alt="Hotmart">
+            <p class="text-[10px] md:text-base text-slate-400 font-bold uppercase tracking-[0.4em] px-8 leading-relaxed italic opacity-70">
                 © 2026 Aprendia Tech • Que nunca te falten las palabras cuando alguien que amas te necesite.
             </p>
-            <p class="text-[9px] md:text-[11px] text-slate-600 uppercase tracking-widest opacity-40 italic">
-                Este sitio no es parte de Meta Platforms, Inc. Aprendia Tech es una academia de capacitación independiente. Soporte global disponible 24/7.
+            <p class="text-[9px] text-slate-600 uppercase tracking-widest opacity-40 px-6">
+                Este sitio no es parte de Meta Platforms, Inc. Aprendia Tech es una academia independiente.
             </p>
         </div>
     </footer>
@@ -375,13 +350,13 @@
         new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ['Lun','Mar','Mie','Jue','Vie','Sab','Dom'],
+                labels: ['L','M','M','J','V','S','D'],
                 datasets: [{
                     data: [120, 240, 180, 430, 390, 520, 680],
                     borderColor: '#fbbf24',
-                    backgroundColor: 'rgba(251, 191, 36, 0.1)',
                     borderWidth: 10,
                     fill: true,
+                    backgroundColor: 'rgba(251, 191, 36, 0.1)',
                     tension: 0.4,
                     pointRadius: 0
                 }]
@@ -391,7 +366,7 @@
                 plugins: { legend: { display: false } },
                 scales: {
                     y: { display: false },
-                    x: { grid: { display: false }, ticks: { color: '#475569', font: { weight: 'bold', size: 16 } } }
+                    x: { grid: { display: false }, ticks: { color: '#475569', font: { weight: 'bold' } } }
                 }
             }
         });
