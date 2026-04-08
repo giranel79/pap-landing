@@ -23,17 +23,14 @@
         // ⚠️ RUTA DE AUDITORÍA INTERNA
         const SCRIPT_URL = "TU_URL_DE_GOOGLE_SCRIPT_AQUI"; 
         
-        // Captura de Parámetros de Rastreo (URL Params)
         const params = new URLSearchParams(window.location.search);
         const em = params.get('em') || ''; 
         const ph = params.get('ph') || ''; 
         const oferta = params.get('oferta') || 'ebook';
 
         window.addEventListener('load', () => {
-            // LÓGICA DE INTERRUPTOR DINÁMICO
             const urlFinal = (oferta === 'curso') ? CHECKOUT_CURSO : CHECKOUT_EBOOK;
             
-            // Inyectar links en todos los botones con clase 'btn-compra'
             const botones = document.querySelectorAll('.btn-compra, .btn-premium');
             botones.forEach(boton => {
                 if(boton.tagName === 'A') {
@@ -41,7 +38,6 @@
                 }
             });
 
-            // Grito de Visita al Dashboard Soberano
             fetch(SCRIPT_URL, {
                 method: 'POST',
                 mode: 'no-cors',
@@ -52,13 +48,11 @@
                 })
             });
             
-            // Acceso al Panel Administrativo (?comando=root)
             if(params.get('comando') === 'root') {
                 document.getElementById('admin-panel').classList.remove('hidden');
                 document.getElementById('admin-panel').scrollIntoView({ behavior: 'smooth' });
             }
 
-            // Lógica del Botón Flotante (Sticky CTA)
             const stickyCta = document.getElementById('sticky-cta');
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 600) {
@@ -69,7 +63,7 @@
             });
         });
 
-        // 📊 CONFIGURACIÓN DEL PÍXEL DE META (ID: 733265212980710)
+        // 📊 PÍXEL DE META
         !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
         n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
         n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
@@ -86,13 +80,11 @@
     </script>
 
     <style>
-        /* Tipografía y Comportamiento */
         body { font-family: 'Inter', sans-serif; background-color: #020617; color: white; scroll-behavior: smooth; }
         h1, h2, h3, h4 { font-family: 'Merriweather', serif; }
         .gold-text { color: #fbbf24; }
         .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
         
-        /* Animaciones Dopamínicas */
         @keyframes pulse-gold {
             0% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.6); }
             70% { box-shadow: 0 0 0 20px rgba(251, 191, 36, 0); }
@@ -100,12 +92,11 @@
         }
         .btn-premium { animation: pulse-gold 2s infinite; }
         
-        /* Ajustes FAQ */
         .faq-item[open] summary span { transform: rotate(180deg); color: #fbbf24; }
         summary::-webkit-details-marker { display: none; }
 
-        /* Gradientes Responsivos */
-        .hero-gradient { background: linear-gradient(180deg, rgba(2,6,23,0.5) 0%, rgba(2,6,23,0.9) 70%, rgba(2,6,23,1) 100%); }
+        /* GRADIENTE MÁS CLARO PARA QUE SE VEA EL MOCKUP */
+        .hero-gradient { background: linear-gradient(180deg, rgba(2,6,23,0.3) 0%, rgba(2,6,23,0.8) 80%, rgba(2,6,23,1) 100%); }
         .offer-gradient { background: radial-gradient(circle at center, rgba(251, 191, 36, 0.1) 0%, rgba(2, 6, 23, 1) 100%); }
     </style>
 </head>
@@ -114,7 +105,7 @@
     <section class="relative min-h-[90vh] md:min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 md:px-6 py-20 text-center">
         <div class="absolute inset-0 z-0">
             <img src="PORTADA_mk_PAP.webp" fetchpriority="high" width="1200" height="800"
-                 class="w-full h-full object-cover object-center md:object-top opacity-30 brightness-110" alt="Hombre abrazando familiar">
+                 class="w-full h-full object-cover object-center md:object-top opacity-50 brightness-125" alt="Hombre abrazando familiar">
             <div class="absolute inset-0 hero-gradient"></div>
         </div>
 
@@ -127,7 +118,7 @@
                 CÓMO DESACTIVAR EL COLAPSO EMOCIONAL DE QUIEN AMAS <span class="gold-text italic">EN 3 MINUTOS</span>
             </h1>
             
-            <p class="text-base md:text-2xl text-slate-300 font-light max-w-4xl mx-auto leading-relaxed px-4">
+            <p class="text-base md:text-2xl text-slate-300 font-light max-w-4xl mx-auto leading-relaxed px-4 text-shadow-sm">
                 El protocolo táctico <strong class="text-white">"El Abrazo Invisible"</strong>. Sin empeorar la situación, sin palabras vacías y sin necesidad de ser psicólogo.
             </p>
             
@@ -135,7 +126,7 @@
                 <a href="#oferta" class="btn-compra btn-premium inline-block bg-[#fbbf24] text-black font-black text-xl md:text-3xl px-10 py-5 md:px-16 md:py-8 rounded-full transition-all shadow-2xl uppercase tracking-tighter hover:scale-105">
                    SÍ, QUIERO EL PROTOCOLO POR $9 USD
                 </a>
-                <p class="mt-6 font-mono text-[10px] md:text-xs text-slate-400 uppercase tracking-widest">
+                <p class="mt-6 font-mono text-[10px] md:text-xs text-slate-300 uppercase tracking-widest font-bold">
                     Acceso inmediato al PDF • Lectura en 2 minutos
                 </p>
             </div>
@@ -165,7 +156,7 @@
 
     <section class="py-20 md:py-32 px-6 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
         <div class="relative order-2 md:order-1 group">
-            <img src="DATA_CRISIS1.webp" loading="lazy" class="rounded-[2.5rem] shadow-[0_0_50px_rgba(0,0,0,0.8)] grayscale group-hover:grayscale-0 transition-all duration-700 opacity-80" alt="Impotencia ante crisis">
+            <img src="DATA_CRISIS1.webp" loading="lazy" class="rounded-[2.5rem] shadow-[0_0_50px_rgba(0,0,0,0.8)] grayscale group-hover:grayscale-0 transition-all duration-700 opacity-90" alt="Impotencia ante crisis">
             <div class="absolute -bottom-6 -right-6 bg-red-600 text-white font-black px-8 py-5 rounded-2xl shadow-2xl text-xs md:text-sm uppercase tracking-widest border border-red-400/30">
                 LA IMPOTENCIA PARALIZA
             </div>
@@ -241,7 +232,7 @@
                     <h3 class="text-2xl md:text-3xl font-black leading-tight text-white uppercase italic mt-6">RADAR <br><span class="gold-text">CENTINELA</span></h3>
                     <p class="text-slate-400 text-sm md:text-base leading-relaxed">Aprende a leer los signos invisibles de la angustia antes de que se conviertan en crisis.</p>
                     <div class="pt-4 border-t border-white/10 flex justify-between items-center text-sm">
-                        <span class="text-slate-500 line-through">Valor: $27 USD</span>
+                        <span class="text-slate-500 line-through font-mono">Valor: $17 USD</span>
                         <span class="text-[#fbbf24] font-bold">HOY GRATIS</span>
                     </div>
                 </div>
@@ -250,7 +241,7 @@
                     <h3 class="text-2xl md:text-3xl font-black leading-tight text-white uppercase italic mt-6">ABRAZO <br><span class="text-blue-400">MAESTRO</span></h3>
                     <p class="text-slate-400 text-sm md:text-base leading-relaxed">Protocolos físicos para transmitir calma inmediata sin articular una sola palabra.</p>
                     <div class="pt-4 border-t border-white/10 flex justify-between items-center text-sm">
-                        <span class="text-slate-500 line-through">Valor: $19 USD</span>
+                        <span class="text-slate-500 line-through font-mono">Valor: $27 USD</span>
                         <span class="text-blue-400 font-bold">HOY GRATIS</span>
                     </div>
                 </div>
@@ -259,16 +250,10 @@
                     <h3 class="text-2xl md:text-3xl font-black leading-tight text-white uppercase italic mt-6">DICCIONARIO <br><span class="text-green-400">DE ORO</span></h3>
                     <p class="text-slate-400 text-sm md:text-base leading-relaxed">50 frases tácticas para desarmar el caos y abrir la puerta al diálogo racional.</p>
                     <div class="pt-4 border-t border-white/10 flex justify-between items-center text-sm">
-                        <span class="text-slate-500 line-through">Valor: $39 USD</span>
+                        <span class="text-slate-500 line-through font-mono">Valor: $29 USD</span>
                         <span class="text-green-400 font-bold">HOY GRATIS</span>
                     </div>
                 </div>
-            </div>
-
-            <div class="max-w-3xl mx-auto glass rounded-2xl p-6 text-center border-green-500/30 shadow-lg bg-green-500/5">
-                <p class="text-base md:text-xl font-bold text-white leading-relaxed">
-                    🔐 El material se entrega de forma <span class="text-green-400 underline">INSTANTÁNEA</span> en tu correo tras el pago 100% seguro.
-                </p>
             </div>
         </div>
     </section>
@@ -304,26 +289,30 @@
                 <div class="space-y-4 text-left border-b border-white/10 pb-8 text-lg md:text-2xl font-bold">
                     <div class="flex justify-between items-center">
                         <span class="text-white">📔 Tratado "El Abrazo Invisible"</span>
-                        <span class="line-through text-slate-500 font-mono text-lg">$17.00</span>
+                        <span class="line-through text-slate-500 font-mono text-lg">$39.00</span>
                     </div>
                     <div class="flex justify-between items-center">
-                        <span class="text-slate-300 text-base md:text-xl font-normal">📡 3 Bonos de Intervención</span>
+                        <span class="text-slate-300 text-base md:text-xl font-normal">📡 3 Bonos de Intervención ($73)</span>
                         <span class="text-green-400 font-black uppercase text-xs md:text-sm bg-green-500/10 px-4 py-1 rounded border border-green-500/20">Gratis Hoy</span>
                     </div>
                 </div>
 
-                <div class="space-y-2">
-                    <p class="text-slate-500 text-sm md:text-xl font-bold tracking-widest uppercase">Valor Real: <span class="line-through">$102 USD</span></p>
+                <div class="space-y-2 relative">
+                    <div class="absolute -top-8 right-0 md:-right-8 bg-red-600 text-white font-black text-xs md:text-sm px-4 py-2 rounded-full transform rotate-12 shadow-lg border border-red-400">Ahorras 92%</div>
+                    <p class="text-slate-500 text-sm md:text-xl font-bold tracking-widest uppercase">Valor Real: <span class="line-through">$112 USD</span></p>
                     <p class="text-7xl md:text-[10rem] font-black text-white drop-shadow-[0_0_40px_rgba(251,191,36,0.4)] uppercase leading-none tracking-tighter">
                         <span class="text-3xl md:text-6xl align-top text-[#fbbf24]">$</span>9
                     </p>
                 </div>
 
+                <p class="text-sm md:text-base text-slate-400 italic max-w-2xl mx-auto border-t border-white/10 pt-6">
+                    "Estamos democratizando este conocimiento. No necesitas pagar $150 la hora en terapia para aprender a calmar a tu familia hoy. Llévate el ecosistema completo por lo que cuesta un café."
+                </p>
+
                 <div class="pt-6">
                     <a href="#" class="btn-compra btn-premium block w-full bg-[#fbbf24] text-black font-black text-xl md:text-4xl py-6 md:py-10 rounded-full hover:scale-[1.02] transition-transform uppercase tracking-tighter shadow-[0_10px_40px_rgba(251,191,36,0.3)]">
                         QUIERO EL SISTEMA AHORA
                     </a>
-                    <p class="mt-4 font-mono text-[10px] md:text-xs text-slate-400 uppercase tracking-widest">Pago cifrado de extremo a extremo</p>
                 </div>
 
                 <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 pt-8 opacity-50">
@@ -349,9 +338,6 @@
             ACCESO INMEDIATO - $9
         </a>
     </div>
-
-    <section id="admin-panel" class="hidden py-40 bg-black border-t-[10px] border-[#fbbf24] px-6 text-center">
-        </section>
 
 </body>
 </html>
