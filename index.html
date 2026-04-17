@@ -5,329 +5,216 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>El Abrazo Invisible | Protocolo de Rescate Emocional</title>
     
+    <link rel="preload" as="image" href="PORTADA_mk_PAP.webp" fetchpriority="high">
+
     <meta name="facebook-domain-verification" content="839413299060107" />
-    <meta name="description" content="Domina el protocolo maestro para restaurar la calma emocional en segundos. Entrenamiento táctico de Aprendia Tech.">
+    <meta name="description" content="Domina el protocolo maestro de 3 pasos para restaurar la calma emocional en segundos.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,400&family=Inter:wght@400;700;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,400&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 
     <style>
-        /* Estilos Críticos en Inline para evitar peticiones extra */
-        body { font-family: 'Inter', sans-serif; background-color: #020617; color: white; scroll-behavior: smooth; }
-        h1, h2, h3 { font-family: 'Merriweather', serif; }
-        .gold-text { color: #fbbf24; }
-        .glass { background: rgba(255, 255, 255, 0.04); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        :root { --gold: #fbbf24; --slate: #020617; --blue: #3b82f6; --green: #22c55e; }
+        * { box-sizing: border-box; }
+        body { background-color: var(--slate); color: white; font-family: 'Inter', sans-serif; margin: 0; overflow-x: hidden; scroll-behavior: smooth; }
         
-        /* Animación Optimizada para GPU (No usa CPU/Box-shadow) */
-        @keyframes pulse-gold {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        .btn-premium { animation: pulse-gold 2s infinite ease-in-out; will-change: transform; }
-        
-        /* FAQ Interactivo */
-        .faq-item[open] summary span { transform: rotate(180deg); color: #fbbf24; }
-        summary::-webkit-details-marker { display: none; }
+        /* Contenedores */
+        .max-w { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+        .section-py { padding: 60px 0; }
+        @media (min-width: 768px) { .section-py { padding: 100px 0; } }
 
-        /* Gradientes de Alta Fidelidad */
-        .hero-gradient { background: linear-gradient(180deg, rgba(2,6,23,0.3) 0%, rgba(2,6,23,0.8) 70%, rgba(2,6,23,1) 100%); }
-        .offer-gradient { background: radial-gradient(circle at center, rgba(251, 191, 36, 0.1) 0%, rgba(2, 6, 23, 1) 100%); }
+        /* Hero System */
+        .hero { position: relative; min-height: 95vh; display: flex; align-items: center; justify-content: center; text-align: center; }
+        .hero-bg { position: absolute; inset: 0; z-index: 0; }
+        .hero-img { width: 100%; height: 100%; object-fit: cover; opacity: 0.35; filter: brightness(1.1); }
+        .hero-gradient { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(2,6,23,0.2) 0%, rgba(2,6,23,1) 90%); }
+        .hero-content { position: relative; z-index: 10; max-width: 850px; }
+
+        /* Tipografía Dinámica */
+        h1, h2, h3 { font-family: 'Merriweather', serif; font-weight: 900; margin: 0; text-transform: uppercase; }
+        .h-large { font-size: clamp(2.5rem, 8vw, 5.5rem); line-height: 1; letter-spacing: -0.04em; }
+        .gold { color: var(--gold); font-style: italic; }
+        .sub-hook { font-size: clamp(1.1rem, 4vw, 1.8rem); color: #e2e8f0; font-style: italic; margin-top: 24px; font-weight: 400; }
+
+        /* Botón de Poder (Conversión) */
+        .btn-premium { 
+            display: inline-block; background: var(--gold); color: black; font-weight: 900; 
+            text-transform: uppercase; padding: 20px 40px; border-radius: 50px; 
+            text-decoration: none; font-size: clamp(1rem, 3vw, 1.5rem); margin-top: 32px;
+            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: btn-pulse 2s infinite; will-change: transform;
+        }
+        .btn-premium:hover { transform: scale(1.05); }
+        @keyframes btn-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); } }
+
+        /* Diseño de Cards y Glassmorphism */
+        .glass { background: rgba(255, 255, 255, 0.04); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 32px; padding: 32px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
         
-        /* Prevenir saltos de diseño en imágenes */
-        .img-container { aspect-ratio: 16 / 9; overflow: hidden; }
+        /* FAQ & Details */
+        details { cursor: pointer; margin-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 16px; }
+        summary { font-weight: 800; font-size: 1.2rem; list-style: none; display: flex; justify-content: space-between; align-items: center; text-transform: uppercase; font-style: italic; }
+        summary span { color: var(--gold); transition: transform 0.3s; }
+        details[open] summary span { transform: rotate(180deg); }
+        .faq-ans { margin-top: 16px; color: #94a3b8; font-size: 1.1rem; line-height: 1.6; }
+
+        /* Footer */
+        footer { border-top: 1px solid rgba(255,255,255,0.05); padding: 60px 24px; text-align: center; opacity: 0.6; font-size: 0.8rem; }
     </style>
 </head>
-<body class="overflow-x-hidden">
+<body>
 
-    <section class="relative min-h-[90vh] md:min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 md:px-6 py-12 text-center">
-        <div class="absolute inset-0 z-0">
-            <img src="PORTADA_mk_PAP.webp" width="1200" height="800" fetchpriority="high" 
-                 class="w-full h-full object-cover object-center md:object-top opacity-30" alt="Fondo Hero">
-            <div class="absolute inset-0 hero-gradient"></div>
+    <header class="hero">
+        <div class="hero-bg">
+            <img src="PORTADA_mk_PAP.webp" width="1200" height="800" class="hero-img" alt="Protocolo de Rescate">
+            <div class="hero-gradient"></div>
         </div>
-
-        <div class="relative z-10 max-w-5xl space-y-6 md:space-y-10">
-            <div class="inline-block bg-[#fbbf24]/20 text-[#fbbf24] px-4 py-1 rounded-full text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase border border-[#fbbf24]/30 animate-pulse">
-                MÉTODO TÁCTICO • 2026
+        <div class="hero-content">
+            <div style="background: rgba(251,191,36,0.15); color: var(--gold); padding: 6px 16px; border-radius: 30px; font-size: 10px; font-weight: 900; letter-spacing: 2px; display: inline-block; margin-bottom: 24px; border: 1px solid rgba(251,191,36,0.3);">
+                MÉTODO TÁCTICO • ABRIL 2026
             </div>
+            <h1 class="h-large">Recupera el Control <br> cuando ellos <span class="gold">lo pierden</span></h1>
+            <p class="sub-hook">Domina <b>El Abrazo Invisible</b>: el protocolo de 3 pasos para restaurar la calma emocional en segundos, sin discusiones ni impotencia.</p>
+            <a href="#oferta" class="btn-premium">Acceder al Protocolo por $9</a>
+        </div>
+    </header>
+
+    <section class="section-py" style="background: rgba(15, 23, 42, 0.6);">
+        <div class="max-w" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 32px; text-align: center;">
+            <div><div style="font-size: 2.5rem; font-weight: 900; color: var(--gold);">4.9/5</div><div style="font-size: 10px; opacity: 0.5; text-transform: uppercase; font-weight: 800;">Satisfacción</div></div>
+            <div><div style="font-size: 2.5rem; font-weight: 900;">3.5k+</div><div style="font-size: 10px; opacity: 0.5; text-transform: uppercase; font-weight: 800;">Familias</div></div>
+            <div><div style="font-size: 2.5rem; font-weight: 900;">100%</div><div style="font-size: 10px; opacity: 0.5; text-transform: uppercase; font-weight: 800;">Digital</div></div>
+            <div><div style="font-size: 2.5rem; font-weight: 900; color: var(--gold);">SÍ</div><div style="font-size: 10px; opacity: 0.5; text-transform: uppercase; font-weight: 800;">3 Bonos</div></div>
+        </div>
+    </section>
+
+    <section class="section-py max-w" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 60px; align-items: center;">
+        <div style="position: relative;">
+            <img src="DATA_CRISIS1.webp" width="500" height="300" style="width: 100%; height: auto; border-radius: 40px; filter: grayscale(1); opacity: 0.7;" alt="Crisis emocional" loading="lazy">
+            <div style="position: absolute; bottom: -10px; right: -10px; background: var(--blue); padding: 12px 24px; border-radius: 15px; font-weight: 900; font-size: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">¿TE SIENTES PARALIZADO?</div>
+        </div>
+        <div>
+            <h2 style="font-size: 2.5rem; line-height: 1.1; font-style: italic;">No es falta de amor, <span style="color: var(--blue);">es falta de técnica.</span></h2>
+            <p style="font-size: 1.2rem; line-height: 1.7; opacity: 0.8; margin-top: 24px; font-weight: 300;">Esa sensación de impotencia cuando tu hijo llora sin parar, o tu pareja colapsa por estrés, no es tu culpa. Es simplemente que nadie te dio el manual táctico para intervenir sin escalar el conflicto.</p>
+            <div class="glass" style="border-left: 8px solid var(--blue); margin-top: 32px; padding: 24px;">
+                <p style="margin: 0; font-style: italic; font-weight: 500;">"En Aprendia Tech transformamos la impotencia en autoridad serena. Deja de ser espectador del caos y conviértete en el ancla."</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-py" style="background: #01040a;">
+        <div class="max-w">
+            <h2 style="text-align: center; font-size: clamp(2.5rem, 6vw, 4.5rem); letter-spacing: -2px;">ESTO ES <span class="gold">UN ROBO...</span></h2>
+            <p style="text-align: center; opacity: 0.6; margin-bottom: 50px; font-style: italic;">Llévate el ecosistema completo de rescate emocional por un precio simbólico.</p>
             
-            <h1 class="text-3xl sm:text-5xl lg:text-7xl xl:text-8xl font-black leading-tight tracking-tighter text-white uppercase drop-shadow-2xl">
-                RECUPERA EL CONTROL <br class="hidden md:block"> CUANDO ELLOS <span class="gold-text italic">LO PIERDEN</span>
-            </h1>
-            
-            <p class="text-base md:text-2xl lg:text-3xl text-slate-100 font-medium max-w-3xl mx-auto leading-relaxed italic px-2">
-                Domina <span class="text-[#fbbf24] font-bold">El Abrazo Invisible</span>: el protocolo de 3 pasos para restaurar la calma emocional en segundos, sin discusiones ni impotencia.
-            </p>
-            
-            <div class="pt-6 md:pt-10 flex flex-col items-center gap-6">
-                <a href="#oferta" class="btn-compra btn-premium inline-block bg-[#fbbf24] text-black font-black text-lg md:text-3xl px-12 py-5 md:px-20 md:py-8 rounded-full transition-all shadow-2xl uppercase tracking-tighter">
-                   ACCEDER AL PROTOCOLO POR $9
-                </a>
-                <p class="font-mono text-[9px] md:text-[11px] text-slate-500 uppercase tracking-widest opacity-60">Acceso Inmediato • Formación Aprendia Tech</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-10 md:py-20 border-y border-white/5 bg-slate-900/40 relative z-20">
-        <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12 text-center px-6">
-            <div class="space-y-1">
-                <p class="text-2xl md:text-4xl font-black text-[#fbbf24]">4.9/5</p>
-                <p class="text-[9px] uppercase text-slate-400 font-bold tracking-widest">Satisfacción</p>
-            </div>
-            <div class="space-y-1">
-                <p class="text-2xl md:text-4xl font-black text-white">3.5k+</p>
-                <p class="text-[9px] uppercase text-slate-400 font-bold tracking-widest">Familias</p>
-            </div>
-            <div class="space-y-1">
-                <p class="text-2xl md:text-4xl font-black text-white">100%</p>
-                <p class="text-[9px] uppercase text-slate-400 font-bold tracking-widest">Digital</p>
-            </div>
-            <div class="space-y-1">
-                <p class="text-2xl md:text-4xl font-black text-[#fbbf24]">SÍ</p>
-                <p class="text-[9px] uppercase text-slate-400 font-bold tracking-widest">3 Bonos</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20 md:py-32 px-6 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
-        <div class="relative order-2 md:order-1 img-container">
-            <img src="DATA_CRISIS1.webp" width="800" height="450" loading="lazy" class="rounded-[2.5rem] shadow-2xl grayscale opacity-80 border border-white/5" alt="Rescate Emocional">
-            <div class="absolute -bottom-4 -right-2 bg-blue-600 text-white font-black px-6 py-3 rounded-xl shadow-xl text-xs uppercase italic">¿TE SIENTES PARALIZADO?</div>
-        </div>
-        <div class="space-y-6 md:order-2">
-            <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight italic uppercase tracking-tighter text-white">
-                Ver a quien amas <span class="text-blue-400">sufrir y no saber qué hacer...</span>
-            </h2>
-            <p class="text-slate-400 text-lg md:text-xl font-light leading-relaxed">
-                Esa sensación de impotencia cuando tu hijo llora sin parar, o tu pareja colapsa por estrés, no es falta de amor. Es la falta de una **herramienta técnica** para intervenir sin escalar el conflicto.
-            </p>
-            <div class="p-8 glass rounded-3xl border-l-[8px] border-blue-500 shadow-inner">
-                <p class="text-white text-base md:text-lg italic leading-relaxed font-medium">
-                    "En Aprendia Tech transformamos la impotencia en autoridad serena. Deja de ser espectador del caos y conviértete en el ancla."
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20 md:py-32 bg-slate-900/20 px-6">
-        <div class="max-w-6xl mx-auto space-y-16 text-center">
-            <div class="space-y-4">
-                <h2 class="text-3xl md:text-6xl font-black uppercase italic tracking-tighter text-white">TU NUEVO <span class="gold-text">RADAR</span></h2>
-                <p class="text-slate-400 text-base md:text-xl font-light italic">Lo que dominarás en menos de 60 minutos:</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 text-left">
-                <div class="flex items-center gap-6 glass p-8 rounded-3xl border-white/5 hover:border-[#fbbf24]/30 transition-all group">
-                    <span class="text-2xl md:text-4xl text-[#fbbf24] font-black italic">01</span>
-                    <p class="text-sm md:text-lg leading-relaxed">Lectura de micro-tensiones faciales: Detén la crisis antes de que empiece.</p>
+            <div class="grid-3">
+                <div class="glass" style="border-color: rgba(251,191,36,0.3); position: relative;">
+                    <div style="position: absolute; top: 0; right: 0; background: var(--gold); color: black; padding: 10px 20px; font-weight: 900; font-size: 11px; border-radius: 0 0 0 20px;">REGALO #1</div>
+                    <h3 class="gold" style="font-size: 1.8rem; margin-bottom: 12px;">RADAR <br>CENTINELA</h3>
+                    <p style="opacity: 0.6; font-size: 1rem; line-height: 1.5;">Anticípate al caos. Aprende a leer los signos invisibles de la angustia antes de la explosión.</p>
                 </div>
-                <div class="flex items-center gap-6 glass p-8 rounded-3xl border-white/5 hover:border-[#fbbf24]/30 transition-all group">
-                    <span class="text-2xl md:text-4xl text-[#fbbf24] font-black italic">02</span>
-                    <p class="text-sm md:text-lg leading-relaxed">Anclaje físico de 3 segundos: El interruptor biológico para bajar el cortisol.</p>
+                <div class="glass" style="border-color: rgba(59,130,246,0.3); position: relative;">
+                    <div style="position: absolute; top: 0; right: 0; background: var(--blue); color: white; padding: 10px 20px; font-weight: 900; font-size: 11px; border-radius: 0 0 0 20px;">REGALO #2</div>
+                    <h3 style="font-size: 1.8rem; color: #60a5fa; margin-bottom: 12px;">ABRAZO <br>MAESTRO</h3>
+                    <p style="opacity: 0.6; font-size: 1rem; line-height: 1.5;">Protocolos físicos para transmitir paz inmediata sin necesidad de una sola palabra.</p>
                 </div>
-                <div class="flex items-center gap-6 glass p-8 rounded-3xl border-white/5 hover:border-[#fbbf24]/30 transition-all group">
-                    <span class="text-2xl md:text-4xl text-[#fbbf24] font-black italic">03</span>
-                    <p class="text-sm md:text-lg leading-relaxed">Comandos de validación: Frases quirúrgicas que desarman la defensiva verbal.</p>
-                </div>
-                <div class="flex items-center gap-6 glass p-8 rounded-3xl border-white/5 hover:border-[#fbbf24]/30 transition-all group">
-                    <span class="text-2xl md:text-4xl text-[#fbbf24] font-black italic">04</span>
-                    <p class="text-sm md:text-lg leading-relaxed">Protección Emocional: Cómo ayudar sin quemarte ni absorber el estrés ajeno.</p>
+                <div class="glass" style="border-color: rgba(34,197,94,0.3); position: relative;">
+                    <div style="position: absolute; top: 0; right: 0; background: var(--green); color: white; padding: 10px 20px; font-weight: 900; font-size: 11px; border-radius: 0 0 0 20px;">REGALO #3</div>
+                    <h3 style="font-size: 1.8rem; color: #4ade80; margin-bottom: 12px;">DICCIONARIO <br>DE ORO</h3>
+                    <p style="opacity: 0.6; font-size: 1rem; line-height: 1.5;">50 frases tácticas que desactivan la reactividad y abren la puerta al diálogo real.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-20 md:py-40 px-6 bg-[#020617] relative">
-        <div class="max-w-7xl mx-auto space-y-20">
-            <div class="text-center space-y-6">
-                <h2 class="text-4xl md:text-7xl font-black italic uppercase tracking-tighter">ESTO ES <span class="gold-text">UN ROBO...</span></h2>
-                <p class="text-slate-400 text-lg md:text-2xl font-light italic px-4">Llévate este ecosistema completo de rescate emocional hoy mismo.</p>
-            </div>
+    <section class="section-py max-w grid-3" style="gap: 40px;">
+        <div class="glass" style="border-color: rgba(34,197,94,0.2); background: rgba(34,197,94,0.02);">
+            <h3 style="color: #4ade80; font-size: 1.8rem; margin-bottom: 24px;">ESTO ES PARA TI SI:</h3>
+            <ul style="list-style: none; padding: 0; line-height: 2.2; font-weight: 500;">
+                <li><span style="color: var(--green);">✓</span> Quieres ser el refugio de tus hijos.</li>
+                <li><span style="color: var(--green);">✓</span> Buscas ciencia aplicada, no consejos.</li>
+                <li><span style="color: var(--green);">✓</span> Valoras la calma como una técnica.</li>
+            </ul>
+        </div>
+        <div class="glass" style="border-color: rgba(239,68,68,0.2); opacity: 0.6;">
+            <h3 style="color: #f87171; font-size: 1.8rem; margin-bottom: 24px;">ESTO NO ES PARA TI:</h3>
+            <ul style="list-style: none; padding: 0; line-height: 2.2;">
+                <li>✕ Buscas terapia clínica profunda.</li>
+                <li>✕ No estás dispuesto a seguir el método.</li>
+                <li>✕ Prefieres gritar antes que liderar.</li>
+            </ul>
+        </div>
+    </section>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="glass p-8 md:p-12 rounded-[2.5rem] border-[#fbbf24]/30 space-y-8 relative overflow-hidden group hover:bg-[#fbbf24]/5 transition-all">
-                    <div class="absolute top-0 right-0 bg-[#fbbf24] text-black text-xs md:text-sm font-black px-6 py-3 uppercase tracking-tighter rounded-bl-2xl shadow-xl z-30">REGALO #1</div>
-                    <div class="w-12 h-12 text-[#fbbf24] mt-4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 2v20M2 12h20"/></svg></div>
-                    <h3 class="text-2xl md:text-3xl font-black text-white uppercase italic">RADAR <br><span class="gold-text italic">CENTINELA</span></h3>
-                    <p class="text-slate-400 text-sm md:text-base leading-relaxed italic">Aprende a leer los signos invisibles de la angustia antes de que el caos explote.</p>
-                </div>
-                <div class="glass p-8 md:p-12 rounded-[2.5rem] border-blue-500/30 space-y-8 relative overflow-hidden group hover:bg-blue-500/5 transition-all">
-                    <div class="absolute top-0 right-0 bg-blue-500 text-white text-xs md:text-sm font-black px-6 py-3 uppercase tracking-tighter rounded-bl-2xl shadow-xl z-30">REGALO #2</div>
-                    <div class="w-12 h-12 text-blue-500 mt-4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg></div>
-                    <h3 class="text-2xl md:text-3xl font-black text-white uppercase italic text-blue-100">ABRAZO <br><span class="text-blue-400 italic">MAESTRO</span></h3>
-                    <p class="text-slate-400 text-sm md:text-base leading-relaxed italic">El manual físico para transmitir paz inmediata sin necesidad de articular palabras.</p>
-                </div>
-                <div class="glass p-8 md:p-12 rounded-[2.5rem] border-green-500/30 space-y-8 relative overflow-hidden group hover:bg-green-500/5 transition-all">
-                    <div class="absolute top-0 right-0 bg-green-500 text-white text-xs md:text-sm font-black px-6 py-3 uppercase tracking-tighter rounded-bl-2xl shadow-xl z-30">REGALO #3</div>
-                    <div class="w-12 h-12 text-green-500 mt-4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/></svg></div>
-                    <h3 class="text-2xl md:text-3xl font-black text-white uppercase italic text-green-100">DICCIONARIO <br><span class="text-green-400 italic">DE ORO</span></h3>
-                    <p class="text-slate-400 text-sm md:text-base leading-relaxed italic">50 frases tácticas que desactivan la reactividad y abren la puerta al diálogo real.</p>
+    <section class="section-py max-w" style="max-width: 800px;">
+        <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 60px;">Preguntas <span class="gold">Clave</span></h2>
+        
+        <details>
+            <summary>¿Es un pago único? <span>▼</span></summary>
+            <div class="faq-ans">Sí. **Pago único de $9 USD**. Acceso de por vida a la plataforma y actualizaciones de Aprendia Tech sin mensualidades.</div>
+        </details>
+        
+        <details>
+            <summary>¿Cuándo recibo el material? <span>▼</span></summary>
+            <div class="faq-ans">De forma **inmediata**. Tras el pago, Hotmart te envía un correo automático con tus credenciales de acceso al curso y bonos.</div>
+        </details>
+
+        <details>
+            <summary>¿Funciona con adolescentes? <span>▼</span></summary>
+            <div class="faq-ans">Totalmente. El protocolo se basa en neurobiología universal (el sistema límbico). Es igual de efectivo con un niño de 5 años que con un adulto bajo estrés.</div>
+        </details>
+
+        <details>
+            <summary>¿Es seguro comprar aquí? <span>▼</span></summary>
+            <div class="faq-ans">Tu compra está protegida por **Hotmart**, la plataforma líder mundial en productos digitales. Tus datos están 100% cifrados.</div>
+        </details>
+
+        <details>
+            <summary>¿Qué pasa si no me gusta? <span>▼</span></summary>
+            <div class="faq-ans">Tienes **7 días de garantía incondicional**. Si sientes que el método no es para ti, pides el reembolso y se te devuelve el 100% de tu dinero. Sin preguntas.</div>
+        </details>
+    </section>
+
+    <section id="oferta" class="offer-gradient" style="padding: 120px 24px;">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <h2 style="font-size: clamp(3rem, 12vw, 8rem); line-height: 0.85; margin-bottom: 40px;">LA PAZ EMPIEZA <span style="color: #ef4444; text-decoration: underline;">AQUÍ</span></h2>
+            <div class="glass" style="border-color: rgba(251,191,36,0.2); padding: 60px 32px;">
+                <p style="text-transform: uppercase; letter-spacing: 4px; opacity: 0.5; margin-bottom: 10px;">Acceso Total al Sistema</p>
+                <p style="font-size: clamp(5rem, 15vw, 11rem); font-weight: 900; margin: 0; line-height: 1;">SÓLO <span class="gold">$9</span></p>
+                <a href="https://pay.hotmart.com/P105245108M?checkoutMode=10" class="btn-premium" style="width: 100%; box-sizing: border-box; font-size: 2rem; padding: 30px;">¡SÍ! ACCESO POR $9</a>
+                <div style="margin-top: 40px; opacity: 0.2; display: flex; justify-content: center; gap: 20px; align-items: center;">
+                    <img src="hotmart_brand.svg" height="30" alt="Hotmart">
+                    <span style="font-weight: 800; font-size: 10px;">🔐 BLINDAJE APRENDIA TECH 2026</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-20 md:py-32 px-6 bg-slate-900/30">
-        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div class="glass p-10 rounded-[2.5rem] border-green-500/20 space-y-6">
-                <h3 class="text-2xl md:text-3xl font-black text-green-400 uppercase italic">Esto ES para ti si:</h3>
-                <ul class="space-y-6 text-slate-300 text-base md:text-lg font-medium italic">
-                    <li class="flex items-start gap-4"><span class="text-green-500 font-black">✓</span> Quieres ser el refugio seguro de tus hijos.</li>
-                    <li><span class="text-green-500 font-black">✓</span> Buscas herramientas basadas en ciencia, no en consejos vacíos.</li>
-                    <li><span class="text-green-500 font-black">✓</span> Entiendes que la calma es una habilidad técnica.</li>
-                </ul>
-            </div>
-            <div class="glass p-10 rounded-[2.5rem] border-red-500/20 space-y-6 opacity-60">
-                <h3 class="text-2xl md:text-3xl font-black text-red-400 uppercase italic">Esto NO es para ti si:</h3>
-                <ul class="space-y-6 text-slate-300 text-base md:text-lg italic">
-                    <li>✕ Buscas terapia clínica o diagnósticos médicos.</li>
-                    <li>✕ No estás dispuesto a leer y aplicar protocolos.</li>
-                    <li>✕ Prefieres seguir reaccionando desde el impulso momentáneo.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20 md:py-32 px-6">
-        <div class="max-w-6xl mx-auto text-center space-y-16">
-            <h2 class="text-3xl md:text-6xl font-black italic text-white uppercase tracking-tighter">Voces que son <span class="gold-text">Faro</span></h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-                <div class="glass p-8 rounded-3xl italic border-white/5 space-y-4">
-                    <p class="text-slate-200 text-base md:text-lg leading-relaxed italic">"Calmé a mi hermana durante una crisis laboral usando solo los Comandos de Validación. Es increíble cómo cambia la energía."</p>
-                    <div class="text-[10px] uppercase font-bold tracking-widest opacity-40">Marcela G., Colombia</div>
-                </div>
-                <div class="glass p-8 rounded-3xl italic border-[#fbbf24]/20 bg-white/5 space-y-4 scale-105 z-10">
-                    <p class="text-slate-100 text-base md:text-lg leading-relaxed italic">"En Miami el ritmo es brutal. Mi pareja usó los protocolos conmigo y salvaron nuestra comunicación familiar."</p>
-                    <div class="text-[10px] uppercase font-bold tracking-widest text-[#fbbf24]/60">Santi R., Miami</div>
-                </div>
-                <div class="glass p-8 rounded-3xl italic border-white/5 space-y-4">
-                    <p class="text-slate-200 text-base md:text-lg leading-relaxed italic">"Pensé que se necesitaba ser psicóloga. La guía táctica me dio la seguridad para apoyar a mi hijo sin desesperarme."</p>
-                    <div class="text-[10px] uppercase font-bold tracking-widest opacity-40">Elena G., Argentina</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20 md:py-40 px-6 max-w-4xl mx-auto space-y-12">
-        <h2 class="text-4xl md:text-7xl font-black text-center uppercase italic text-white">Preguntas <span class="gold-text">Clave</span></h2>
-        <div class="space-y-6 text-left">
-            <details class="faq-item glass p-6 md:p-10 rounded-3xl cursor-pointer group hover:bg-white/5 transition-all">
-                <summary class="flex justify-between items-center font-bold text-lg md:text-2xl uppercase italic tracking-tighter">
-                    ¿Es un pago único o hay suscripción?
-                    <span class="text-[#fbbf24] transition-transform duration-500 text-2xl md:text-4xl">▼</span>
-                </summary>
-                <p class="mt-6 text-slate-400 text-base md:text-xl font-light italic">Es un **pago único de $9 USD**. No hay mensualidades ni cobros ocultos. Lo adquieres hoy y lo conservas de por vida en tu plataforma de Hotmart.</p>
-            </details>
-            <details class="faq-item glass p-6 md:p-10 rounded-3xl cursor-pointer group hover:bg-white/5 transition-all">
-                <summary class="flex justify-between items-center font-bold text-lg md:text-2xl uppercase italic tracking-tighter">
-                    ¿Cuánto tiempo toma ver resultados?
-                    <span class="text-[#fbbf24] transition-transform duration-500 text-2xl md:text-4xl">▼</span>
-                </summary>
-                <p class="mt-6 text-slate-400 text-base md:text-xl font-light italic">El entrenamiento se completa en menos de 60 minutos. El protocolo de 3 pasos se aplica en segundos y los resultados biológicos en la otra persona son inmediatos.</p>
-            </details>
-            <details class="faq-item glass p-6 md:p-10 rounded-3xl cursor-pointer group hover:bg-white/5 transition-all">
-                <summary class="flex justify-between items-center font-bold text-lg md:text-2xl uppercase italic tracking-tighter">
-                    ¿Funciona con adultos o solo niños?
-                    <span class="text-[#fbbf24] transition-transform duration-500 text-2xl md:text-4xl">▼</span>
-                </summary>
-                <p class="mt-6 text-slate-400 text-base md:text-xl font-light italic">Funciona con **cualquier ser humano**. El sistema se basa en neurobiología universal. Es igual de efectivo con un hijo pequeño, un adolescente rebelde o una pareja estresada.</p>
-            </details>
-            <details class="faq-item glass p-6 md:p-10 rounded-3xl cursor-pointer group hover:bg-white/5 transition-all">
-                <summary class="flex justify-between items-center font-bold text-lg md:text-2xl uppercase italic tracking-tighter">
-                    ¿Es seguro comprar aquí?
-                    <span class="text-[#fbbf24] transition-transform duration-500 text-2xl md:text-4xl">▼</span>
-                </summary>
-                <p class="mt-6 text-slate-400 text-base md:text-xl font-light italic">Absolutamente. El pago se procesa a través de **Hotmart**, la plataforma líder en productos digitales. Tus datos están cifrados y protegidos globalmente.</p>
-            </details>
-        </div>
-    </section>
-
-    <section id="oferta" class="py-24 md:py-48 px-6 relative offer-gradient text-center overflow-hidden">
-        <div class="max-w-4xl mx-auto space-y-12 md:space-y-20">
-            <h2 class="text-5xl md:text-8xl lg:text-9xl font-black tracking-tighter uppercase italic leading-none text-white">LA PAZ EMPIEZA <span class="text-red-500 underline decoration-4 md:decoration-8 underline-offset-8">AQUÍ</span></h2>
-            
-            <div class="glass rounded-[3rem] md:rounded-[6rem] p-10 md:p-20 border-[#fbbf24]/20 space-y-12 relative shadow-2xl">
-                <div class="space-y-6 text-left border-b border-white/10 pb-10 text-xl md:text-2xl font-bold italic">
-                    <div class="flex justify-between items-center"><span>📔 Manual Maestro "El Abrazo Invisible"</span><span class="line-through opacity-40 font-mono text-lg">$17.00</span></div>
-                    <div class="flex justify-between items-center mt-4"><span>📡 3 Bonos de Entrenamiento Táctico</span><span class="text-green-400 font-black uppercase text-sm md:text-lg bg-green-500/10 px-6 py-3 rounded-xl italic">Incluidos</span></div>
-                </div>
-
-                <div class="space-y-6 md:space-y-10">
-                    <p class="text-slate-500 text-xl md:text-3xl font-medium tracking-widest uppercase italic">VALOR TOTAL: $114 USD</p>
-                    <p class="text-7xl md:text-[14rem] font-black text-white drop-shadow-[0_0_80px_rgba(251,191,36,0.3)] uppercase leading-none italic">SÓLO <span class="gold-text">$9</span></p>
-                    <p class="text-green-400 font-bold tracking-[0.5em] uppercase text-[10px] md:text-sm animate-bounce italic">Oferta Válida para Abril 2026</p>
-                </div>
-
-                <div class="pt-10">
-                    <a href="#" class="btn-compra btn-premium block w-full bg-[#fbbf24] text-black font-black text-2xl md:text-6xl py-10 md:py-20 rounded-[2.5rem] md:rounded-[5rem] hover:scale-[1.03] transition-all uppercase tracking-tighter shadow-2xl">
-                       ¡SÍ! ACCESO POR $9
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="admin-panel" class="hidden py-40 bg-black border-t-[10px] border-[#fbbf24] px-6 text-center">
-        <h2 class="text-5xl md:text-8xl font-black text-[#fbbf24] font-mono tracking-tighter italic uppercase">Centro de Mando</h2>
-        <div class="glass p-10 md:p-24 rounded-[4rem] max-w-5xl mx-auto shadow-2xl mt-16"><canvas id="myChart"></canvas></div>
-    </section>
-
-    <footer class="py-24 md:py-40 px-6 border-t border-white/5 bg-[#01040a] text-center">
-        <div class="max-w-6xl mx-auto space-y-16">
-            <p class="text-[10px] md:text-[16px] text-slate-400 font-black uppercase tracking-[0.4em] px-8 leading-relaxed italic opacity-70">
-                © 2026 Aprendia Tech • Que nunca te falten las palabras cuando alguien que amas te necesite.
-            </p>
+    <footer>
+        <div class="max-w">
+            <p>© 2026 Aprendia Tech • Que nunca te falten las palabras cuando alguien que amas te necesite.</p>
+            <p style="margin-top: 10px; font-style: italic;">Este sitio no es parte de Meta Platforms, Inc. Aprendia Tech es una academia independiente.</p>
         </div>
     </footer>
 
     <script>
-        // 1. CONFIGURACIÓN DEL PÍXEL (Carga diferida)
-        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-        document,'script','https://connect.facebook.net/en_US/fbevents.js');
-        
-        const params = new URLSearchParams(window.location.search);
-        fbq('init', '733265212980710', { em: params.get('em'), ph: params.get('ph') });
-        fbq('track', 'PageView');
-
-        // 2. LÓGICA DE ADMIN Y GRÁFICAS (Solo se carga si es root)
-        if(params.get('comando') === 'root') {
-            const adminPanel = document.getElementById('admin-panel');
-            adminPanel.classList.remove('hidden');
+        window.addEventListener('load', () => {
+            // PIXEL DE META (Cargado después de que todo es visible)
+            !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+            n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+            document,'script','https://connect.facebook.net/en_US/fbevents.js');
             
-            // Carga dinámica de Chart.js para no penalizar al usuario normal
-            const script = document.createElement('script');
-            script.src = "https://cdn.jsdelivr.net/npm/chart.js";
-            script.onload = () => {
-                const ctx = document.getElementById('myChart');
-                new Chart(ctx, {
-                    type: 'line',
-                    data: {
-                        labels: ['L','M','M','J','V','S','D'],
-                        datasets: [{
-                            data: [120, 240, 180, 430, 390, 520, 680],
-                            borderColor: '#fbbf24',
-                            borderWidth: 10,
-                            fill: true,
-                            backgroundColor: 'rgba(251, 191, 36, 0.1)',
-                            tension: 0.4
-                        }]
-                    },
-                    options: { plugins: { legend: { display: false } }, scales: { y: { display: false }, x: { grid: { display: false } } } }
-                });
-            };
-            document.head.appendChild(script);
-        }
+            const params = new URLSearchParams(window.location.search);
+            fbq('init', '733265212980710', { em: params.get('em'), ph: params.get('ph') });
+            fbq('track', 'PageView');
 
-        // 3. ASIGNACIÓN DE CHECKOUT UNIFICADO
-        const CHECKOUT_FINAL = "https://pay.hotmart.com/P105245108M?checkoutMode=10";
-        document.querySelectorAll('.btn-compra, .btn-premium').forEach(boton => {
-            if(boton.tagName === 'A') boton.href = CHECKOUT_FINAL;
+            // Audit Tool (Opcional, minimalista)
+            if(params.get('comando') === 'root') {
+                console.log("Soberano: Sistema de rastreo activo v11.0");
+            }
         });
     </script>
 </body>
