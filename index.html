@@ -6,99 +6,86 @@
     <title>El Abrazo Invisible | Protocolo de Rescate Emocional</title>
     
     <link rel="preload" as="image" href="PORTADA_mk_PAP.webp" fetchpriority="high">
-
     <meta name="facebook-domain-verification" content="839413299060107" />
     <meta name="description" content="Domina el protocolo maestro de 3 pasos para restaurar la calma emocional en segundos.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,400&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,400&family=Inter:wght@400;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 
     <style>
-        :root { --gold: #fbbf24; --slate: #020617; --blue: #3b82f6; --green: #22c55e; }
+        :root { --gold: #fbbf24; --slate: #020617; --blue: #1d4ed8; --green: #15803d; }
         * { box-sizing: border-box; }
-        body { background-color: var(--slate); color: white; font-family: 'Inter', sans-serif; margin: 0; overflow-x: hidden; scroll-behavior: smooth; }
-        
-        /* Contenedores */
+        body { background-color: var(--slate); color: white; font-family: system-ui, -apple-system, sans-serif; margin: 0; overflow-x: hidden; scroll-behavior: smooth; }
+        .loaded body { font-family: 'Inter', sans-serif; }
         .max-w { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
         .section-py { padding: 60px 0; }
         @media (min-width: 768px) { .section-py { padding: 100px 0; } }
 
-        /* Hero System */
+        /* Hero */
         .hero { position: relative; min-height: 95vh; display: flex; align-items: center; justify-content: center; text-align: center; }
         .hero-bg { position: absolute; inset: 0; z-index: 0; }
-        .hero-img { width: 100%; height: 100%; object-fit: cover; opacity: 0.35; filter: brightness(1.1); }
-        .hero-gradient { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(2,6,23,0.2) 0%, rgba(2,6,23,1) 90%); }
+        .hero-img { width: 100%; height: 100%; object-fit: cover; opacity: 0.35; }
+        .hero-gradient { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(2,6,23,0.1) 0%, rgba(2,6,23,1) 90%); }
         .hero-content { position: relative; z-index: 10; max-width: 850px; }
-
-        /* Tipografía Dinámica */
         h1, h2, h3 { font-family: 'Merriweather', serif; font-weight: 900; margin: 0; text-transform: uppercase; }
-        .h-large { font-size: clamp(2.5rem, 8vw, 5.5rem); line-height: 1; letter-spacing: -0.04em; }
+        .h-large { font-size: clamp(2.5rem, 8vw, 5.5rem); line-height: 1.1; letter-spacing: -0.04em; }
         .gold { color: var(--gold); font-style: italic; }
         .sub-hook { font-size: clamp(1.1rem, 4vw, 1.8rem); color: #e2e8f0; font-style: italic; margin-top: 24px; font-weight: 400; }
 
-        /* Botón de Poder (Conversión) */
+        /* Botón */
         .btn-premium { 
             display: inline-block; background: var(--gold); color: black; font-weight: 900; 
-            text-transform: uppercase; padding: 20px 40px; border-radius: 50px; 
-            text-decoration: none; font-size: clamp(1rem, 3vw, 1.5rem); margin-top: 32px;
-            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            animation: btn-pulse 2s infinite; will-change: transform;
+            text-transform: uppercase; padding: 22px 45px; border-radius: 50px; 
+            text-decoration: none; font-size: clamp(1.1rem, 3vw, 1.6rem); margin-top: 35px;
+            animation: btn-pulse 2.5s infinite; will-change: transform;
         }
-        .btn-premium:hover { transform: scale(1.05); }
-        @keyframes btn-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); } }
+        @keyframes btn-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.04); } }
 
-        /* Diseño de Cards y Glassmorphism */
+        /* Cards */
         .glass { background: rgba(255, 255, 255, 0.04); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 32px; padding: 32px; }
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
         
-        /* FAQ & Details */
+        /* FAQ */
         details { cursor: pointer; margin-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 16px; }
-        summary { font-weight: 800; font-size: 1.2rem; list-style: none; display: flex; justify-content: space-between; align-items: center; text-transform: uppercase; font-style: italic; }
-        summary span { color: var(--gold); transition: transform 0.3s; }
-        details[open] summary span { transform: rotate(180deg); }
-        .faq-ans { margin-top: 16px; color: #94a3b8; font-size: 1.1rem; line-height: 1.6; }
-
-        /* Footer */
-        footer { border-top: 1px solid rgba(255,255,255,0.05); padding: 60px 24px; text-align: center; opacity: 0.6; font-size: 0.8rem; }
+        summary { font-weight: 800; font-size: 1.2rem; display: flex; justify-content: space-between; align-items: center; text-transform: uppercase; list-style: none; }
+        .faq-ans { margin-top: 16px; color: #94a3b8; line-height: 1.6; }
+        
+        footer { border-top: 1px solid rgba(255,255,255,0.05); padding: 60px 24px; text-align: center; opacity: 0.6; font-size: 0.85rem; }
     </style>
 </head>
-<body>
+<body class="loaded">
 
     <header class="hero">
-        <div class="hero-bg">
-            <img src="PORTADA_mk_PAP.webp" width="1200" height="800" class="hero-img" alt="Protocolo de Rescate">
-            <div class="hero-gradient"></div>
-        </div>
+        <div class="hero-bg"><img src="PORTADA_mk_PAP.webp" width="1200" height="800" class="hero-img" alt="Portada Aprendia Co">
+        <div class="hero-gradient"></div></div>
         <div class="hero-content">
-            <div style="background: rgba(251,191,36,0.15); color: var(--gold); padding: 6px 16px; border-radius: 30px; font-size: 10px; font-weight: 900; letter-spacing: 2px; display: inline-block; margin-bottom: 24px; border: 1px solid rgba(251,191,36,0.3);">
-                MÉTODO TÁCTICO • ABRIL 2026
-            </div>
+            <div style="background: rgba(251,191,36,0.12); color: var(--gold); padding: 6px 18px; border-radius: 30px; font-size: 11px; font-weight: 900; letter-spacing: 2px; display: inline-block; margin-bottom: 25px; border: 1px solid rgba(251,191,36,0.3);">SISTEMA SOBERANO • APRENDIA CO</div>
             <h1 class="h-large">Recupera el Control <br> cuando ellos <span class="gold">lo pierden</span></h1>
-            <p class="sub-hook">Domina <b>El Abrazo Invisible</b>: el protocolo de 3 pasos para restaurar la calma emocional en segundos, sin discusiones ni impotencia.</p>
-            <a href="#oferta" class="btn-premium">Acceder al Protocolo por $9</a>
+            <p class="sub-hook">Domina <b>El Abrazo Invisible</b>: el protocolo de 3 pasos para restaurar la calma emocional en segundos.</p>
+            <a href="#oferta" class="btn-premium">ACCEDER POR $9 USD</a>
         </div>
     </header>
 
     <section class="section-py" style="background: rgba(15, 23, 42, 0.6);">
         <div class="max-w" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 32px; text-align: center;">
-            <div><div style="font-size: 2.5rem; font-weight: 900; color: var(--gold);">4.9/5</div><div style="font-size: 10px; opacity: 0.5; text-transform: uppercase; font-weight: 800;">Satisfacción</div></div>
-            <div><div style="font-size: 2.5rem; font-weight: 900;">3.5k+</div><div style="font-size: 10px; opacity: 0.5; text-transform: uppercase; font-weight: 800;">Familias</div></div>
-            <div><div style="font-size: 2.5rem; font-weight: 900;">100%</div><div style="font-size: 10px; opacity: 0.5; text-transform: uppercase; font-weight: 800;">Digital</div></div>
-            <div><div style="font-size: 2.5rem; font-weight: 900; color: var(--gold);">SÍ</div><div style="font-size: 10px; opacity: 0.5; text-transform: uppercase; font-weight: 800;">3 Bonos</div></div>
+            <div><div style="font-size: 2.8rem; font-weight: 900; color: var(--gold);">4.9/5</div><div style="font-size: 10px; opacity: 0.5; text-transform: uppercase; font-weight: 800;">Satisfacción</div></div>
+            <div><div style="font-size: 2.8rem; font-weight: 900;">3.5k+</div><div style="font-size: 10px; opacity: 0.5; text-transform: uppercase; font-weight: 800;">Familias</div></div>
+            <div><div style="font-size: 2.8rem; font-weight: 900;">100%</div><div style="font-size: 10px; opacity: 0.5; text-transform: uppercase; font-weight: 800;">Digital</div></div>
+            <div><div style="font-size: 2.8rem; font-weight: 900; color: var(--gold);">SÍ</div><div style="font-size: 10px; opacity: 0.5; text-transform: uppercase; font-weight: 800;">3 Bonos</div></div>
         </div>
     </section>
 
     <section class="section-py max-w" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 60px; align-items: center;">
         <div style="position: relative;">
-            <img src="DATA_CRISIS1.webp" width="500" height="300" style="width: 100%; height: auto; border-radius: 40px; filter: grayscale(1); opacity: 0.7;" alt="Crisis emocional" loading="lazy">
-            <div style="position: absolute; bottom: -10px; right: -10px; background: var(--blue); padding: 12px 24px; border-radius: 15px; font-weight: 900; font-size: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">¿TE SIENTES PARALIZADO?</div>
+            <img src="DATA_CRISIS1.webp" width="720" height="400" style="width: 100%; height: auto; border-radius: 40px; filter: grayscale(1); opacity: 0.7;" alt="Crisis emocional" loading="lazy">
+            <div style="position: absolute; bottom: -10px; right: -10px; background: #2563eb; padding: 12px 24px; border-radius: 15px; font-weight: 900; font-size: 12px;">¿TE SIENTES IMPOTENTE?</div>
         </div>
         <div>
-            <h2 style="font-size: 2.5rem; line-height: 1.1; font-style: italic;">No es falta de amor, <span style="color: var(--blue);">es falta de técnica.</span></h2>
-            <p style="font-size: 1.2rem; line-height: 1.7; opacity: 0.8; margin-top: 24px; font-weight: 300;">Esa sensación de impotencia cuando tu hijo llora sin parar, o tu pareja colapsa por estrés, no es tu culpa. Es simplemente que nadie te dio el manual táctico para intervenir sin escalar el conflicto.</p>
-            <div class="glass" style="border-left: 8px solid var(--blue); margin-top: 32px; padding: 24px;">
-                <p style="margin: 0; font-style: italic; font-weight: 500;">"En Aprendia Tech transformamos la impotencia en autoridad serena. Deja de ser espectador del caos y conviértete en el ancla."</p>
+            <h2 style="font-size: 2.6rem; line-height: 1.1; font-style: italic;">No es falta de amor, <br><span style="color: #60a5fa;">es falta de técnica.</span></h2>
+            <p style="font-size: 1.25rem; line-height: 1.7; opacity: 0.8; margin-top: 25px; font-weight: 300;">Esa sensación de parálisis cuando alguien que amas colapsa no es falta de cariño. Es falta de un manual táctico para intervenir sin escalar el conflicto.</p>
+            <div class="glass" style="border-left: 8px solid #2563eb; margin-top: 35px; padding: 25px;">
+                <p style="margin: 0; font-style: italic; font-weight: 500;">"En Aprendia Co transformamos la impotencia en autoridad serena. Conviértete en el ancla que ellos necesitan."</p>
             </div>
         </div>
     </section>
@@ -106,115 +93,80 @@
     <section class="section-py" style="background: #01040a;">
         <div class="max-w">
             <h2 style="text-align: center; font-size: clamp(2.5rem, 6vw, 4.5rem); letter-spacing: -2px;">ESTO ES <span class="gold">UN ROBO...</span></h2>
-            <p style="text-align: center; opacity: 0.6; margin-bottom: 50px; font-style: italic;">Llévate el ecosistema completo de rescate emocional por un precio simbólico.</p>
-            
-            <div class="grid-3">
+            <div class="grid-3" style="margin-top: 50px;">
                 <div class="glass" style="border-color: rgba(251,191,36,0.3); position: relative;">
-                    <div style="position: absolute; top: 0; right: 0; background: var(--gold); color: black; padding: 10px 20px; font-weight: 900; font-size: 11px; border-radius: 0 0 0 20px;">REGALO #1</div>
-                    <h3 class="gold" style="font-size: 1.8rem; margin-bottom: 12px;">RADAR <br>CENTINELA</h3>
-                    <p style="opacity: 0.6; font-size: 1rem; line-height: 1.5;">Anticípate al caos. Aprende a leer los signos invisibles de la angustia antes de la explosión.</p>
+                    <div style="position: absolute; top: 0; right: 0; background: var(--gold); color: black; padding: 10px 22px; font-weight: 900; font-size: 11px; border-radius: 0 0 0 20px;">REGALO #1</div>
+                    <h3 class="gold" style="font-size: 1.9rem; margin-bottom: 15px;">RADAR <br>CENTINELA</h3>
+                    <p style="opacity: 0.7; font-size: 1.05rem;">Anticípate al caos leyendo los signos invisibles de angustia antes de la explosión.</p>
                 </div>
-                <div class="glass" style="border-color: rgba(59,130,246,0.3); position: relative;">
-                    <div style="position: absolute; top: 0; right: 0; background: var(--blue); color: white; padding: 10px 20px; font-weight: 900; font-size: 11px; border-radius: 0 0 0 20px;">REGALO #2</div>
-                    <h3 style="font-size: 1.8rem; color: #60a5fa; margin-bottom: 12px;">ABRAZO <br>MAESTRO</h3>
-                    <p style="opacity: 0.6; font-size: 1rem; line-height: 1.5;">Protocolos físicos para transmitir paz inmediata sin necesidad de una sola palabra.</p>
+                <div class="glass" style="border-color: rgba(29, 78, 216, 0.4); position: relative;">
+                    <div style="position: absolute; top: 0; right: 0; background: var(--blue); color: white; padding: 10px 22px; font-weight: 900; font-size: 11px; border-radius: 0 0 0 20px;">REGALO #2</div>
+                    <h3 style="font-size: 1.9rem; color: #60a5fa; margin-bottom: 15px;">ABRAZO <br>MAESTRO</h3>
+                    <p style="opacity: 0.7; font-size: 1.05rem;">Protocolos físicos para transmitir paz inmediata sin necesidad de palabras.</p>
                 </div>
-                <div class="glass" style="border-color: rgba(34,197,94,0.3); position: relative;">
-                    <div style="position: absolute; top: 0; right: 0; background: var(--green); color: white; padding: 10px 20px; font-weight: 900; font-size: 11px; border-radius: 0 0 0 20px;">REGALO #3</div>
-                    <h3 style="font-size: 1.8rem; color: #4ade80; margin-bottom: 12px;">DICCIONARIO <br>DE ORO</h3>
-                    <p style="opacity: 0.6; font-size: 1rem; line-height: 1.5;">50 frases tácticas que desactivan la reactividad y abren la puerta al diálogo real.</p>
+                <div class="glass" style="border-color: rgba(21, 128, 61, 0.4); position: relative;">
+                    <div style="position: absolute; top: 0; right: 0; background: var(--green); color: white; padding: 10px 22px; font-weight: 900; font-size: 11px; border-radius: 0 0 0 20px;">REGALO #3</div>
+                    <h3 style="font-size: 1.9rem; color: #4ade80; margin-bottom: 15px;">DICCIONARIO <br>DE ORO</h3>
+                    <p style="opacity: 0.7; font-size: 1.05rem;">50 frases tácticas que desactivan la reactividad y abren la puerta al diálogo real.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="section-py max-w grid-3" style="gap: 40px;">
-        <div class="glass" style="border-color: rgba(34,197,94,0.2); background: rgba(34,197,94,0.02);">
-            <h3 style="color: #4ade80; font-size: 1.8rem; margin-bottom: 24px;">ESTO ES PARA TI SI:</h3>
-            <ul style="list-style: none; padding: 0; line-height: 2.2; font-weight: 500;">
-                <li><span style="color: var(--green);">✓</span> Quieres ser el refugio de tus hijos.</li>
-                <li><span style="color: var(--green);">✓</span> Buscas ciencia aplicada, no consejos.</li>
-                <li><span style="color: var(--green);">✓</span> Valoras la calma como una técnica.</li>
+        <div class="glass" style="border-color: rgba(34,197,94,0.2); background: rgba(34,197,94,0.03);">
+            <h3 style="color: #4ade80; font-size: 2rem; margin-bottom: 25px;">ESTO ES PARA TI SI:</h3>
+            <ul style="list-style: none; padding: 0; line-height: 2.3; font-weight: 500;">
+                <li><span style="color: #4ade80;">✓</span> Quieres ser el refugio de tus seres queridos.</li>
+                <li><span style="color: #4ade80;">✓</span> Buscas ciencia aplicada, no consejos vacíos.</li>
+                <li><span style="color: #4ade80;">✓</span> Valoras la calma técnica como un poder real.</li>
             </ul>
         </div>
-        <div class="glass" style="border-color: rgba(239,68,68,0.2); opacity: 0.6;">
-            <h3 style="color: #f87171; font-size: 1.8rem; margin-bottom: 24px;">ESTO NO ES PARA TI:</h3>
-            <ul style="list-style: none; padding: 0; line-height: 2.2;">
-                <li>✕ Buscas terapia clínica profunda.</li>
-                <li>✕ No estás dispuesto a seguir el método.</li>
-                <li>✕ Prefieres gritar antes que liderar.</li>
+        <div class="glass" style="border-color: rgba(239,68,68,0.2); opacity: 0.65;">
+            <h3 style="color: #f87171; font-size: 2rem; margin-bottom: 25px;">ESTO NO ES PARA TI:</h3>
+            <ul style="list-style: none; padding: 0; line-height: 2.3;">
+                <li>✕ Buscas terapia clínica profunda o diagnósticos.</li>
+                <li>✕ No estás dispuesto a aplicar el método táctico.</li>
+                <li>✕ Prefieres el impulso momentáneo al método liderado.</li>
             </ul>
         </div>
     </section>
 
     <section class="section-py max-w" style="max-width: 800px;">
-        <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 60px;">Preguntas <span class="gold">Clave</span></h2>
-        
-        <details>
-            <summary>¿Es un pago único? <span>▼</span></summary>
-            <div class="faq-ans">Sí. **Pago único de $9 USD**. Acceso de por vida a la plataforma y actualizaciones de Aprendia Tech sin mensualidades.</div>
-        </details>
-        
-        <details>
-            <summary>¿Cuándo recibo el material? <span>▼</span></summary>
-            <div class="faq-ans">De forma **inmediata**. Tras el pago, Hotmart te envía un correo automático con tus credenciales de acceso al curso y bonos.</div>
-        </details>
-
-        <details>
-            <summary>¿Funciona con adolescentes? <span>▼</span></summary>
-            <div class="faq-ans">Totalmente. El protocolo se basa en neurobiología universal (el sistema límbico). Es igual de efectivo con un niño de 5 años que con un adulto bajo estrés.</div>
-        </details>
-
-        <details>
-            <summary>¿Es seguro comprar aquí? <span>▼</span></summary>
-            <div class="faq-ans">Tu compra está protegida por **Hotmart**, la plataforma líder mundial en productos digitales. Tus datos están 100% cifrados.</div>
-        </details>
-
-        <details>
-            <summary>¿Qué pasa si no me gusta? <span>▼</span></summary>
-            <div class="faq-ans">Tienes **7 días de garantía incondicional**. Si sientes que el método no es para ti, pides el reembolso y se te devuelve el 100% de tu dinero. Sin preguntas.</div>
-        </details>
+        <h2 style="text-align: center; font-size: 2.8rem; margin-bottom: 60px;">Preguntas <span class="gold">Clave</span></h2>
+        <details><summary>¿Es un pago único? <span>▼</span></summary><div class="faq-ans">Sí. **Pago único de $9 USD**. Acceso de por vida a la plataforma de Hotmart.</div></details>
+        <details><summary>¿Cuándo recibo el material? <span>▼</span></summary><div class="faq-ans">Inmediatamente. Hotmart te envía un correo automático tras el pago seguro.</div></details>
+        <details><summary>¿Funciona con adultos? <span>▼</span></summary><div class="faq-ans">Sí. Se basa en neurobiología universal del estrés, aplicable a cualquier ser humano bajo tensión.</div></details>
+        <details><summary>¿Qué pasa si no me gusta? <span>▼</span></summary><div class="faq-ans">Tienes **7 días de garantía**. Si no es para ti, te devolvemos el 100% de tu dinero.</div></details>
     </section>
 
-    <section id="oferta" class="offer-gradient" style="padding: 120px 24px;">
-        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-            <h2 style="font-size: clamp(3rem, 12vw, 8rem); line-height: 0.85; margin-bottom: 40px;">LA PAZ EMPIEZA <span style="color: #ef4444; text-decoration: underline;">AQUÍ</span></h2>
-            <div class="glass" style="border-color: rgba(251,191,36,0.2); padding: 60px 32px;">
-                <p style="text-transform: uppercase; letter-spacing: 4px; opacity: 0.5; margin-bottom: 10px;">Acceso Total al Sistema</p>
-                <p style="font-size: clamp(5rem, 15vw, 11rem); font-weight: 900; margin: 0; line-height: 1;">SÓLO <span class="gold">$9</span></p>
-                <a href="https://pay.hotmart.com/P105245108M?checkoutMode=10" class="btn-premium" style="width: 100%; box-sizing: border-box; font-size: 2rem; padding: 30px;">¡SÍ! ACCESO POR $9</a>
-                <div style="margin-top: 40px; opacity: 0.2; display: flex; justify-content: center; gap: 20px; align-items: center;">
-                    <img src="hotmart_brand.svg" height="30" alt="Hotmart">
-                    <span style="font-weight: 800; font-size: 10px;">🔐 BLINDAJE APRENDIA TECH 2026</span>
+    <section id="oferta" style="padding: 120px 24px; text-align: center; background: radial-gradient(circle, rgba(251,191,36,0.06) 0%, rgba(2,6,23,1) 100%);">
+        <div style="max-width: 850px; margin: 0 auto;">
+            <h2 style="font-size: clamp(3rem, 12vw, 8.5rem); line-height: 0.85; margin-bottom: 45px;">LA PAZ EMPIEZA <span style="color: #ef4444; text-decoration: underline;">AQUÍ</span></h2>
+            <div class="glass" style="border-color: rgba(251,191,36,0.2); padding: 70px 35px;">
+                <p style="text-transform: uppercase; letter-spacing: 5px; opacity: 0.5; margin-bottom: 12px; font-weight: 700;">Acceso Total al Sistema</p>
+                <p style="font-size: clamp(5.5rem, 16vw, 12rem); font-weight: 900; margin: 0; line-height: 1;">SÓLO <span class="gold">$9</span></p>
+                <a href="https://pay.hotmart.com/P105245108M?checkoutMode=10" class="btn-premium" style="width: 100%; box-sizing: border-box; font-size: 2.2rem; padding: 35px;">¡SÍ! ACCESO POR $9</a>
+                <div style="margin-top: 45px; opacity: 0.25; display: flex; justify-content: center; gap: 25px; align-items: center;">
+                    <img src="hotmart_brand.svg" width="120" height="30" alt="Hotmart" loading="lazy">
+                    <span style="font-weight: 800; font-size: 11px;">🔐 APRENDIA CO 2026</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="max-w">
-            <p>© 2026 Aprendia Tech • Que nunca te falten las palabras cuando alguien que amas te necesite.</p>
-            <p style="margin-top: 10px; font-style: italic;">Este sitio no es parte de Meta Platforms, Inc. Aprendia Tech es una academia independiente.</p>
-        </div>
-    </footer>
+    <footer>© 2026 Aprendia Co • Que nunca te falten las palabras cuando alguien que amas te necesite.</footer>
 
     <script>
         window.addEventListener('load', () => {
-            // PIXEL DE META (Cargado después de que todo es visible)
+            const params = new URLSearchParams(window.location.search);
             !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
             n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
             n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
             t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
             document,'script','https://connect.facebook.net/en_US/fbevents.js');
-            
-            const params = new URLSearchParams(window.location.search);
             fbq('init', '733265212980710', { em: params.get('em'), ph: params.get('ph') });
             fbq('track', 'PageView');
-
-            // Audit Tool (Opcional, minimalista)
-            if(params.get('comando') === 'root') {
-                console.log("Soberano: Sistema de rastreo activo v11.0");
-            }
         });
     </script>
 </body>
