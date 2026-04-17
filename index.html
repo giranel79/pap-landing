@@ -13,71 +13,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,400&family=Inter:wght@400;700;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    <script>
-        // 🚨 DESTINO ÚNICO (CURSO + ORDER BUMPS)
-        const CHECKOUT_HOTMART = "https://pay.hotmart.com/P105245108M?checkoutMode=10";
-        
-        // ⚠️ AUDITORÍA INTERNA
-        const SCRIPT_URL = "TU_URL_DE_GOOGLE_SCRIPT_AQUI"; 
-        
-        const params = new URLSearchParams(window.location.search);
-        const em = params.get('em') || '', ph = params.get('ph') || '';
-
-        window.addEventListener('load', () => {
-            // INYECCIÓN DE LINK EN BOTONES
-            document.querySelectorAll('.btn-compra, .btn-premium').forEach(boton => {
-                if(boton.tagName === 'A') boton.href = CHECKOUT_HOTMART;
-            });
-
-            // Registro en Dashboard Soberano
-            fetch(SCRIPT_URL, {
-                method: 'POST',
-                mode: 'no-cors',
-                body: new URLSearchParams({ 'tipo': 'VISITA_V9.1_CONVERSION', 'ref': document.referrer || 'Directo' })
-            });
-            
-            // Acceso secreto (?comando=root)
-            if(params.get('comando') === 'root') {
-                document.getElementById('admin-panel').classList.remove('hidden');
-                document.getElementById('admin-panel').scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-
-        // 📊 META PIXEL v2.0 (733265212980710)
-        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-        document,'script','https://connect.facebook.net/en_US/fbevents.js');
-        
-        fbq('init', '733265212980710', { em: em, ph: ph });
-        fbq('track', 'PageView');
-        fbq('track', 'ViewContent', { content_name: 'Curso PAP High Value', value: 9.00, currency: 'USD' });
-    </script>
 
     <style>
+        /* Estilos Críticos en Inline para evitar peticiones extra */
         body { font-family: 'Inter', sans-serif; background-color: #020617; color: white; scroll-behavior: smooth; }
         h1, h2, h3 { font-family: 'Merriweather', serif; }
         .gold-text { color: #fbbf24; }
         .glass { background: rgba(255, 255, 255, 0.04); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
         
-        /* Animación Dopamínica */
+        /* Animación Optimizada para GPU (No usa CPU/Box-shadow) */
         @keyframes pulse-gold {
-            0% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.6); }
-            70% { box-shadow: 0 0 0 20px rgba(251, 191, 36, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0); }
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
-        .btn-premium { animation: pulse-gold 2s infinite; }
+        .btn-premium { animation: pulse-gold 2s infinite ease-in-out; will-change: transform; }
         
         /* FAQ Interactivo */
         .faq-item[open] summary span { transform: rotate(180deg); color: #fbbf24; }
         summary::-webkit-details-marker { display: none; }
 
-        /* Gradientes Responsivos */
-        .hero-gradient { background: linear-gradient(180deg, rgba(2,6,23,0.4) 0%, rgba(2,6,23,0.9) 80%, rgba(2,6,23,1) 100%); }
+        /* Gradientes de Alta Fidelidad */
+        .hero-gradient { background: linear-gradient(180deg, rgba(2,6,23,0.3) 0%, rgba(2,6,23,0.8) 70%, rgba(2,6,23,1) 100%); }
         .offer-gradient { background: radial-gradient(circle at center, rgba(251, 191, 36, 0.1) 0%, rgba(2, 6, 23, 1) 100%); }
+        
+        /* Prevenir saltos de diseño en imágenes */
+        .img-container { aspect-ratio: 16 / 9; overflow: hidden; }
     </style>
 </head>
 <body class="overflow-x-hidden">
@@ -85,16 +46,16 @@
     <section class="relative min-h-[90vh] md:min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 md:px-6 py-12 text-center">
         <div class="absolute inset-0 z-0">
             <img src="PORTADA_mk_PAP.webp" width="1200" height="800" fetchpriority="high" 
-                 class="w-full h-full object-cover object-center md:object-top opacity-30" alt="Fondo">
+                 class="w-full h-full object-cover object-center md:object-top opacity-30" alt="Fondo Hero">
             <div class="absolute inset-0 hero-gradient"></div>
         </div>
 
         <div class="relative z-10 max-w-5xl space-y-6 md:space-y-10">
             <div class="inline-block bg-[#fbbf24]/20 text-[#fbbf24] px-4 py-1 rounded-full text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase border border-[#fbbf24]/30 animate-pulse">
-                MÉTODO TÁCTICO • ABRIL 2026
+                MÉTODO TÁCTICO • 2026
             </div>
             
-            <h1 class="text-3xl sm:text-5xl lg:text-7xl font-black leading-tight tracking-tighter text-white uppercase drop-shadow-2xl">
+            <h1 class="text-3xl sm:text-5xl lg:text-7xl xl:text-8xl font-black leading-tight tracking-tighter text-white uppercase drop-shadow-2xl">
                 RECUPERA EL CONTROL <br class="hidden md:block"> CUANDO ELLOS <span class="gold-text italic">LO PIERDEN</span>
             </h1>
             
@@ -133,8 +94,8 @@
     </section>
 
     <section class="py-20 md:py-32 px-6 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
-        <div class="relative order-2 md:order-1">
-            <img src="DATA_CRISIS1.webp" class="rounded-[2.5rem] shadow-2xl grayscale opacity-80 border border-white/5" alt="Rescate">
+        <div class="relative order-2 md:order-1 img-container">
+            <img src="DATA_CRISIS1.webp" width="800" height="450" loading="lazy" class="rounded-[2.5rem] shadow-2xl grayscale opacity-80 border border-white/5" alt="Rescate Emocional">
             <div class="absolute -bottom-4 -right-2 bg-blue-600 text-white font-black px-6 py-3 rounded-xl shadow-xl text-xs uppercase italic">¿TE SIENTES PARALIZADO?</div>
         </div>
         <div class="space-y-6 md:order-2">
@@ -189,19 +150,19 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="glass p-8 md:p-12 rounded-[2.5rem] border-[#fbbf24]/30 space-y-8 relative overflow-hidden group hover:bg-[#fbbf24]/5 transition-all">
                     <div class="absolute top-0 right-0 bg-[#fbbf24] text-black text-xs md:text-sm font-black px-6 py-3 uppercase tracking-tighter rounded-bl-2xl shadow-xl z-30">REGALO #1</div>
-                    <div class="w-12 h-12 text-[#fbbf24] mt-4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 2v20M2 12h20"/></svg></div>
+                    <div class="w-12 h-12 text-[#fbbf24] mt-4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 2v20M2 12h20"/></svg></div>
                     <h3 class="text-2xl md:text-3xl font-black text-white uppercase italic">RADAR <br><span class="gold-text italic">CENTINELA</span></h3>
                     <p class="text-slate-400 text-sm md:text-base leading-relaxed italic">Aprende a leer los signos invisibles de la angustia antes de que el caos explote.</p>
                 </div>
                 <div class="glass p-8 md:p-12 rounded-[2.5rem] border-blue-500/30 space-y-8 relative overflow-hidden group hover:bg-blue-500/5 transition-all">
                     <div class="absolute top-0 right-0 bg-blue-500 text-white text-xs md:text-sm font-black px-6 py-3 uppercase tracking-tighter rounded-bl-2xl shadow-xl z-30">REGALO #2</div>
-                    <div class="w-12 h-12 text-blue-500 mt-4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg></div>
+                    <div class="w-12 h-12 text-blue-500 mt-4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg></div>
                     <h3 class="text-2xl md:text-3xl font-black text-white uppercase italic text-blue-100">ABRAZO <br><span class="text-blue-400 italic">MAESTRO</span></h3>
                     <p class="text-slate-400 text-sm md:text-base leading-relaxed italic">El manual físico para transmitir paz inmediata sin necesidad de articular palabras.</p>
                 </div>
                 <div class="glass p-8 md:p-12 rounded-[2.5rem] border-green-500/30 space-y-8 relative overflow-hidden group hover:bg-green-500/5 transition-all">
                     <div class="absolute top-0 right-0 bg-green-500 text-white text-xs md:text-sm font-black px-6 py-3 uppercase tracking-tighter rounded-bl-2xl shadow-xl z-30">REGALO #3</div>
-                    <div class="w-12 h-12 text-green-500 mt-4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/></svg></div>
+                    <div class="w-12 h-12 text-green-500 mt-4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/></svg></div>
                     <h3 class="text-2xl md:text-3xl font-black text-white uppercase italic text-green-100">DICCIONARIO <br><span class="text-green-400 italic">DE ORO</span></h3>
                     <p class="text-slate-400 text-sm md:text-base leading-relaxed italic">50 frases tácticas que desactivan la reactividad y abren la puerta al diálogo real.</p>
                 </div>
@@ -281,13 +242,6 @@
                 </summary>
                 <p class="mt-6 text-slate-400 text-base md:text-xl font-light italic">Absolutamente. El pago se procesa a través de **Hotmart**, la plataforma líder en productos digitales. Tus datos están cifrados y protegidos globalmente.</p>
             </details>
-            <details class="faq-item glass p-6 md:p-10 rounded-3xl cursor-pointer group hover:bg-white/5 transition-all">
-                <summary class="flex justify-between items-center font-bold text-lg md:text-2xl uppercase italic tracking-tighter">
-                    ¿Qué pasa si no me gusta?
-                    <span class="text-[#fbbf24] transition-transform duration-500 text-2xl md:text-4xl">▼</span>
-                </summary>
-                <p class="mt-6 text-slate-400 text-base md:text-xl font-light italic">Tienes **7 días de garantía incondicional**. Si sientes que el protocolo no es para ti, pides el reembolso y se te devuelve el 100% de tu dinero sin preguntas.</p>
-            </details>
         </div>
     </section>
 
@@ -296,9 +250,9 @@
             <h2 class="text-5xl md:text-8xl lg:text-9xl font-black tracking-tighter uppercase italic leading-none text-white">LA PAZ EMPIEZA <span class="text-red-500 underline decoration-4 md:decoration-8 underline-offset-8">AQUÍ</span></h2>
             
             <div class="glass rounded-[3rem] md:rounded-[6rem] p-10 md:p-20 border-[#fbbf24]/20 space-y-12 relative shadow-2xl">
-                <div class="space-y-6 text-left border-b border-white/10 pb-10 text-xl md:text-2xl italic font-bold">
+                <div class="space-y-6 text-left border-b border-white/10 pb-10 text-xl md:text-2xl font-bold italic">
                     <div class="flex justify-between items-center"><span>📔 Manual Maestro "El Abrazo Invisible"</span><span class="line-through opacity-40 font-mono text-lg">$17.00</span></div>
-                    <div class="flex justify-between items-center mt-4"><span>📡 3 Bonos de Entrenamiento Táctico</span><span class="text-green-400 font-black uppercase text-xs md:text-lg bg-green-500/10 px-6 py-2 rounded-xl italic">Incluidos</span></div>
+                    <div class="flex justify-between items-center mt-4"><span>📡 3 Bonos de Entrenamiento Táctico</span><span class="text-green-400 font-black uppercase text-sm md:text-lg bg-green-500/10 px-6 py-3 rounded-xl italic">Incluidos</span></div>
                 </div>
 
                 <div class="space-y-6 md:space-y-10">
@@ -312,11 +266,6 @@
                        ¡SÍ! ACCESO POR $9
                     </a>
                 </div>
-
-                <div class="flex flex-col md:flex-row items-center justify-center gap-10 pt-16 opacity-30">
-                    <div class="flex items-center gap-4 italic"><img src="hotmart_brand.svg" class="h-8 md:h-10" alt="Hotmart"><span class="text-[10px] font-bold uppercase tracking-widest">Pago Seguro</span></div>
-                    <div class="flex items-center gap-4 italic"><span class="text-[10px] font-bold uppercase tracking-widest">🔐 Aprendia Tech 2026</span></div>
-                </div>
             </div>
         </div>
     </section>
@@ -324,41 +273,61 @@
     <section id="admin-panel" class="hidden py-40 bg-black border-t-[10px] border-[#fbbf24] px-6 text-center">
         <h2 class="text-5xl md:text-8xl font-black text-[#fbbf24] font-mono tracking-tighter italic uppercase">Centro de Mando</h2>
         <div class="glass p-10 md:p-24 rounded-[4rem] max-w-5xl mx-auto shadow-2xl mt-16"><canvas id="myChart"></canvas></div>
-        <div class="grid grid-cols-2 gap-6 max-w-2xl mx-auto font-mono text-4xl md:text-7xl font-black italic mt-16">
-            <div class="glass p-12 rounded-[3rem] text-white">x12 ROI</div>
-            <div class="glass p-12 rounded-[3rem] text-[#fbbf24]">2.8k V</div>
-        </div>
     </section>
 
     <footer class="py-24 md:py-40 px-6 border-t border-white/5 bg-[#01040a] text-center">
         <div class="max-w-6xl mx-auto space-y-16">
-            <img src="hotmart_brand.svg" class="h-10 mx-auto opacity-10" alt="Hotmart">
             <p class="text-[10px] md:text-[16px] text-slate-400 font-black uppercase tracking-[0.4em] px-8 leading-relaxed italic opacity-70">
                 © 2026 Aprendia Tech • Que nunca te falten las palabras cuando alguien que amas te necesite.
-            </p>
-            <p class="text-[9px] text-slate-600 uppercase tracking-widest opacity-40 px-6 italic">
-                Este sitio no es parte de Meta Platforms, Inc. Aprendia Tech es una academia independiente. Soporte global disponible 24/7.
             </p>
         </div>
     </footer>
 
     <script>
-        const ctx = document.getElementById('myChart');
-        new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['L','M','M','J','V','S','D'],
-                datasets: [{
-                    data: [120, 240, 180, 430, 390, 520, 680],
-                    borderColor: '#fbbf24',
-                    backgroundColor: 'rgba(251, 191, 36, 0.1)',
-                    borderWidth: 10,
-                    fill: true,
-                    tension: 0.4,
-                    pointRadius: 0
-                }]
-            },
-            options: { plugins: { legend: { display: false } }, scales: { y: { display: false }, x: { grid: { display: false }, ticks: { color: '#475569', font: { weight: 'bold' } } } } }
+        // 1. CONFIGURACIÓN DEL PÍXEL (Carga diferida)
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        
+        const params = new URLSearchParams(window.location.search);
+        fbq('init', '733265212980710', { em: params.get('em'), ph: params.get('ph') });
+        fbq('track', 'PageView');
+
+        // 2. LÓGICA DE ADMIN Y GRÁFICAS (Solo se carga si es root)
+        if(params.get('comando') === 'root') {
+            const adminPanel = document.getElementById('admin-panel');
+            adminPanel.classList.remove('hidden');
+            
+            // Carga dinámica de Chart.js para no penalizar al usuario normal
+            const script = document.createElement('script');
+            script.src = "https://cdn.jsdelivr.net/npm/chart.js";
+            script.onload = () => {
+                const ctx = document.getElementById('myChart');
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['L','M','M','J','V','S','D'],
+                        datasets: [{
+                            data: [120, 240, 180, 430, 390, 520, 680],
+                            borderColor: '#fbbf24',
+                            borderWidth: 10,
+                            fill: true,
+                            backgroundColor: 'rgba(251, 191, 36, 0.1)',
+                            tension: 0.4
+                        }]
+                    },
+                    options: { plugins: { legend: { display: false } }, scales: { y: { display: false }, x: { grid: { display: false } } } }
+                });
+            };
+            document.head.appendChild(script);
+        }
+
+        // 3. ASIGNACIÓN DE CHECKOUT UNIFICADO
+        const CHECKOUT_FINAL = "https://pay.hotmart.com/P105245108M?checkoutMode=10";
+        document.querySelectorAll('.btn-compra, .btn-premium').forEach(boton => {
+            if(boton.tagName === 'A') boton.href = CHECKOUT_FINAL;
         });
     </script>
 </body>
