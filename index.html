@@ -2,216 +2,179 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Abrazo Invisible | Protocolo Maestro PAP</title>
     
+    <!-- PRECARGA CRÍTICA -->
     <link rel="preload" as="image" href="PORTADA_mk_PAP.webp" fetchpriority="high">
     <meta name="facebook-domain-verification" content="0bx2dxclhr73vcxwkjaqq5i3mgfnfu" />
-    <meta name="description" content="Domina el protocolo maestro de 3 pasos para restaurar la calma y la conexión en segundos. Un sistema de Aprendia Co.">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,400&family=Inter:wght@400;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-
+    <!-- ESTILOS DE ALTO IMPACTO (DENSIDAD MAESTRA) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,900;1,400&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    
     <style>
-        :root { --gold: #fbbf24; --slate: #020617; --blue: #1d4ed8; --green: #15803d; }
-        * { box-sizing: border-box; }
-        body { background-color: var(--slate); color: white; font-family: system-ui, -apple-system, sans-serif; margin: 0; overflow-x: hidden; scroll-behavior: smooth; }
-        .loaded body { font-family: 'Inter', sans-serif; }
-        .max-w { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-        .section-py { padding: 60px 0; }
-        @media (min-width: 768px) { .section-py { padding: 100px 0; } }
-
-        /* HERO PERFORMANCE */
-        .hero { position: relative; min-height: 95vh; display: flex; align-items: center; justify-content: center; text-align: center; }
-        .hero-bg { position: absolute; inset: 0; z-index: 0; }
-        .hero-img { width: 100%; height: 100%; object-fit: cover; opacity: 0.35; }
-        .hero-gradient { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(2,6,23,0.1) 0%, rgba(2,6,23,1) 90%); }
-        .hero-content { position: relative; z-index: 10; max-width: 850px; }
-        h1, h2, h3 { font-family: 'Merriweather', serif; font-weight: 900; margin: 0; text-transform: uppercase; }
-        .h-large { font-size: clamp(2.5rem, 8vw, 5.5rem); line-height: 1.1; letter-spacing: -0.04em; }
-        .gold { color: var(--gold); font-style: italic; }
-        .sub-hook { font-size: clamp(1.1rem, 4vw, 1.8rem); color: #e2e8f0; font-style: italic; margin-top: 24px; font-weight: 400; }
-
-        /* BOTÓN DE ALTO IMPACTO */
-        .btn-premium { 
-            display: inline-block; background: var(--gold); color: black; font-weight: 900; 
-            text-transform: uppercase; padding: 22px 45px; border-radius: 50px; 
-            text-decoration: none; font-size: clamp(1.1rem, 3vw, 1.6rem); margin-top: 35px;
-            animation: btn-pulse 2.5s infinite; will-change: transform;
-        }
-        @keyframes btn-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.04); } }
-
-        /* CARDS & UI */
-        .glass { background: rgba(255, 255, 255, 0.04); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 32px; padding: 32px; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-        
-        /* FAQ */
-        details { cursor: pointer; margin-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 16px; }
-        summary { font-weight: 800; font-size: 1.2rem; display: flex; justify-content: space-between; align-items: center; text-transform: uppercase; list-style: none; }
-        .faq-ans { margin-top: 16px; color: #94a3b8; line-height: 1.6; }
-        
-        /* VALUE STACK */
-        .stack-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-weight: 700; font-style: italic; }
-        .stack-row span:last-child { color: var(--gold); }
-        .total-row { font-size: 1.5rem; color: #64748b; text-decoration: line-through; margin-top: 20px; text-align: left; }
-
-        footer { border-top: 1px solid rgba(255,255,255,0.05); padding: 60px 24px; text-align: center; opacity: 0.6; font-size: 0.85rem; }
+        body { font-family: 'Inter', sans-serif; background-color: #020617; color: white; }
+        h1, h2, h3 { font-family: 'Merriweather', serif; text-transform: uppercase; }
+        .gold-text { color: #fbbf24; font-style: italic; }
+        .btn-pulse { animation: pulse 2.5s infinite; background: linear-gradient(135deg, #fbbf24 0%, #b45309 100%); }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .sticky-bar { position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1000; display: none; }
     </style>
 </head>
-<body class="loaded">
+<body class="overflow-x-hidden">
 
-    <header class="hero">
-        <div class="hero-bg">
-            <img src="PORTADA_mk_PAP.webp" width="1200" height="800" class="hero-img" alt="Portada El Abrazo Invisible">
-            <div class="hero-gradient"></div>
+    <!-- 1. SECCIÓN HERO (GANCHO DE DENSIDAD) -->
+    <section class="relative min-h-screen flex items-center justify-center text-center px-6 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="PORTADA_mk_PAP.webp" class="w-full h-full object-cover opacity-20 grayscale" alt="Fondo Centinela">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#020617] to-[#020617]"></div>
         </div>
-        <div class="hero-content">
-            <div style="background: rgba(251,191,36,0.12); color: var(--gold); padding: 6px 18px; border-radius: 30px; font-size: 11px; font-weight: 900; letter-spacing: 2px; display: inline-block; margin-bottom: 25px; border: 1px solid rgba(251,191,36,0.3);">SISTEMA MAESTRO • PAP</div>
-            <h1 class="h-large">Recupera el Control <br> cuando ellos <span class="gold">lo pierden</span></h1>
-            <p class="sub-hook">Domina <b>El Abrazo Invisible</b>: el protocolo táctico de 3 pasos para restaurar la calma y la conexión en segundos.</p>
-            <a href="#oferta" class="btn-premium">ADQUIRIR EL SISTEMA POR $9</a>
-        </div>
-    </header>
-
-    <section class="section-py" style="background: rgba(15, 23, 42, 0.6); text-align: center;">
-        <div class="max-w" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 32px;">
-            <div><div style="font-size: 2.8rem; font-weight: 900; color: var(--gold);">4.9/5</div><div style="font-size: 10px; opacity: 0.5; text-transform: uppercase;">Satisfacción</div></div>
-            <div><div style="font-size: 2.8rem; font-weight: 900;">3.5k+</div><div style="font-size: 10px; opacity: 0.5; text-transform: uppercase;">Personas</div></div>
-            <div><div style="font-size: 2.8rem; font-weight: 900;">100%</div><div style="font-size: 10px; opacity: 0.5; text-transform: uppercase;">Digital</div></div>
-            <div><div style="font-size: 2.8rem; font-weight: 900; color: var(--gold);">SÍ</div><div style="font-size: 10px; opacity: 0.5; text-transform: uppercase;">3 Bonos</div></div>
+        
+        <div class="relative z-10 max-w-4xl">
+            <span class="inline-block px-4 py-1 mb-6 text-[10px] font-black tracking-[3px] border border-yellow-500/30 bg-yellow-500/10 text-yellow-500 rounded-full">SITUACIÓN DE EMERGENCIA EMOCIONAL</span>
+            <h1 class="text-5xl md:text-8xl font-black leading-none mb-6 tracking-tighter">
+                NO TE QUEDES <span class="gold-text">MUDO</span> MIENTRAS ELLOS SE ROMPEN
+            </h1>
+            <p class="text-xl md:text-2xl text-slate-400 mb-10 font-light italic">
+                Domina el protocolo táctico para <b>restaurar la calma</b> en segundos. Deja de ser un espectador impotente y conviértete en el ancla que tu familia necesita.
+            </p>
+            <a href="#oferta" class="btn-pulse inline-block px-12 py-6 text-black font-black text-xl rounded-full shadow-[0_0_50px_rgba(251,191,36,0.3)]">
+                QUIERO EL PROTOCOLO MAESTRO
+            </a>
         </div>
     </section>
 
-    <section class="section-py max-w" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 60px; align-items: center;">
-        <div style="position: relative;">
-            <img src="DATA_CRISIS1.webp" width="720" height="400" style="width: 100%; height: auto; border-radius: 40px; filter: grayscale(1); opacity: 0.7;" alt="Crisis emocional" loading="lazy">
-            <div style="position: absolute; bottom: -10px; right: -10px; background: #2563eb; padding: 12px 24px; border-radius: 15px; font-weight: 900; font-size: 12px;">¿TE SIENTES IMPOTENTE?</div>
-        </div>
-        <div>
-            <h2 style="font-size: 2.6rem; line-height: 1.1; font-style: italic;">No es falta de amor, <br><span style="color: #60a5fa;">es falta de técnica.</span></h2>
-            <p style="font-size: 1.25rem; line-height: 1.7; opacity: 0.8; margin-top: 25px;">Ver a alguien que amas colapsar y no saber cómo intervenir es desgarrador. Te entregamos el manual táctico para convertirte en el ancla en medio del caos.</p>
-            <div class="glass" style="border-left: 8px solid #2563eb; margin-top: 35px;">"Transformamos la impotencia en autoridad serena."</div>
-        </div>
+    <!-- 2. PARA QUIÉN ES -->
+    <section class="py-24 max-w-5xl mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-5xl mb-12">ESTO ES PARA EL <span class="gold-text">PROTECTOR</span></h2>
+        <p class="text-lg text-slate-400 leading-relaxed max-w-2xl mx-auto">
+            Padres, líderes y seres humanos que se niegan a ser espectadores pasivos ante el colapso emocional de quienes más aman. No necesitas ser psicólogo; necesitas técnica.
+        </p>
     </section>
 
-    <section class="section-py" style="background: #01040a;">
-        <div class="max-w">
-            <h2 style="text-align: center; font-size: clamp(2.5rem, 6vw, 4.5rem); letter-spacing: -2px;">ESTO ES <span class="gold">UN REGALO...</span></h2>
-            <div class="grid-3" style="margin-top: 50px;">
-                <div class="glass" style="border-color: rgba(251,191,36,0.3); position: relative;">
-                    <div style="position: absolute; top: 0; right: 0; background: var(--gold); color: black; padding: 10px 22px; font-weight: 900; font-size: 11px; border-radius: 0 0 0 20px;">REGALO #1</div>
-                    <h3 class="gold" style="font-size: 1.8rem; margin-bottom: 12px;">RADAR DE CALIBRACIÓN</h3>
-                    <p style="opacity: 0.7;">Anticípate al caos leyendo los signos invisibles de tensión antes de que ocurra la explosión.</p>
+    <!-- 3. EL PROBLEMA (DOLOR VISCERAL) -->
+    <section class="py-24 bg-[#01040a] px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative group">
+                <img src="DATA_CRISIS1.webp" class="rounded-[40px] shadow-2xl grayscale transition group-hover:grayscale-0 duration-700" alt="Crisis en la cocina">
+                <div class="absolute -bottom-6 -right-6 glass p-6 rounded-3xl border-l-4 border-yellow-500">
+                    <p class="text-xs font-black uppercase tracking-widest text-yellow-500">Impotencia Real</p>
                 </div>
-                <div class="glass" style="border-color: rgba(29, 78, 216, 0.4); position: relative;">
-                    <div style="position: absolute; top: 0; right: 0; background: var(--blue); color: white; padding: 10px 22px; font-weight: 900; font-size: 11px; border-radius: 0 0 0 20px;">REGALO #2</div>
-                    <h3 style="font-size: 1.8rem; color: #60a5fa; margin-bottom: 12px;">MÉTODO DE ANCLAJE</h3>
-                    <p style="opacity: 0.7;">Protocolos de presencia para transmitir seguridad inmediata sin necesidad de palabras.</p>
-                </div>
-                <div class="glass" style="border-color: rgba(21, 128, 61, 0.4); position: relative;">
-                    <div style="position: absolute; top: 0; right: 0; background: var(--green); color: white; padding: 10px 22px; font-weight: 900; font-size: 11px; border-radius: 0 0 0 20px;">REGALO #3</div>
-                    <h3 style="font-size: 1.8rem; color: #4ade80; margin-bottom: 12px;">DICCIONARIO DE CONEXIÓN</h3>
-                    <p style="opacity: 0.7;">50 frases tácticas que desactivan la reactividad y abren la puerta a la comunicación real.</p>
+            </div>
+            <div>
+                <h2 class="text-4xl md:text-6xl leading-tight mb-8">EL AMOR NO ES <br><span class="text-blue-600">SUFICIENTE.</span></h2>
+                <p class="text-xl text-slate-300 leading-relaxed mb-6">
+                    Ver a alguien que amas colapsar en una cocina, en medio del llanto y la desesperación, y sentir que tus palabras son aire vacío es una herida que no cierra.
+                </p>
+                <div class="glass p-8 rounded-3xl border-l-8 border-blue-600">
+                    "Intentar calmar a alguien sin técnica es como intentar apagar una hoguera soplando: solo la haces crecer".
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section-py max-w">
-        <h2 style="text-align: center; font-size: 2.8rem; margin-bottom: 60px;">Voces que ya <span class="gold">tienen el control</span></h2>
-        <div class="grid-3" style="font-style: italic;">
-            <div class="glass" style="opacity: 0.8;">"Calmé una situación crítica usando solo los Comandos de Validación del PAP." <p style="font-size: 10px; margin-top: 20px; opacity: 0.5;">Marcela G.</p></div>
-            <div class="glass" style="border-color: var(--gold);">"Los protocolos salvaron nuestra comunicación en el momento más difícil." <p style="font-size: 10px; margin-top: 20px; color: var(--gold);">Santi R.</p></div>
-            <div class="glass" style="opacity: 0.8;">"Esta guía táctica me dio la seguridad que necesitaba para no perder los nervios." <p style="font-size: 10px; margin-top: 20px; opacity: 0.5;">Elena G.</p></div>
-        </div>
+    <!-- 4. SOLUCIÓN / PRODUCTO -->
+    <section class="py-24 max-w-5xl mx-auto px-6 text-center">
+        <h2 class="text-4xl md:text-6xl mb-8">EL <span class="gold-text">ABRAZO INVISIBLE</span></h2>
+        <p class="text-xl text-slate-400 leading-relaxed">
+            Un sistema de 60 páginas de densidad pura que te enseña la <b>Ley de la Cascada</b>: la arquitectura biológica para resetear el cerebro en pánico y devolver la paz en 60 segundos.
+        </p>
     </section>
 
-    <section class="section-py max-w grid-3" style="gap: 40px;">
-        <div class="glass" style="border-color: rgba(34,197,94,0.2); background: rgba(34,197,94,0.03);">
-            <h3 style="color: #4ade80; font-size: 2rem; margin-bottom: 25px;">ESTO ES PARA TI SI:</h3>
-            <ul style="list-style: none; padding: 0; line-height: 2.3; font-weight: 500;">
-                <li><span style="color: #4ade80;">✓</span> Quieres ser el refugio seguro de quienes amas.</li>
-                <li><span style="color: #4ade80;">✓</span> Buscas un sistema paso a paso, no consejos vacíos.</li>
-            </ul>
-        </div>
-        <div class="glass" style="border-color: rgba(239,68,68,0.2); opacity: 0.65;">
-            <h3 style="color: #f87171; font-size: 2rem; margin-bottom: 25px;">ESTO NO ES PARA TI:</h3>
-            <ul style="list-style: none; padding: 0; line-height: 2.3;">
-                <li>✕ Buscas terapia clínica o diagnósticos médicos.</li>
-                <li>✕ No estás dispuesto a aplicar un método estructurado.</li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="section-py max-w" style="max-width: 800px;">
-        <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 60px;">Preguntas <span class="gold">Clave</span></h2>
-        <details><summary>¿Es un pago único? <span>▼</span></summary><div class="faq-ans">Sí. Pago único de $9 USD. Acceso de por vida a través de la plataforma Hotmart.</div></details>
-        <details><summary>¿Cuándo recibo el material? <span>▼</span></summary><div class="faq-ans">Inmediatamente. Recibirás un acceso automático a tu email tras realizar el pago seguro.</div></details>
-        <details><summary>¿Es seguro comprar aquí? <span>▼</span></summary><div class="faq-ans">Tu compra está blindada por Hotmart, la plataforma líder mundial en productos digitales.</div></details>
-        <details><summary>¿Qué pasa si no es lo que esperaba? <span>▼</span></summary><div class="faq-ans">Tienes 7 días de garantía total. Si el sistema no te convence, te devolvemos el 100%.</div></details>
-    </section>
-
-    <section id="oferta" style="padding: 100px 24px; text-align: center; background: radial-gradient(circle, rgba(251,191,36,0.06) 0%, rgba(2,6,23,1) 100%);">
-        <div style="max-width: 800px; margin: 0 auto;">
-            <h2 style="font-size: clamp(3rem, 12vw, 8.5rem); line-height: 0.85; margin-bottom: 45px;">LA CALMA EMPIEZA <span style="color: #60a5fa; text-decoration: underline;">AQUÍ</span></h2>
-            <div class="glass" style="border-color: rgba(251,191,36,0.2); padding: 50px 35px;">
-                <div style="text-align: left; margin-bottom: 40px; font-size: 1.1rem;">
-                    <div class="stack-row"><span>📔 Manual Maestro "El Abrazo Invisible"</span> <span>$17.00</span></div>
-                    <div class="stack-row"><span>📡 Bono #1: Radar de Calibración</span> <span>INCLUIDO</span></div>
-                    <div class="stack-row"><span>🫂 Bono #2: Método de Anclaje</span> <span>INCLUIDO</span></div>
-                    <div class="stack-row"><span>📖 Bono #3: Diccionario de Conexión</span> <span>INCLUIDO</span></div>
-                    <div class="total-row">VALOR TOTAL: $114 USD</div>
+    <!-- 6. OFERTA IRRESISTIBLE (VALUE STACK) -->
+    <section id="oferta" class="py-32 bg-black px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-5xl md:text-7xl mb-16 uppercase italic">TU ARSENAL DE <span class="gold-text">RESPUESTA</span></h2>
+            
+            <div class="glass p-12 rounded-[50px] border-2 border-yellow-500/30 relative overflow-hidden">
+                <div class="space-y-6 text-left mb-12">
+                    <div class="flex justify-between border-b border-white/10 pb-4">
+                        <span class="text-slate-300 font-bold">📔 Tratado Maestro "El Abrazo Invisible"</span>
+                        <span class="text-slate-500">$47.00</span>
+                    </div>
+                    <div class="flex justify-between border-b border-white/10 pb-4 text-yellow-500 font-black italic">
+                        <span>🎁 Bono A: El Radar del Centinela (Detección)</span>
+                        <span>$37.00</span>
+                    </div>
+                    <div class="flex justify-between border-b border-white/10 pb-4 text-yellow-500 font-black italic">
+                        <span>🎁 Bono B: Manual de Intervención Somática</span>
+                        <span>$27.00</span>
+                    </div>
+                    <div class="flex justify-between border-b border-white/10 pb-4 text-yellow-500 font-black italic">
+                        <span>🎁 Bono C: El Diccionario de Oro (50 Comandos)</span>
+                        <span>$36.00</span>
+                    </div>
                 </div>
 
-                <p style="font-size: clamp(5.5rem, 16vw, 12rem); font-weight: 900; margin: 0; line-height: 1;">SÓLO <span class="gold">$9</span></p>
-                <a href="https://pay.hotmart.com/P105245108M?checkoutMode=10" class="btn-premium" style="width: 100%;">¡SÍ! ACCESO TOTAL POR $9</a>
-                <p style="margin-top: 40px; opacity: 0.25; font-size: 11px; font-weight: 800;">🔐 SISTEMA BLINDADO 2026</p>
+                <div class="mb-8">
+                    <p class="text-2xl line-through text-slate-600 mb-2">VALOR TOTAL REAL: $147.00 USD</p>
+                    <p class="text-[120px] md:text-[180px] font-black text-yellow-500 leading-none tracking-tighter">
+                        $9
+                    </p>
+                    <p class="text-xl tracking-[10px] text-white/40 font-bold">PAGO ÚNICO HOY</p>
+                </div>
+
+                <a href="https://pay.hotmart.com/P105245108M?checkoutMode=10" class="btn-pulse w-full block py-8 text-black font-black text-2xl rounded-2xl">
+                    ¡SÍ! QUIERO ACCESO TOTAL POR $9
+                </a>
+                <p class="mt-8 text-[10px] text-white/30 font-bold tracking-widest uppercase">🔐 TRANSACCIÓN BLINDADA POR HOTMART • GARANTÍA TOTAL 7 DÍAS</p>
             </div>
         </div>
     </section>
 
-    <footer>© 2026 • Que nunca te falten las palabras cuando alguien que amas te necesite.</footer>
+    <!-- 8. SECCIÓN DE AUTORIDAD -->
+    <section class="py-24 max-w-4xl mx-auto px-6 text-center border-t border-white/5">
+        <h2 class="text-3xl mb-8">CIENCIA, NO <span class="gold-text">SUERTE</span></h2>
+        <p class="text-slate-400 italic">
+            "Este no es un manual de autoayuda. Es una ingeniería de respuesta humana basada en 20 años de gestión de crisis y neurociencia aplicada".
+        </p>
+    </section>
 
+    <!-- FOOTER -->
+    <footer class="py-20 text-center text-slate-600 text-xs border-t border-white/5 pb-32">
+        <p>© 2026 aprendia.net • Todos los derechos reservados.</p>
+        <p class="mt-4 max-w-md mx-auto">Este material es educativo y no sustituye la atención médica o psicológica profesional. La decisión de aplicar estas técnicas es responsabilidad del lector.</p>
+    </footer>
+
+    <!-- STICKY BAR (MÓVIL) -->
+    <div id="stickyBtn" class="sticky-bar p-4 bg-slate-950/80 backdrop-blur-md border-t border-yellow-500/30">
+        <a href="https://pay.hotmart.com/P105245108M?checkoutMode=10" class="btn-pulse block w-full text-center py-4 text-black font-black text-lg rounded-xl">
+            OBTENER PROTOCOLO POR $9
+        </a>
+    </div>
+
+    <!-- INGENIERÍA DE TRACKING & CAPI -->
     <script>
+        window.addEventListener('scroll', () => {
+            const bar = document.getElementById('stickyBtn');
+            window.scrollY > 800 ? bar.style.display = 'block' : bar.style.display = 'none';
+        });
+
+        // PIXEL Y CAPI (PROTOCOLO CENTINELA)
         window.addEventListener('load', () => {
             const params = new URLSearchParams(window.location.search);
-            // 🚨 TU URL DE GOOGLE SCRIPT ACTUALIZADA:
-            const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxqTwEoZflNzk-sULHAN4UQ4AaKmUZ9-TbZkKjlAfsd-FHRWV7M24YvVqEMa86eyQVnRw/exec"; 
-            const PIXEL_ID = '2164077384370431'; 
+            const SCRIPT_URL = "https://script.google.com/macros/s/AKfycb-ZgQjc6Cq81MOFZf6iJ2TVe0jEukA8jGziY7h5k7LYkurJr3lM8xbiuaV7XTeRax-tg/exec"; 
+            const PIXEL_ID = '1032926909084188'; 
+            const eventID = 'pap-' + Date.now();
 
-            // 1. GENERAR EVENT_ID ÚNICO PARA DEDUPLICACIÓN
-            const eventID = 'pap-master-' + Date.now() + '-' + Math.floor(Math.random() * 1000);
-
-            // 2. META PIXEL (BROWSER SIDE)
             !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
             n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
             n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
             t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
             document,'script','https://connect.facebook.net/en_US/fbevents.js');
             
-            fbq('init', PIXEL_ID, { em: params.get('em'), ph: params.get('ph') });
-            
+            fbq('init', PIXEL_ID, { em: params.get('em') || '' });
             fbq('track', 'PageView', {}, { eventID: eventID });
-            fbq('track', 'ViewContent', { 
-                content_name: 'Abrazo Invisible PAP', 
-                value: 9.00, 
-                currency: 'USD' 
-            }, { eventID: eventID });
 
-            // 3. ENVIAR DATA AL PUENTE CAPI (SERVER SIDE)
             if(SCRIPT_URL) {
                 fetch(SCRIPT_URL, { 
                     method: 'POST', 
                     mode: 'no-cors', 
                     body: new URLSearchParams({ 
-                        'event_name': 'PageView',
-                        'event_id': eventID,
-                        'pixel_id': PIXEL_ID,
-                        'em': params.get('em') || '',
-                        'ph': params.get('ph') || '',
-                        'fbp': document.cookie.split('; ').find(row => row.startsWith('_fbp='))?.split('=')[1] || '',
-                        'fbc': params.get('fbclid') || ''
+                        'event_name': 'PageView', 'event_id': eventID, 'pixel_id': PIXEL_ID,
+                        'fbp': document.cookie.split('; ').find(row => row.startsWith('_fbp='))?.split('=')[1] || ''
                     })
                 });
             }
