@@ -28,128 +28,200 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,900;1,400&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 
     <style>
-        :root { --gold: #fbbf24; --gold-dark: #b45309; --slate: #020617; --blue: #2563eb; --accent: #f87171; }
+        :root { --gold: #fbbf24; --gold-dark: #b45309; --slate: #020617; --blue: #2563eb; --accent: #f87171; --green: #22c55e; }
         * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
         body { background-color: var(--slate); color: white; font-family: 'Inter', sans-serif; margin: 0; overflow-x: hidden; scroll-behavior: smooth; }
         h1, h2, h3 { font-family: 'Merriweather', serif; text-transform: uppercase; margin: 0; }
-        .max-w { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
-        .section-py { padding: 90px 0; }
+        .max-w { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+        .section-py { padding: 100px 0; }
         .gold { color: var(--gold); font-style: italic; }
 
-        /* HERO: EL IMPACTO */
+        /* HERO: EL GANCHO */
         .hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; }
         .hero-bg { position: absolute; inset: 0; z-index: -1; }
-        .hero-img { width: 100%; height: 100%; object-fit: cover; opacity: 0.2; filter: grayscale(1); }
-        .hero-gradient { position: absolute; inset: 0; background: radial-gradient(circle, rgba(2,6,23,0) 0%, rgba(2,6,23,1) 95%); }
+        .hero-img { width: 100%; height: 100%; object-fit: cover; opacity: 0.25; filter: grayscale(1); }
+        .hero-gradient { position: absolute; inset: 0; background: radial-gradient(circle, rgba(2,6,23,0.1) 0%, rgba(2,6,23,1) 95%); }
         .hero-content { position: relative; z-index: 10; padding: 20px; }
+        
         .badge { background: rgba(248, 113, 113, 0.1); color: var(--accent); padding: 8px 18px; border-radius: 50px; font-size: 11px; font-weight: 900; letter-spacing: 2px; border: 1px solid rgba(248,113,113,0.3); display: inline-block; margin-bottom: 25px; }
-        .h-large { font-size: clamp(2.5rem, 8.5vw, 5.5rem); line-height: 0.9; letter-spacing: -0.05em; margin-bottom: 30px; }
+        .h-large { font-size: clamp(2.8rem, 9vw, 5.5rem); line-height: 0.95; letter-spacing: -0.05em; margin-bottom: 30px; }
 
         /* BOTONES */
-        .btn-main { display: inline-block; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%); color: black; font-weight: 900; text-transform: uppercase; padding: 22px 40px; border-radius: 12px; text-decoration: none; font-size: 1.2rem; box-shadow: 0 10px 40px rgba(251,191,36,0.3); animation: pulse 2.5s infinite; }
+        .btn-main { display: inline-block; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%); color: black; font-weight: 900; text-transform: uppercase; padding: 22px 45px; border-radius: 12px; text-decoration: none; font-size: 1.2rem; box-shadow: 0 10px 40px rgba(251,191,36,0.3); animation: pulse 2.5s infinite; cursor: pointer; border: none; }
         @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
         
         .sticky-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(2,6,23,0.95); backdrop-filter: blur(15px); border-top: 1px solid var(--gold); padding: 15px 0; z-index: 1000; display: none; }
         .sticky-bar.visible { display: block; }
 
         /* GRID SECTIONS */
-        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 50px; align-items: center; }
-        .pain-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); padding: 40px; border-radius: 30px; border-left: 6px solid var(--blue); }
-        .pain-img { width: 100%; border-radius: 30px; filter: grayscale(0.5) contrast(1.1); border: 1px solid rgba(255,255,255,0.1); }
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 60px; align-items: center; }
+        .card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); padding: 40px; border-radius: 30px; }
+        .pain-img { width: 100%; border-radius: 40px; filter: contrast(1.1); border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+
+        /* BONUS BOXES */
+        .bonus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 40px 0; }
+        .bonus-card { background: rgba(251, 191, 36, 0.03); border: 1px solid rgba(251, 191, 36, 0.2); border-radius: 20px; padding: 30px; position: relative; }
+        .bonus-tag { position: absolute; top: -10px; right: -10px; background: var(--green); color: white; padding: 5px 15px; border-radius: 10px; font-weight: 900; font-size: 10px; }
 
         /* VALUE STACK */
-        .stack-box { background: #010409; border: 2px solid var(--gold); border-radius: 40px; padding: 50px 30px; margin-top: 60px; box-shadow: 0 0 100px rgba(251,191,36,0.1); }
-        .stack-row { display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .bonus { color: var(--gold); font-weight: 900; }
-        .price-old { font-size: 1.6rem; text-decoration: line-through; opacity: 0.4; margin-top: 40px; text-align: center; }
-        .price-new { font-size: 7rem; font-weight: 900; color: var(--gold); line-height: 0.8; text-align: center; margin-bottom: 20px; }
+        .stack-box { background: #000; border: 2px solid var(--gold); border-radius: 40px; padding: 60px 40px; margin-top: 60px; text-align: left; }
+        .stack-row { display: flex; justify-content: space-between; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .price-old { font-size: 1.8rem; text-decoration: line-through; opacity: 0.4; text-align: center; margin-top: 40px; }
+        .price-new { font-size: clamp(6rem, 15vw, 9rem); font-weight: 900; color: var(--gold); line-height: 0.8; text-align: center; }
 
-        /* FOOTER & LOGO */
-        .hotmart-logo { height: 35px; opacity: 0.8; margin: 25px auto; display: block; }
+        /* FAQ */
+        details { background: rgba(255,255,255,0.03); margin-bottom: 10px; border-radius: 15px; overflow: hidden; }
+        summary { padding: 20px; cursor: pointer; font-weight: 700; text-transform: uppercase; list-style: none; display: flex; justify-content: space-between; }
+        .faq-content { padding: 0 20px 20px; opacity: 0.7; }
+
         footer { padding: 60px 24px 140px; text-align: center; opacity: 0.4; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.05); }
     </style>
 </head>
 <body>
 
-    <!-- BOTÓN STICKY MÓVIL (DEDUPLICACIÓN VISUAL) -->
     <div id="ctaBar" class="sticky-bar">
         <div class="max-w" style="display: flex; justify-content: center;">
-            <a href="https://pay.hotmart.com/P105245108M?checkoutMode=10" class="btn-main" style="padding: 15px 30px; font-size: 1rem;">ACCESO TOTAL POR $9</a>
+            <a href="https://pay.hotmart.com/P105245108M?checkoutMode=10" class="btn-main" style="padding: 12px 30px; font-size: 1rem;">ACCESO TOTAL POR $9</a>
         </div>
     </div>
 
-    <!-- 1. SECCIÓN HERO -->
+    <!-- 1. ENCABEZADO PODEROSO -->
     <header class="hero">
         <div class="hero-bg">
             <img src="PORTADA_mk_PAP.webp" class="hero-img" alt="Hero">
             <div class="hero-gradient"></div>
         </div>
         <div class="hero-content max-w">
-            <div class="badge">ESTÁNDAR DE SEGURIDAD EMOCIONAL 2026</div>
-            <h1 class="h-large">¿QUÉ HARÁS CUANDO <br> <span class="gold">SU MUNDO</span> SE APAGUE?</h1>
-            <p class="sub-hook">No hay nada más doloroso que ver a quien amas romperse y <b>quedarte mudo</b>. Domina el protocolo táctico para restaurar la calma biológica en segundos.</p>
-            <a href="#oferta" class="btn-main">VER EL SISTEMA Y BONOS</a>
+            <div class="badge">SISTEMA MAESTRO • OPTIMIZACIÓN HUMANA</div>
+            <h1 class="h-large">NO TE QUEDES <span class="gold">MUDO</span> MIENTRAS ELLOS SE ROMPEN</h1>
+            <p class="sub-hook">Domina el protocolo táctico para <b>restaurar la calma</b> en segundos. Conviértete en el ancla que tu familia necesita cuando el mundo se apaga.</p>
+            <a href="#bonos" class="btn-main">VER EL SISTEMA Y BONOS GRATIS</a>
         </div>
     </header>
 
-    <!-- 2. PARA QUIÉN ES -->
-    <section class="section-py max-w text-center">
-        <h2 style="font-size: 2.2rem;">ESTO ES PARA EL <span class="gold">CENTINELA</span></h2>
-        <p style="opacity: 0.7; max-width: 700px; margin: 20px auto; font-size: 1.2rem;">Para padres, líderes y seres humanos que se niegan a ser testigos mudos del colapso de quienes más aman.</p>
-    </section>
-
-    <!-- 3. PROBLEMA AVATAR CON IMAGEN DATA_CRISIS1.webp -->
+    <!-- 2. PARA QUIÉN / 3. PROBLEMA (PAS) -->
     <section class="section-py" style="background: #01040a;">
-        <div class="max-w grid-2">
-            <img src="DATA_CRISIS1.webp" class="pain-img" alt="Crisis Real">
-            <div class="pain-card">
-                <h2 style="font-size: 2.5rem; line-height: 1.1; margin-bottom: 20px;">EL AMOR NO ES <br><span style="color: var(--blue);">SUFICIENTE.</span></h2>
-                <p style="opacity: 0.8; line-height: 1.7; font-size: 1.1rem;">Ver a alguien colapsar en la cocina y sentir que tus palabras son aire vacío es una herida que no cierra. Sin técnica, tu buena intención es solo ruido.</p>
+        <div class="max-w">
+            <div class="grid-2">
+                <img src="DATA_CRISIS1.webp" class="pain-img" alt="Dolor Crisis">
+                <div class="pain-card">
+                    <h2 style="font-size: 2.8rem; line-height: 1; margin-bottom: 25px;">EL AMOR NO ES <br><span style="color: var(--blue);">SUFICIENTE.</span></h2>
+                    <p style="font-size: 1.2rem; opacity: 0.8; margin-bottom: 25px;">Ver a alguien que amas colapsar frente a ti y <b>no tener las palabras exactas</b> es una herida que no cierra. Intentar "ayudar" sin técnica es como soplar una hoguera: solo la haces crecer.</p>
+                    <div style="background: rgba(37, 99, 235, 0.1); border-left: 4px solid var(--blue); padding: 20px; border-radius: 0 15px 15px 0;">
+                        <b>ESTO ES PARA TI SI:</b> quieres ser el refugio seguro, buscas un método paso a paso y te niegas a ser un espectador impotente.
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 4, 5. SOLUCIÓN Y BENEFICIOS -->
+    <!-- 4. SOLUCIÓN / TRANSFORMACIÓN -->
     <section class="section-py max-w text-center">
-        <h2 style="font-size: 2.5rem; margin-bottom: 50px;">EL PROTOCOLO <span class="gold">MAESTRO</span></h2>
+        <h2 style="font-size: 2.5rem; margin-bottom: 30px;">EL <span class="gold">ABRAZO INVISIBLE</span></h2>
+        <p style="font-size: 1.3rem; opacity: 0.7; max-width: 800px; margin: 0 auto 50px;">Transformamos tu buena intención en <b>autoridad serena</b>. Un protocolo de 36 páginas que reprograma la respuesta biológica al caos.</p>
+        
         <div class="grid-2" style="text-align: left;">
-            <div class="pain-card"><h3>LEY DE LA CASCADA</h3><p style="opacity: 0.6; font-size: 0.9rem;">Reset biológico del cerebro en pánico.</p></div>
-            <div class="pain-card"><h3>DICCIONARIO DE ORO</h3><p style="opacity: 0.6; font-size: 0.9rem;">50 comandos verbales para desarmar el caos.</p></div>
-        </div>
-    </section>
-
-    <!-- 6. OFERTA IRRESISTIBLE (VALUE STACK) -->
-    <section id="oferta" class="section-py" style="background: #000;">
-        <div class="max-w text-center">
-            <h2 style="font-size: 3.5rem; margin-bottom: 40px;">EL ARSENAL <span class="gold">TOTAL</span></h2>
-            <div class="stack-box">
-                <div class="stack-row"><span>📔 Tratado Maestro "El Abrazo Invisible" (60 pág.)</span><span>$47.00</span></div>
-                <div class="stack-row bonus"><span>🎁 Bono A: El Radar del Centinela (Detección)</span><span>$37.00</span></div>
-                <div class="stack-row bonus"><span>🎁 Bono B: Manual de Intervención Somática</span><span>$27.00</span></div>
-                <div class="stack-row bonus"><span>🎁 Bono C: El Diccionario de Oro (50 Comandos)</span><span>$36.00</span></div>
-                <div class="price-old">VALOR TOTAL REAL: $147.00 USD</div>
-                <div class="price-new">$9</div>
-                <a href="https://pay.hotmart.com/P105245108M?checkoutMode=10" class="btn-main" style="width: 100%;">¡SÍ! DAME ACCESO TOTAL POR $9</a>
-                <p style="margin-top: 30px; font-size: 11px; opacity: 0.3; letter-spacing: 2px;">🔐 SISTEMA BLINDADO POR HOTMART • GARANTÍA 7 DÍAS</p>
+            <div class="card">
+                <h3 class="gold">✓ LEY DE LA CASCADA</h3>
+                <p style="opacity: 0.6;">Resetea el sistema nervioso en pánico antes de que la crisis sea irreversible.</p>
+            </div>
+            <div class="card">
+                <h3 class="gold">✓ RADAR SOMÁTICO</h3>
+                <p style="opacity: 0.6;">Detecta micro-señales de colapso 10 minutos antes de que ocurra la explosión.</p>
             </div>
         </div>
     </section>
 
-    <!-- 8. AUTORIDAD Y GARANTÍA -->
-    <section class="section-py max-w text-center">
-        <h2 style="margin-bottom: 20px;">Sello de Confianza <span class="gold">Aprendia Co.</span></h2>
-        <p style="opacity: 0.6; max-width: 600px; margin: 0 auto;">Investigación de alta densidad basada en neurociencia aplicada y gestión de crisis.</p>
+    <!-- 5. BONOS DETALLADOS (DOPAMINA) -->
+    <section id="bonos" class="section-py" style="background: #000;">
+        <div class="max-w text-center">
+            <h2 style="font-size: 2.5rem; margin-bottom: 10px;">TU ARSENAL <span class="gold">SIN COSTO</span></h2>
+            <p style="opacity: 0.5; margin-bottom: 50px;">Al adquirir el Tratado hoy, te llevas estas 3 armas tácticas:</p>
+            
+            <div class="bonus-grid">
+                <div class="bonus-card">
+                    <div class="bonus-tag">¡GRATIS!</div>
+                    <h3 class="gold">RADAR DEL CENTINELA</h3>
+                    <p style="font-size: 0.9rem; opacity: 0.7; margin-top: 15px;">Guía de calibración visual para leer el lenguaje del cuerpo antes del caos.</p>
+                </div>
+                <div class="bonus-card">
+                    <div class="bonus-tag">¡GRATIS!</div>
+                    <h3 class="gold">EL ABRAZO DEL CENTINELA</h3>
+                    <p style="font-size: 0.9rem; opacity: 0.7; margin-top: 15px;">Manual de intervención física para transmitir seguridad biológica inmediata.</p>
+                </div>
+                <div class="bonus-card">
+                    <div class="bonus-tag">¡GRATIS!</div>
+                    <h3 class="gold">DICCIONARIO DE ORO</h3>
+                    <p style="font-size: 0.9rem; opacity: 0.7; margin-top: 15px;">50 comandos verbales de PNL para desarmar reactividad y abrir conexión.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. OFERTA IRRESISTIBLE / VALUE STACK -->
+    <section class="section-py" style="background: radial-gradient(circle, rgba(251,191,36,0.05) 0%, rgba(2,6,23,1) 100%);">
+        <div class="max-w text-center">
+            <div class="stack-box">
+                <div class="stack-row"><span>📔 Tratado Maestro "El Abrazo Invisible"</span><span>$47.00</span></div>
+                <div class="stack-row gold" style="font-weight: 900;"><span>🎁 Bono #1: Radar del Centinela</span><span>$37.00</span></div>
+                <div class="stack-row gold" style="font-weight: 900;"><span>🎁 Bono #2: El Abrazo del Centinela</span><span>$27.00</span></div>
+                <div class="stack-row gold" style="font-weight: 900;"><span>🎁 Bono #3: Diccionario de Oro</span><span>$36.00</span></div>
+                
+                <div class="price-old">VALOR TOTAL REAL: $147.00 USD</div>
+                <div style="font-size: 1.5rem; letter-spacing: 5px; margin: 20px 0;">PAGO ÚNICO HOY:</div>
+                <div class="price-new">$9</div>
+                
+                <a href="https://pay.hotmart.com/P105245108M?checkoutMode=10" class="btn-main" style="width: 100%; margin-top: 40px; font-size: 1.5rem;">SÍ! DAME TODO POR $9</a>
+                <p style="margin-top: 30px; font-size: 11px; opacity: 0.4; letter-spacing: 2px;">🔐 SISTEMA BLINDADO POR HOTMART • GARANTÍA TOTAL 7 DÍAS</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. PRUEBA SOCIAL / TESTIMONIOS -->
+    <section class="section-py max-w">
+        <h2 style="text-align: center; margin-bottom: 50px;">VOCES QUE <span class="gold">TOMARON EL MANDO</span></h2>
+        <div class="grid-2">
+            <div class="card" style="font-style: italic;">
+                "Antes me paralizaba el llanto de mi hija. Usé el Radar y el Diccionario de Oro y por primera vez en años sentí que yo tenía el control de la situación. La calma regresó en minutos."
+                <p style="margin-top: 20px; font-weight: 900; color: var(--gold); font-style: normal;">- Marcela G. ⭐⭐⭐⭐⭐</p>
+            </div>
+            <div class="card" style="font-style: italic;">
+                "Como líder de equipo, las crisis emocionales eran mi punto débil. El Abrazo Invisible me dio una estructura técnica que funciona. Es ciencia pura al servicio de la gente."
+                <p style="margin-top: 20px; font-weight: 900; color: var(--gold); font-style: normal;">- Ricardo J. ⭐⭐⭐⭐⭐</p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 40px; font-weight: 900; color: var(--green);">
+            ✓ 4.9/5 SATISFACCIÓN • 3,500+ CENTINELAS ACTIVOS
+        </div>
+    </section>
+
+    <!-- NO ES PARA TI SI -->
+    <section class="section-py max-w">
+        <div class="card" style="border-left: 8px solid var(--accent); opacity: 0.8;">
+            <h3 style="color: var(--accent); margin-bottom: 20px;">ESTO NO ES PARA TI SI:</h3>
+            <ul style="list-style: none; padding: 0; line-height: 2;">
+                <li>✕ Buscas terapia clínica o diagnósticos médicos.</li>
+                <li>✕ No estás dispuesto a aplicar un método estructurado.</li>
+                <li>✕ Prefieres seguir siendo un espectador pasivo de las crisis.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- PREGUNTAS FRECUENTES -->
+    <section class="section-py max-w">
+        <h2 style="text-align: center; margin-bottom: 40px;">DUDAS <span class="gold">DEL CENTINELA</span></h2>
+        <details><summary>¿Es un pago único? <span>▼</span></summary><div class="faq-content">Sí. Solo pagas $9 una vez y tienes acceso de por vida a todo el sistema y bonos.</div></details>
+        <details><summary>¿Cuándo recibo el material? <span>▼</span></summary><div class="faq-content">Inmediatamente. Recibirás un correo de Hotmart con tu acceso privado tras la compra.</div></details>
+        <details><summary>¿Necesito ser psicólogo? <span>▼</span></summary><div class="faq-content">No. Este es un manual técnico de primeros auxilios diseñado para cualquier ser humano.</div></details>
     </section>
 
     <footer>
-        <img src="hotmart_brand.svg" alt="Hotmart Logo" class="hotmart-logo">
-        © 2026 aprendia.net • Todos los derechos reservados.<br>
-        Este material es educativo y no sustituye atención médica profesional[cite: 1].
+        <img src="hotmart_brand.svg" alt="Hotmart" style="height: 35px; margin-bottom: 20px; opacity: 0.8;">
+        <br>© 2026 aprendia.net • Nel Giraldo, Arquitecto de Libertad.<br>
+        Este material es educativo y no sustituye atención médica profesional.
     </footer>
 
-    <!-- INGENIERÍA DE TRACKING & CAPI V2.5 (ALTA CALIDAD) -->
     <script>
-        // Lógica de Barra Flotante
         window.onscroll = function() {
             let bar = document.getElementById("ctaBar");
             if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
@@ -168,12 +240,9 @@
             const fbp = document.cookie.split('; ').find(row => row.startsWith('_fbp='))?.split('=')[1] || '';
             const fbc = params.get('fbclid') || document.cookie.split('; ').find(row => row.startsWith('_fbc='))?.split('=')[1] || '';
 
-            // DISPARO PIXEL NAVEGADOR
             fbq('init', PIXEL_ID, { em: params.get('em') || '' });
             fbq('track', 'PageView', {}, { eventID: eventID });
-            fbq('track', 'ViewContent', { content_name: 'Abrazo Invisible PAP', value: 9.00, currency: 'USD' }, { eventID: eventID });
 
-            // DISPARO CAPI SERVIDOR (ALTA CALIDAD 9/10)
             if(SCRIPT_URL) {
                 fetch(SCRIPT_URL, { 
                     method: 'POST', 
