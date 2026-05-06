@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Protocolo Maestro | El Abrazo Invisible</title>
     
+    <!-- Microsoft Clarity (Análisis de Comportamiento) -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "wn0j7qcqpd");
+    </script>
+
     <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -41,12 +50,11 @@
         .hero-bg { position: absolute; inset: 0; z-index: -1; }
         .hero-img { width: 100%; height: 100%; object-fit: cover; opacity: 0.25; filter: grayscale(1); }
         .hero-gradient { position: absolute; inset: 0; background: radial-gradient(circle, rgba(2,6,23,0.1) 0%, rgba(2,6,23,1) 95%); }
-        
         .badge { background: rgba(248, 113, 113, 0.1); color: var(--accent); padding: 8px 18px; border-radius: 50px; font-size: 11px; font-weight: 900; letter-spacing: 2px; border: 1px solid rgba(248,113,113,0.3); display: inline-block; margin-bottom: 25px; }
         .h-large { font-size: clamp(2.8rem, 9vw, 5.5rem); line-height: 0.95; letter-spacing: -0.05em; margin-bottom: 30px; }
 
         /* BOTONES */
-        .btn-main { display: inline-block; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%); color: black; font-weight: 900; text-transform: uppercase; padding: 22px 45px; border-radius: 12px; text-decoration: none; font-size: 1.2rem; box-shadow: 0 10px 40px rgba(251,191,36,0.3); animation: pulse 2.5s infinite; border: none; }
+        .btn-main { display: inline-block; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%); color: black; font-weight: 900; text-transform: uppercase; padding: 22px 45px; border-radius: 12px; text-decoration: none; font-size: 1.2rem; box-shadow: 0 10px 40px rgba(251,191,36,0.3); animation: pulse 2.5s infinite; border: none; cursor: pointer; }
         @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
         
         .sticky-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(2,6,23,0.95); backdrop-filter: blur(15px); border-top: 1px solid var(--gold); padding: 15px 0; z-index: 1000; display: none; }
@@ -59,8 +67,8 @@
 
         /* BONOS IRRESISTIBLES */
         .bonus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px; }
-        .bonus-card { background: rgba(251, 191, 36, 0.05); border: 2px solid var(--gold); border-radius: 25px; padding: 40px; position: relative; text-align: center; }
-        .bonus-tag { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); background: var(--green); color: white; padding: 10px 25px; border-radius: 50px; font-weight: 900; font-size: 14px; box-shadow: 0 5px 15px rgba(34, 197, 94, 0.4); }
+        .bonus-card { background: rgba(251, 191, 36, 0.05); border: 2px solid var(--gold); border-radius: 25px; padding: 45px 30px; position: relative; text-align: center; }
+        .bonus-tag { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); background: var(--green); color: white; padding: 10px 30px; border-radius: 50px; font-weight: 900; font-size: 16px; box-shadow: 0 5px 15px rgba(34, 197, 94, 0.5); }
 
         /* VALUE STACK */
         .stack-box { background: #000; border: 2px solid var(--gold); border-radius: 40px; padding: 60px 40px; margin-top: 60px; text-align: left; }
@@ -80,54 +88,37 @@
         </div>
     </div>
 
-    <!-- 1. HERO PODEROSO -->
+    <!-- 1. HERO -->
     <header class="hero">
         <div class="hero-bg">
             <img src="PORTADA_mk_PAP.webp" class="hero-img" alt="Hero">
             <div class="hero-gradient"></div>
         </div>
         <div class="hero-content max-w">
-            <div class="badge">SITUACIÓN DE EMERGENCIA EMOCIONAL</div>
+            <div class="badge">SISTEMA MAESTRO • OPTIMIZACIÓN HUMANA</div>
             <h1 class="h-large">¿QUÉ HARÁS CUANDO <br> <span class="gold">SU MUNDO</span> SE APAGUE?</h1>
             <p class="sub-hook">No hay nada más doloroso que ver a quien amas romperse y <b>quedarte mudo</b>. Domina el protocolo táctico para restaurar la calma en segundos.</p>
             <a href="#bonos" class="btn-main">VER EL SISTEMA Y BONOS GRATIS</a>
         </div>
     </header>
 
-    <!-- 2 & 3. DOLOR (MÉTODO PAS) -->
+    <!-- 2 & 3. DOLOR (PAS) -->
     <section class="section-py" style="background: #01040a;">
         <div class="max-w">
             <div class="grid-2">
-                <img src="DATA_CRISIS1.webp" class="pain-img" alt="Crisis Real">
+                <img src="DATA_CRISIS1.webp" class="pain-img" alt="Crisis en la cocina">
                 <div class="pain-card">
                     <h2 style="font-size: 2.8rem; line-height: 1; margin-bottom: 25px;">EL AMOR NO ES <br><span style="color: var(--blue);">SUFICIENTE.</span></h2>
                     <p style="font-size: 1.25rem; opacity: 0.8; margin-bottom: 25px;">Ver a alguien que amas colapsar frente a ti y <b>no tener las palabras exactas</b> es una herida que no cierra. Sin técnica, tu buena intención es solo ruido.</p>
                     <div style="background: rgba(37, 99, 235, 0.1); border-left: 4px solid var(--blue); padding: 20px; border-radius: 0 15px 15px 0;">
-                        <b>ESTO ES PARA TI SI:</b> quieres ser el refugio seguro, buscas un método paso a paso y te niegas a ser un espectador impotente.
+                        <b>ESTO ES PARA TI SI:</b> buscas ser un refugio seguro y te niegas a ser un espectador pasivo de las crisis de tu familia.
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 4 & 5. SOLUCIÓN / TRANSFORMACIÓN -->
-    <section class="section-py max-w text-center">
-        <h2 style="font-size: 2.5rem; margin-bottom: 30px;">EL PROTOCOLO <span class="gold">MAESTRO</span></h2>
-        <p style="font-size: 1.3rem; opacity: 0.7; max-width: 800px; margin: 0 auto 60px;">Convertimos tu impotencia en <b>autoridad serena</b>. Un sistema de 36 páginas que reprograma la respuesta biológica al caos.</p>
-        
-        <div class="grid-2" style="text-align: left;">
-            <div class="pain-card">
-                <h3 class="gold">✓ LEY DE LA CASCADA</h3>
-                <p style="opacity: 0.6; font-size: 0.95rem;">Resetea el sistema nervioso en pánico antes de que la crisis sea irreversible.</p>
-            </div>
-            <div class="pain-card">
-                <h3 class="gold">✓ RADAR SOMÁTICO</h3>
-                <p style="opacity: 0.6; font-size: 0.95rem;">Detecta micro-señales de colapso 10 minutos antes de que ocurra la explosión.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5 & 9. BONOS DOPAMÍNICOS (GIGANTES) -->
+    <!-- BONOS DOPAMÍNICOS (GIGANTES) -->
     <section id="bonos" class="section-py" style="background: #000;">
         <div class="max-w text-center">
             <h2 style="font-size: 3rem; margin-bottom: 10px;">TU ARSENAL <span class="gold">SIN COSTO</span></h2>
@@ -137,23 +128,23 @@
                 <div class="bonus-card">
                     <div class="bonus-tag">¡GRATIS HOY!</div>
                     <h3 class="gold" style="font-size: 1.8rem;">RADAR DEL CENTINELA</h3>
-                    <p style="opacity: 0.7; margin-top: 20px;">Guía de calibración visual para leer el lenguaje del cuerpo antes del caos[cite: 1].</p>
+                    <p style="opacity: 0.7; margin-top: 20px;">Guía de calibración visual para leer el lenguaje del cuerpo antes del caos.</p>
                 </div>
                 <div class="bonus-card" style="border-color: var(--blue);">
                     <div class="bonus-tag">¡GRATIS HOY!</div>
                     <h3 style="color: #60a5fa; font-size: 1.8rem;">EL ABRAZO DEL CENTINELA</h3>
-                    <p style="opacity: 0.7; margin-top: 20px;">Manual de intervención física para transmitir seguridad biológica inmediata[cite: 1].</p>
+                    <p style="opacity: 0.7; margin-top: 20px;">Manual de intervención física para transmitir seguridad biológica inmediata.</p>
                 </div>
                 <div class="bonus-card">
                     <div class="bonus-tag">¡GRATIS HOY!</div>
                     <h3 class="gold" style="font-size: 1.8rem;">DICCIONARIO DE ORO</h3>
-                    <p style="opacity: 0.7; margin-top: 20px;">50 comandos verbales de PNL para desarmar reactividad y abrir conexión[cite: 1].</p>
+                    <p style="opacity: 0.7; margin-top: 20px;">50 comandos verbales de PNL para desarmar reactividad y abrir conexión.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 6. OFERTA IRRESISTIBLE -->
+    <!-- OFERTA IRRESISTIBLE -->
     <section class="section-py" style="background: radial-gradient(circle, rgba(251,191,36,0.05) 0%, rgba(2,6,23,1) 100%);">
         <div class="max-w text-center">
             <div class="stack-box">
@@ -172,7 +163,7 @@
         </div>
     </section>
 
-    <!-- 7. PRUEBA SOCIAL -->
+    <!-- TESTIMONIOS -->
     <section class="section-py max-w">
         <h2 style="text-align: center; margin-bottom: 50px;">VOCES QUE <span class="gold">TOMARON EL MANDO</span></h2>
         <div class="grid-2">
@@ -185,22 +176,6 @@
                 <p style="margin-top: 20px; font-weight: 900; color: var(--gold); font-style: normal;">- Ricardo J. ⭐⭐⭐⭐⭐</p>
             </div>
         </div>
-        <div style="text-align: center; margin-top: 40px; font-weight: 900; color: var(--green);">
-            ✓ 4.9/5 SATISFACCIÓN • 3,500+ CENTINELAS ACTIVOS[cite: 1]
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="section-py max-w">
-        <h2 style="text-align: center; margin-bottom: 40px;">DUDAS <span class="gold">COMUNES</span></h2>
-        <details style="background: rgba(255,255,255,0.03); margin-bottom: 10px; border-radius: 15px;">
-            <summary style="padding: 20px; cursor: pointer; font-weight: 700; text-transform: uppercase;">¿Es un pago único? <span>▼</span></summary>
-            <div style="padding: 0 20px 20px; opacity: 0.7;">Sí. Solo pagas $9 una vez y tienes acceso de por vida a todo el sistema y bonos[cite: 1].</div>
-        </details>
-        <details style="background: rgba(255,255,255,0.03); margin-bottom: 10px; border-radius: 15px;">
-            <summary style="padding: 20px; cursor: pointer; font-weight: 700; text-transform: uppercase;">¿Cuándo recibo el material? <span>▼</span></summary>
-            <div style="padding: 0 20px 20px; opacity: 0.7;">Inmediatamente. Recibirás un correo de Hotmart con tu acceso tras la compra[cite: 1].</div>
-        </details>
     </section>
 
     <footer>
@@ -208,7 +183,7 @@
         <br>© 2026 aprendia.net • Todos los derechos reservados.
         <div class="disclaimer">
             Este sitio no es parte del sitio web de Meta o de Meta Platforms Inc. Además, este sitio NO está respaldado por Meta de ninguna manera. FACEBOOK es una marca registrada de Meta Platforms, Inc.
-            Este producto se vende a través de Hotmart. La plataforma no realiza un control editorial previo de los productos vendidos, ni valora la tecnicidad y experiencia de quienes los elaboran. La existencia de un producto y su adquisición, a través de la plataforma, no pueden ser consideradas como garantía de calidad de contenido y resultado, en ningún caso. Al adquirirlo, el comprador declara conocer esta información[cite: 1].
+            Este producto se vende a través de Hotmart. La plataforma no realiza un control editorial previo de los productos vendidos. Al adquirirlo, el comprador declara conocer esta información.
         </div>
     </footer>
 
