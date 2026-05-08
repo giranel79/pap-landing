@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Protocolo Maestro | El Abrazo Invisible</title>
-    <!-- SEO FIX: Meta Description -->
-    <meta name="description" content="Domina el protocolo táctico para restaurar la calma en situaciones de crisis emocional. El manual definitivo para convertirte en el ancla de tu familia.">
+    <meta name="description" content="Domina el protocolo táctico para restaurar la calma en crisis emocionales. El manual definitivo para ser el ancla de tu familia.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- MICROSOFT CLARITY -->
+    <!-- MICROSOFT CLARITY (ANÁLISIS) -->
     <script type="text/javascript" defer>
         (function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -19,7 +18,7 @@
         })(window, document, "clarity", "script", "wn0j7qcqpd");
     </script>
 
-    <!-- META PIXEL -->
+    <!-- META PIXEL (TRACKING) -->
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -41,64 +40,73 @@
         body { background-color: var(--slate); color: white; font-family: 'Inter', system-ui, sans-serif; margin: 0; overflow-x: hidden; scroll-behavior: smooth; }
         h1, h2, h3 { font-family: 'Merriweather', serif; text-transform: uppercase; margin: 0; }
         .max-w { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-        .section-py { padding: 100px 0; }
+        .section-py { padding: 80px 0; }
         .gold { color: var(--gold); font-style: italic; }
 
-        /* HERO - FIX CLS */
-        .hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: #020617; }
-        .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.2; filter: grayscale(1); z-index: -1; }
-        .hero-gradient { position: absolute; inset: 0; background: radial-gradient(circle, rgba(2,6,23,0) 0%, rgba(2,6,23,1) 95%); z-index: -1; }
-        .h-large { font-size: clamp(2.8rem, 9vw, 5.5rem); line-height: 0.95; letter-spacing: -0.05em; margin-bottom: 30px; min-height: 1.2em; }
-
-        /* BOTONES */
-        .btn-main { display: inline-block; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%); color: #000; font-weight: 900; text-transform: uppercase; padding: 22px 45px; border-radius: 12px; text-decoration: none; font-size: 1.2rem; box-shadow: 0 10px 40px rgba(251,191,36,0.3); animation: pulse 2.5s infinite; border: none; cursor: pointer; }
+        /* HERO: DISEÑO SPLIT (TEXTO + IMAGEN) */
+        .hero { position: relative; min-height: 90vh; display: flex; align-items: center; background: #020617; padding-top: 50px; }
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 50px; align-items: center; }
+        .hero-img-side { width: 100%; max-width: 450px; height: auto; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.8); border: 1px solid rgba(251,191,36,0.3); justify-self: center; }
+        .h-large { font-size: clamp(2.5rem, 7vw, 4.5rem); line-height: 1; margin-bottom: 25px; text-align: left; }
+        
+        .btn-main { display: inline-block; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%); color: #000; font-weight: 900; text-transform: uppercase; padding: 22px 45px; border-radius: 12px; text-decoration: none; font-size: 1.1rem; box-shadow: 0 10px 40px rgba(251,191,36,0.3); animation: pulse 2.5s infinite; border: none; cursor: pointer; }
         @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
         
         .sticky-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(2,6,23,0.98); border-top: 1px solid var(--gold); padding: 15px 0; z-index: 1000; display: none; }
         .sticky-bar.visible { display: block; }
 
-        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 60px; align-items: center; }
         .pain-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.1); padding: 40px; border-radius: 30px; border-left: 6px solid var(--blue); }
         .pain-img { width: 100%; height: auto; border-radius: 40px; filter: contrast(1.1); aspect-ratio: 4/3; }
 
-        /* ACCESSIBILITY FIX: Contrast on Bonus Tag */
-        .bonus-card { background: rgba(251, 191, 36, 0.05); border: 2px solid var(--gold); border-radius: 25px; padding: 45px 30px; position: relative; text-align: center; }
+        /* BONOS: ALTO CONTRASTE */
+        .bonus-card { background: rgba(251, 191, 36, 0.05); border: 2px solid var(--gold); border-radius: 25px; padding: 50px 30px; position: relative; text-align: center; }
         .bonus-tag { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); background: #fff; color: #000; padding: 10px 30px; border-radius: 50px; font-weight: 900; font-size: 16px; box-shadow: 0 5px 15px rgba(255,255,255,0.2); }
 
+        /* VALUE STACK */
         .stack-box { background: #000; border: 2px solid var(--gold); border-radius: 40px; padding: 60px 40px; margin-top: 60px; text-align: left; }
         .stack-row { display: flex; justify-content: space-between; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
-        
-        /* FOOTER FIX: Contrast */
-        footer { padding: 60px 24px 140px; text-align: center; opacity: 0.8; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.1); }
-        .disclaimer { max-width: 800px; margin: 40px auto 0; font-size: 0.75rem; opacity: 0.7; line-height: 1.6; }
+        .price-new { font-size: clamp(5rem, 15vw, 9rem); font-weight: 900; color: var(--gold); line-height: 0.8; text-align: center; }
+
+        /* FAQ RESTORED */
+        details { background: rgba(255,255,255,0.03); margin-bottom: 12px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); }
+        summary { padding: 22px; cursor: pointer; font-weight: 700; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; }
+        .faq-content { padding: 0 22px 22px; opacity: 0.8; line-height: 1.6; }
+
+        footer { padding: 60px 24px 140px; text-align: center; opacity: 0.9; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.1); }
+        .disclaimer { max-width: 850px; margin: 40px auto 0; font-size: 0.75rem; opacity: 0.7; line-height: 1.6; }
     </style>
 </head>
 <body>
 
     <div id="ctaBar" class="sticky-bar">
         <div class="max-w" style="display: flex; justify-content: center;">
-            <a href="https://pay.hotmart.com/P105245108M?checkoutMode=10" class="btn-main" style="padding: 12px 30px; font-size: 1rem;">SÍ! DAME EL ACCESO POR $9</a>
+            <a href="https://pay.hotmart.com/P105245108M?checkoutMode=10" class="btn-main" style="padding: 12px 30px; font-size: 1rem;">SÍ! QUIERO EL ACCESO POR $9</a>
         </div>
     </div>
 
+    <!-- 1. HERO RECONFIGURADO -->
     <header class="hero">
-        <img src="PORTADA_mk_PAP.webp" class="hero-img" alt="Hero Portada" width="1200" height="675" fetchpriority="high">
-        <div class="hero-gradient"></div>
-        <div class="hero-content max-w">
-            <div style="background: rgba(248, 113, 113, 0.2); color: #fda4af; padding: 8px 18px; border-radius: 50px; font-size: 11px; font-weight: 900; letter-spacing: 2px; border: 1px solid var(--accent); display: inline-block; margin-bottom: 25px;">SISTEMA MAESTRO • OPTIMIZACIÓN HUMANA</div>
-            <h1 class="h-large">NO TE QUEDES <span class="gold">MUDO</span> MIENTRAS ELLOS SE ROMPEN</h1>
-            <p style="font-size: 1.3rem; color: #cbd5e1; max-width: 850px; margin: 0 auto 40px;">Domina el protocolo táctico para <b>restaurar la calma</b> en segundos.</p>
-            <a href="#bonos" class="btn-main">VER EL SISTEMA Y BONOS GRATIS</a>
+        <div class="max-w grid-2">
+            <div class="hero-text">
+                <div style="background: rgba(248, 113, 113, 0.2); color: #fda4af; padding: 8px 18px; border-radius: 50px; font-size: 11px; font-weight: 900; letter-spacing: 2px; border: 1px solid var(--accent); display: inline-block; margin-bottom: 25px;">SITUACIÓN DE EMERGENCIA EMOCIONAL</div>
+                <h1 class="h-large">NO TE QUEDES <span class="gold">MUDO</span> MIENTRAS ELLOS SE ROMPEN</h1>
+                <p style="font-size: 1.2rem; color: #cbd5e1; margin-bottom: 35px; line-height: 1.5;">Domina el protocolo táctico para <b>restaurar la calma</b> en segundos. Conviértete en el ancla que tu familia necesita.</p>
+                <a href="#bonos" class="btn-main">VER EL SISTEMA Y BONOS GRATIS</a>
+            </div>
+            <div class="hero-media">
+                <img src="PORTADA_mk_PAP.webp" class="hero-img-side" alt="Portada Abrazo Invisible" width="500" height="700" fetchpriority="high">
+            </div>
         </div>
     </header>
 
+    <!-- 2 & 3. DOLOR PAS -->
     <section class="section-py" style="background: #01040a;">
         <div class="max-w">
             <div class="grid-2">
-                <img src="DATA_CRISIS1.webp" class="pain-img" alt="Crisis en la cocina" width="400" height="300" loading="lazy">
+                <img src="DATA_CRISIS1.webp" class="pain-img" alt="Crisis Real" width="400" height="300" loading="lazy">
                 <div class="pain-card">
-                    <h2 style="font-size: 2.8rem; line-height: 1; margin-bottom: 25px;">EL AMOR NO ES <br><span style="color: #60a5fa;">SUFICIENTE.</span></h2>
-                    <p style="font-size: 1.25rem; opacity: 0.9; margin-bottom: 25px;">Ver a alguien que amas colapsar y no tener las palabras exactas es devastador. Tu buena intención sin método es solo ruido.</p>
+                    <h2 style="font-size: 2.5rem; line-height: 1.1; margin-bottom: 25px;">EL AMOR NO ES <br><span style="color: #60a5fa;">SUFICIENTE.</span></h2>
+                    <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 25px;">Ver a alguien que amas colapsar frente a ti y <b>no tener las palabras exactas</b> es devastador. Tu buena intención sin método es solo ruido.</p>
                     <div style="background: rgba(37, 99, 235, 0.15); border-left: 4px solid var(--blue); padding: 20px; border-radius: 0 15px 15px 0;">
                         <b>ESTO ES PARA TI SI:</b> quieres ser el refugio seguro y te niegas a ser un espectador impotente.
                     </div>
@@ -107,10 +115,19 @@
         </div>
     </section>
 
+    <!-- 4. TRANSFORMACIÓN -->
+    <section class="section-py max-w text-center">
+        <h2 style="font-size: 2.8rem; margin-bottom: 40px;">EL PROTOCOLO <span class="gold">MAESTRO</span></h2>
+        <div class="grid-2" style="text-align: left;">
+            <div class="pain-card"><h3 class="gold">✓ LEY DE LA CASCADA</h3><p style="opacity: 0.7;">Resetea el sistema nervioso en pánico antes de que la crisis sea irreversible.</p></div>
+            <div class="pain-card"><h3 class="gold">✓ RADAR SOMÁTICO</h3><p style="opacity: 0.7;">Detecta micro-señales de colapso 10 minutos antes de la explosión.</p></div>
+        </div>
+    </section>
+
+    <!-- 5 & 9. BONOS DOPAMÍNICOS -->
     <section id="bonos" class="section-py" style="background: #000;">
         <div class="max-w text-center">
-            <h2 style="font-size: 3rem; margin-bottom: 10px;">TU ARSENAL <span class="gold">SIN COSTO</span></h2>
-            <p style="opacity: 0.7; margin-bottom: 70px;">Al adquirir el Tratado hoy, te llevas estas 3 armas tácticas:</p>
+            <h2 style="font-size: 3rem; margin-bottom: 60px;">TU ARSENAL <span class="gold">SIN COSTO</span></h2>
             <div class="bonus-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
                 <div class="bonus-card"><div class="bonus-tag">¡GRATIS HOY!</div><h3 class="gold">RADAR DEL CENTINELA</h3><p style="opacity: 0.8; margin-top: 20px;">Guía visual para leer el lenguaje del cuerpo antes del caos.</p></div>
                 <div class="bonus-card" style="border-color: var(--blue);"><div class="bonus-tag">¡GRATIS HOY!</div><h3 style="color: #60a5fa;">EL ABRAZO DEL CENTINELA</h3><p style="opacity: 0.8; margin-top: 20px;">Manual de intervención física para seguridad biológica inmediata.</p></div>
@@ -119,6 +136,7 @@
         </div>
     </section>
 
+    <!-- 6. OFERTA / VALUE STACK -->
     <section class="section-py" style="background: radial-gradient(circle, rgba(251,191,36,0.05) 0%, rgba(2,6,23,1) 100%);">
         <div class="max-w text-center">
             <div class="stack-box">
@@ -134,19 +152,29 @@
         </div>
     </section>
 
+    <!-- 7. PRUEBA SOCIAL RESTORED -->
     <section class="section-py max-w">
         <h2 style="text-align: center; margin-bottom: 50px;">VOCES QUE <span class="gold">TOMARON EL MANDO</span></h2>
         <div class="grid-2">
             <div class="pain-card" style="font-style: italic;">"Usé el Radar y el Diccionario de Oro y por primera vez sentí que yo tenía el control. La calma regresó en minutos."<p style="margin-top: 20px; font-weight: 900; color: var(--gold); font-style: normal;">- Marcela G. ⭐⭐⭐⭐⭐</p></div>
             <div class="pain-card" style="font-style: italic;">"El Abrazo Invisible me dio una estructura técnica que funciona. Es ciencia pura al servicio de la gente."<p style="margin-top: 20px; font-weight: 900; color: var(--gold); font-style: normal;">- Ricardo J. ⭐⭐⭐⭐⭐</p></div>
         </div>
+        <div style="text-align: center; margin-top: 40px; font-weight: 900; color: var(--green);">✓ 4.9/5 SATISFACCIÓN • 3,500+ CENTINELAS ACTIVOS</div>
+    </section>
+
+    <!-- 10. PREGUNTAS FRECUENTES RESTORED -->
+    <section class="section-py max-w">
+        <h2 style="text-align: center; margin-bottom: 40px;">DUDAS <span class="gold">DEL CENTINELA</span></h2>
+        <details><summary>¿Es un pago único? <span>▼</span></summary><div class="faq-content">Sí. Pagas $9 una vez y tienes acceso de por vida a todo el sistema y sus bonos.</div></details>
+        <details><summary>¿Cuándo recibo el material? <span>▼</span></summary><div class="faq-content">Inmediatamente. Tras el pago, Hotmart te enviará un correo con tus credenciales de acceso.</div></details>
+        <details><summary>¿Necesito ser psicólogo? <span>▼</span></summary><div class="faq-content">No. Este es un protocolo de primeros auxilios emocionales diseñado para cualquier persona que desee cuidar a los suyos.</div></details>
     </section>
 
     <footer>
-        <img src="hotmart_brand.svg" alt="Logo Hotmart" width="150" height="35" style="margin-bottom: 20px;">
+        <img src="hotmart_brand.svg" alt="Hotmart Logo" width="150" height="35" style="margin-bottom: 20px;">
         <br>© 2026 aprendia.net • Todos los derechos reservados.
         <div class="disclaimer">
-            Este sitio no es parte del sitio web de Meta o de Meta Platforms Inc. Además, este sitio NO está respaldado por Meta de ninguna manera. FACEBOOK es una marca registrada de Meta Platforms, Inc. Producto vendido a través de Hotmart. Al adquirirlo, el comprador declara conocer esta información.
+            Este sitio no es parte de Meta ni de Meta Platforms Inc. Además, este sitio NO está respaldado por Meta de ninguna manera. FACEBOOK es una marca registrada de Meta Platforms, Inc. Producto vendido a través de Hotmart. Al adquirirlo, el comprador declara conocer esta información.
         </div>
     </footer>
 
@@ -162,15 +190,12 @@
             const SCRIPT_URL = "https://script.google.com/macros/s/AKfycby_4dyqEMJegqAj_Hau6Q8FrkgPEeIwkn48qSFguW4_rFdm8R0GDpE_oXGQAG7yZgDl/exec"; 
             const PIXEL_ID = '1032926909084188';
             const eventID = 'pap-nel-' + Date.now();
-            const fbp = document.cookie.split('; ').find(row => row.startsWith('_fbp='))?.split('=')[1] || '';
-            const fbc = params.get('fbclid') || document.cookie.split('; ').find(row => row.startsWith('_fbc='))?.split('=')[1] || '';
-
             if(SCRIPT_URL) {
                 fetch(SCRIPT_URL, { 
                     method: 'POST', mode: 'no-cors', 
                     body: new URLSearchParams({ 
                         'event_name': 'PageView', 'event_id': eventID, 'pixel_id': PIXEL_ID,
-                        'fbc': fbc, 'fbp': fbp, 'user_agent': navigator.userAgent,
+                        'fbc': params.get('fbclid') || '', 'user_agent': navigator.userAgent,
                         'url': window.location.href, 'em': params.get('em') || ''
                     })
                 });
