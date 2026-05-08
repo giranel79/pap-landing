@@ -9,36 +9,44 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- ESTILOS CRÍTICOS (CRITICAL CSS) -->
     <style>
         :root { --gold: #fbbf24; --gold-dark: #b45309; --slate: #020617; --blue: #2563eb; --accent: #f87171; --green: #16a34a; }
         * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
         body { background-color: var(--slate); color: white; font-family: system-ui, -apple-system, sans-serif; margin: 0; overflow-x: hidden; scroll-behavior: smooth; }
+        h1, h2, h3 { font-family: 'Merriweather', serif; text-transform: uppercase; margin: 0; }
         .max-w { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
         .section-py { padding: 80px 0; }
+        .gold { color: var(--gold); font-style: italic; }
+
         .hero { position: relative; min-height: 100vh; display: flex; align-items: center; background: #020617; }
         .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 50px; align-items: center; }
-        .h-large { font-size: clamp(2.5rem, 7vw, 4.5rem); line-height: 1.05; margin-bottom: 25px; font-family: 'Merriweather', serif; font-weight: 900; }
-        .hero-img-side { width: 100%; max-width: 500px; height: auto; border-radius: 20px; border: 1px solid rgba(251,191,36,0.3); aspect-ratio: auto; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+        .h-large { font-size: clamp(2.5rem, 7vw, 4.5rem); line-height: 1.05; margin-bottom: 25px; }
+        
+        /* CSS mantiene la proporción, pero el HTML da la reserva inicial */
+        .hero-img-side { width: 100%; max-width: 500px; height: auto; border-radius: 20px; border: 1px solid rgba(251,191,36,0.3); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+        
         .btn-main { display: inline-block; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%); color: #000; font-weight: 900; text-transform: uppercase; padding: 22px 45px; border-radius: 12px; text-decoration: none; font-size: 1.1rem; animation: pulse 2.5s infinite; border: none; cursor: pointer; }
         @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
-        .gold { color: var(--gold); font-style: italic; }
-    </style>
-
-    <!-- ESTILOS SECUNDARIOS -->
-    <style>
+        
         .sticky-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(2,6,23,0.98); border-top: 1px solid var(--gold); padding: 15px 0; z-index: 1000; display: none; }
         .sticky-bar.visible { display: block; }
+
         .pain-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.1); padding: 40px; border-radius: 30px; border-left: 6px solid var(--blue); }
-        .pain-img { width: 100%; max-width: 500px; height: auto; border-radius: 40px; filter: contrast(1.1); aspect-ratio: auto; }
+        .pain-img { width: 100%; max-width: 500px; height: auto; border-radius: 40px; filter: contrast(1.1); }
+
         .bonus-card { background: rgba(251, 191, 36, 0.05); border: 2px solid var(--gold); border-radius: 25px; padding: 50px 30px; position: relative; text-align: center; }
         .bonus-tag { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); background: #fff; color: #000; padding: 10px 30px; border-radius: 50px; font-weight: 900; font-size: 18px; box-shadow: 0 5px 15px rgba(255,255,255,0.3); width: 80%; }
-        .stack-box { background: #000; border: 2px solid var(--gold); border-radius: 40px; padding: 60px 40px; margin-top: 60px; text-align: left; }
+
+        .stack-box { background: #000; border: 2px solid var(--gold); border-radius: 40px; padding: 60px 40px; margin-top: 60px; }
         .stack-row { display: flex; justify-content: space-between; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-weight: 700; }
         .price-new { font-size: clamp(6rem, 16vw, 10rem); font-weight: 900; color: var(--gold); line-height: 0.8; text-align: center; }
+
         details { background: rgba(255,255,255,0.03); margin-bottom: 12px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); }
         summary { padding: 22px; cursor: pointer; font-weight: 700; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; }
+        .faq-content { padding: 0 22px 22px; opacity: 0.8; }
+
         footer { padding: 60px 24px 140px; text-align: center; opacity: 0.9; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.1); line-height: 1.6; }
+        .disclaimer { max-width: 850px; margin: 40px auto 0; font-size: 0.75rem; opacity: 0.7; line-height: 1.6; }
     </style>
 
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,900;1,400&family=Inter:wght@400;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
@@ -52,7 +60,6 @@
             </div>
         </div>
 
-        <!-- 1. HERO -->
         <header class="hero">
             <div class="max-w grid-2">
                 <div class="hero-text">
@@ -62,49 +69,38 @@
                     <a href="#bonos" class="btn-main">VER EL SISTEMA Y BONOS GRATIS</a>
                 </div>
                 <div class="hero-media">
-                    <img src="PORTADA_mk_PAP.webp" class="hero-img-side" alt="Portada" width="500" height="auto" fetchpriority="high">
+                    <!-- FIX: Altura numérica explícita (700px para ratio 5:7) -->
+                    <img src="PORTADA_mk_PAP.webp" class="hero-img-side" alt="Portada" width="500" height="700" fetchpriority="high">
                 </div>
             </div>
         </header>
 
-        <!-- 2 & 3. DOLOR PAS -->
         <section class="section-py" style="background: #01040a;">
             <div class="max-w">
                 <div class="grid-2">
-                    <img src="DATA_CRISIS1.webp" class="pain-img" alt="Crisis Real" width="500" height="auto" fetchpriority="high">
+                    <!-- FIX: Altura numérica explícita (375px para ratio 4:3) -->
+                    <img src="DATA_CRISIS1.webp" class="pain-img" alt="Crisis Real" width="500" height="375" fetchpriority="high">
                     <div class="pain-card">
                         <h2 style="font-size: 2.5rem; line-height: 1.1; margin-bottom: 25px;">EL AMOR NO ES <br><span style="color: #60a5fa;">SUFICIENTE.</span></h2>
-                        <p style="font-size: 1.25rem; opacity: 0.9; margin-bottom: 25px;">Ver a quien amas colapsar y <b>no tener las palabras exactas</b> es devastador.</p>
-                        <div style="background: rgba(37, 99, 235, 0.15); border-left: 4px solid var(--blue); padding: 20px; border-radius: 0 15px 15px 0;">
-                            <b>ESTO ES PARA TI SI:</b> quieres ser el refugio seguro y te niegas a ser un espectador impotente.
-                        </div>
+                        <p style="font-size: 1.25rem; opacity: 0.9; margin-bottom: 25px;">Ver a quien amas colapsar y no tener las palabras exactas es devastador.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. TRANSFORMACIÓN -->
-        <section class="section-py max-w text-center">
-            <h2 style="font-size: 2.8rem; margin-bottom: 40px;">EL PROTOCOLO <span class="gold">MAESTRO</span></h2>
-            <div class="grid-2" style="text-align: left;">
-                <div class="pain-card"><h3 class="gold">✓ LEY DE LA CASCADA</h3><p style="opacity: 0.7;">Resetea el sistema nervioso antes de que la crisis sea irreversible.</p></div>
-                <div class="pain-card"><h3 class="gold">✓ RADAR SOMÁTICO</h3><p style="opacity: 0.7;">Detecta micro-señales de colapso 10 minutos antes de la explosión.</p></div>
-            </div>
-        </section>
-
-        <!-- 5 & 9. BONOS (GIGANTES) -->
+        <!-- BONOS -->
         <section id="bonos" class="section-py" style="background: #000;">
             <div class="max-w text-center">
                 <h2 style="font-size: 3rem; margin-bottom: 60px;">TU ARSENAL <span class="gold">SIN COSTO</span></h2>
                 <div class="bonus-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px;">
-                    <div class="bonus-card"><div class="bonus-tag">¡GRATIS HOY!</div><h3 class="gold">RADAR DEL CENTINELA</h3><p style="opacity: 0.8; margin-top: 20px;">Guía visual para leer el lenguaje corporal antes del caos.</p></div>
-                    <div class="bonus-card" style="border-color: var(--blue);"><div class="bonus-tag">¡GRATIS HOY!</div><h3 style="color: #60a5fa;">EL ABRAZO DEL CENTINELA</h3><p style="opacity: 0.8; margin-top: 20px;">Manual de intervención física para seguridad biológica.</p></div>
-                    <div class="bonus-card"><div class="bonus-tag">¡GRATIS HOY!</div><h3 class="gold">DICCIONARIO DE ORO</h3><p style="opacity: 0.8; margin-top: 20px;">50 comandos de PNL para desarmar reactividad.</p></div>
+                    <div class="bonus-card"><div class="bonus-tag">¡GRATIS HOY!</div><h3 class="gold">RADAR DEL CENTINELA</h3><p style="opacity: 0.8; margin-top: 20px;">Guía visual para leer el lenguaje corporal.</p></div>
+                    <div class="bonus-card" style="border-color: var(--blue);"><div class="bonus-tag">¡GRATIS HOY!</div><h3 style="color: #60a5fa;">EL ABRAZO DEL CENTINELA</h3><p style="opacity: 0.8; margin-top: 20px;">Manual de intervención física inmediata.</p></div>
+                    <div class="bonus-card"><div class="bonus-tag">¡GRATIS HOY!</div><h3 class="gold">DICCIONARIO DE ORO</h3><p style="opacity: 0.8; margin-top: 20px;">50 comandos de PNL para crisis.</p></div>
                 </div>
             </div>
         </section>
 
-        <!-- 6. OFERTA -->
+        <!-- OFERTA -->
         <section class="section-py" style="background: radial-gradient(circle, rgba(251,191,36,0.05) 0%, rgba(2,6,23,1) 100%);">
             <div class="max-w text-center">
                 <div class="stack-box">
@@ -119,7 +115,7 @@
             </div>
         </section>
 
-        <!-- 7. PRUEBA SOCIAL -->
+        <!-- PRUEBA SOCIAL -->
         <section class="section-py max-w">
             <h2 style="text-align: center; margin-bottom: 50px;">VOCES QUE <span class="gold">TOMARON EL MANDO</span></h2>
             <div class="grid-2">
@@ -131,7 +127,7 @@
         <!-- FAQ -->
         <section class="section-py max-w">
             <h2 style="text-align: center; margin-bottom: 40px;">DUDAS <span class="gold">FRECUENTES</span></h2>
-            <details><summary>¿Es un pago único? <span>▼</span></summary><div class="faq-content">Sí. Pagas $9 una vez y tienes acceso de por vida al material.</div></details>
+            <details><summary>¿Es un pago único? <span>▼</span></summary><div class="faq-content">Sí. Pagas $9 una vez y tienes acceso de por vida.</div></details>
             <details><summary>¿Cuándo recibo el material? <span>▼</span></summary><div class="faq-content">Inmediatamente tras el pago vía correo electrónico.</div></details>
         </section>
 
@@ -139,7 +135,7 @@
             <img src="hotmart_brand.svg" alt="Hotmart" width="150" height="35" style="margin-bottom: 20px;" loading="lazy">
             <br>© 2026 aprendia.net • Todos los derechos reservados.
             <div class="disclaimer">
-                Este sitio no es parte de Meta ni de Meta Platforms Inc. Este sitio NO está respaldado por Meta de ninguna manera. FACEBOOK es una marca registrada de Meta Platforms, Inc. Producto vendido a través de Hotmart.
+                Este sitio no es parte de Meta ni de Meta Platforms Inc. Producto vendido a través de Hotmart. Al adquirirlo, el comprador declara conocer esta información.
             </div>
         </footer>
     </main>
