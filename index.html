@@ -15,48 +15,40 @@
         body { background-color: var(--slate); color: white; font-family: system-ui, -apple-system, sans-serif; margin: 0; overflow-x: hidden; scroll-behavior: smooth; }
         h1, h2, h3 { font-family: 'Merriweather', serif; text-transform: uppercase; margin: 0; }
         .max-w { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-        .section-py { padding: 60px 0; }
+        .section-py { padding: 80px 0; }
         .gold { color: var(--gold); font-style: italic; }
 
-        /* HERO RECONFIGURADO PARA RESPONSIVE */
+        /* HERO RESPONSIVE */
         .hero { position: relative; min-height: 100vh; display: flex; align-items: center; background: #020617; padding: 40px 0; }
         .grid-hero { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; }
-        
         .hero-text { text-align: left; }
         .h-large { font-size: clamp(2.2rem, 6vw, 4.2rem); line-height: 1.1; margin-bottom: 25px; }
-        
-        .hero-img-side { width: 100%; max-width: 420px; height: auto; border-radius: 20px; border: 1px solid rgba(251,191,36,0.3); box-shadow: 0 20px 40px rgba(0,0,0,0.6); display: block; margin: 0 auto; }
+        .hero-img-side { width: 100%; max-width: 500px; height: auto; border-radius: 20px; border: 1px solid rgba(251,191,36,0.3); box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
 
-        /* BOTONES */
         .btn-main { display: inline-block; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%); color: #000; font-weight: 900; text-transform: uppercase; padding: 20px 35px; border-radius: 12px; text-decoration: none; font-size: 1.1rem; animation: pulse 2.5s infinite; border: none; cursor: pointer; text-align: center; }
         @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
 
-        /* GRID GENERAL (SECCIONES DE DOLOR, BONOS, ETC) */
         .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center; }
         
-        /* MEDIA QUERY PARA MÓVILES (FORZAR STACK) */
         @media (max-width: 768px) {
             .grid-hero { grid-template-columns: 1fr; text-align: center; }
             .hero-text { text-align: center; order: 1; }
             .hero-media { order: 2; margin-top: 20px; }
-            .h-large { font-size: 2.5rem; }
-            .section-py { padding: 40px 0; }
-            .hero-img-side { max-width: 300px; } /* Portada más pequeña en móvil para no opacar el texto */
+            .hero-img-side { max-width: 300px; }
         }
 
-        /* RESTO DE ESTILOS (BONOS, STACK, FAQ) */
-        .sticky-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(2,6,23,0.98); border-top: 1px solid var(--gold); padding: 15px 0; z-index: 1000; display: none; }
-        .sticky-bar.visible { display: block; }
         .pain-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.1); padding: 35px; border-radius: 25px; border-left: 6px solid var(--blue); }
-        .pain-img { width: 100%; height: auto; border-radius: 30px; filter: contrast(1.1); }
         .bonus-card { background: rgba(251, 191, 36, 0.05); border: 2px solid var(--gold); border-radius: 25px; padding: 40px 25px; position: relative; text-align: center; margin-top: 20px; }
         .bonus-tag { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #000; padding: 8px 25px; border-radius: 50px; font-weight: 900; font-size: 14px; box-shadow: 0 5px 15px rgba(255,255,255,0.3); width: 80%; }
-        .stack-box { background: #000; border: 2px solid var(--gold); border-radius: 35px; padding: 50px 30px; margin-top: 40px; }
-        .stack-row { display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; }
-        .price-new { font-size: clamp(5rem, 15vw, 9rem); font-weight: 900; color: var(--gold); line-height: 0.8; text-align: center; margin: 20px 0; }
+        .stack-box { background: #000; border: 2px solid var(--gold); border-radius: 35px; padding: 50px 30px; margin-top: 40px; text-align: left; }
+        .stack-row { display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 0.95rem; }
+        .price-new { font-size: clamp(5rem, 15vw, 9rem); font-weight: 900; color: var(--gold); line-height: 0.8; text-align: center; margin: 30px 0; }
+        
         details { background: rgba(255,255,255,0.03); margin-bottom: 10px; border-radius: 12px; }
-        summary { padding: 20px; cursor: pointer; font-weight: 700; text-transform: uppercase; display: flex; justify-content: space-between; font-size: 0.9rem; }
-        footer { padding: 60px 24px 140px; text-align: center; opacity: 0.9; font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.1); }
+        summary { padding: 20px; cursor: pointer; font-weight: 700; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; }
+        
+        footer { padding: 60px 24px 140px; text-align: center; opacity: 0.9; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.1); }
+        .disclaimer { max-width: 900px; margin: 40px auto 0; font-size: 0.75rem; opacity: 0.6; line-height: 1.6; text-align: justify; }
     </style>
 
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,900;1,400&family=Inter:wght@400;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
@@ -66,18 +58,17 @@
     <main>
         <div id="ctaBar" class="sticky-bar">
             <div class="max-w" style="display: flex; justify-content: center;">
-                <a href="https://pay.hotmart.com/P105245108M?checkoutMode=10" class="btn-main" style="padding: 12px 25px; font-size: 0.9rem;">SÍ! DAME EL ACCESO POR $9</a>
+                <a href="https://pay.hotmart.com/P105245108M?checkoutMode=10" class="btn-main" style="padding: 10px 25px; font-size: 0.9rem;">SÍ! QUIERO EL ACCESO POR $9</a>
             </div>
         </div>
 
-        <!-- 1. HERO CORREGIDO -->
         <header class="hero">
             <div class="max-w grid-hero">
                 <div class="hero-text">
-                    <div style="background: rgba(248, 113, 113, 0.2); color: #fda4af; padding: 6px 15px; border-radius: 50px; font-size: 10px; font-weight: 900; border: 1px solid var(--accent); display: inline-block; margin-bottom: 20px;">SITUACIÓN DE EMERGENCIA EMOCIONAL</div>
+                    <div style="background: rgba(248, 113, 113, 0.2); color: #fda4af; padding: 6px 15px; border-radius: 50px; font-size: 10px; font-weight: 900; border: 1px solid var(--accent); display: inline-block; margin-bottom: 20px;">PROTOCOLO TÁCTICO FAMILIAR</div>
                     <h1 class="h-large">NO TE QUEDES <span class="gold">MUDO</span> MIENTRAS ELLOS SE ROMPEN</h1>
-                    <p style="font-size: 1.1rem; color: #cbd5e1; margin-bottom: 30px;">Domina el protocolo táctico para <b>restaurar la calma</b> en segundos.</p>
-                    <a href="#bonos" class="btn-main">VER EL SISTEMA Y BONOS GRATIS</a>
+                    <p style="font-size: 1.2rem; color: #cbd5e1; margin-bottom: 35px;">Domina el método exacto para <b>restaurar la calma</b> en segundos.</p>
+                    <a href="#bonos" class="btn-main">VER SISTEMA Y BONOS GRATIS</a>
                 </div>
                 <div class="hero-media">
                     <img src="PORTADA_mk_PAP.webp" class="hero-img-side" alt="Portada" width="500" height="700" fetchpriority="high">
@@ -85,32 +76,32 @@
             </div>
         </header>
 
-        <!-- 2 & 3. DOLOR PAS -->
+        <!-- SECCIÓN DE DOLOR PAS -->
         <section class="section-py" style="background: #01040a;">
             <div class="max-w">
                 <div class="grid-2">
-                    <img src="DATA_CRISIS1.webp" class="pain-img" alt="Crisis Real" width="500" height="375" fetchpriority="high">
+                    <img src="DATA_CRISIS1.webp" alt="Crisis" width="500" height="375" style="width:100%; height:auto; border-radius:30px;" fetchpriority="high">
                     <div class="pain-card">
-                        <h2 style="font-size: 2.2rem; line-height: 1.1; margin-bottom: 20px;">EL AMOR NO ES <br><span style="color: #60a5fa;">SUFICIENTE.</span></h2>
-                        <p style="font-size: 1.1rem; opacity: 0.9;">Ver a quien amas colapsar y <b>no tener las palabras exactas</b> es devastador.</p>
+                        <h2 style="font-size: 2.5rem; line-height: 1.1; margin-bottom: 25px;">EL AMOR NO ES <br><span style="color: #60a5fa;">SUFICIENTE.</span></h2>
+                        <p style="font-size: 1.25rem; opacity: 0.9;">Ver a quien amas colapsar y no saber qué decir es una herida que no cierra. Tu buena intención sin técnica es solo ruido.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- RESTO DE SECCIONES SE MANTIENEN IGUAL... -->
-        <!-- (Bonos, Oferta, Testimonios, FAQ, Footer) -->
+        <!-- BONOS -->
         <section id="bonos" class="section-py" style="background: #000;">
             <div class="max-w text-center">
-                <h2 style="font-size: 2.5rem; margin-bottom: 50px;">TU ARSENAL <span class="gold">SIN COSTO</span></h2>
+                <h2 style="font-size: 2.8rem; margin-bottom: 50px;">TU ARSENAL <span class="gold">SIN COSTO</span></h2>
                 <div class="grid-2">
-                    <div class="bonus-card"><div class="bonus-tag">¡GRATIS HOY!</div><h3 class="gold" style="font-size: 1.2rem;">RADAR DEL CENTINELA</h3><p style="opacity: 0.8; font-size: 0.9rem;">Guía visual para detectar el caos.</p></div>
-                    <div class="bonus-card" style="border-color: var(--blue);"><div class="bonus-tag">¡GRATIS HOY!</div><h3 style="color: #60a5fa; font-size: 1.2rem;">EL ABRAZO DEL CENTINELA</h3><p style="opacity: 0.8; font-size: 0.9rem;">Manual de intervención física.</p></div>
-                    <div class="bonus-card"><div class="bonus-tag">¡GRATIS HOY!</div><h3 class="gold" style="font-size: 1.2rem;">DICCIONARIO DE ORO</h3><p style="opacity: 0.8; font-size: 0.9rem;">50 comandos de PNL para crisis.</p></div>
+                    <div class="bonus-card"><div class="bonus-tag">¡GRATIS HOY!</div><h3 class="gold">RADAR DEL CENTINELA</h3><p style="opacity: 0.8; font-size: 0.95rem;">Detecta el colapso emocional 10 minutos antes de que ocurra.</p></div>
+                    <div class="bonus-card" style="border-color: var(--blue);"><div class="bonus-tag">¡GRATIS HOY!</div><h3 style="color: #60a5fa;">EL ABRAZO DEL CENTINELA</h3><p style="opacity: 0.8; font-size: 0.95rem;">Manual de intervención física para seguridad biológica inmediata.</p></div>
+                    <div class="bonus-card"><div class="bonus-tag">¡GRATIS HOY!</div><h3 class="gold">DICCIONARIO DE ORO</h3><p style="opacity: 0.8; font-size: 0.95rem;">50 comandos verbales de PNL para desarmar la reactividad.</p></div>
                 </div>
             </div>
         </section>
 
+        <!-- OFERTA VALUE STACK -->
         <section class="section-py" style="background: radial-gradient(circle, rgba(251,191,36,0.05) 0%, rgba(2,6,23,1) 100%);">
             <div class="max-w text-center">
                 <div class="stack-box">
@@ -119,28 +110,50 @@
                     <div class="stack-row gold"><span>🎁 Bono #2: El Abrazo del Centinela</span><span>$27.00</span></div>
                     <div class="stack-row gold"><span>🎁 Bono #3: Diccionario de Oro</span><span>$36.00</span></div>
                     <div class="price-new">$9</div>
-                    <a href="https://pay.hotmart.com/P105245108M?checkoutMode=10" class="btn-main" style="width: 100%; font-size: 1.3rem;">SÍ! DAME TODO POR $9</a>
+                    <a href="https://pay.hotmart.com/P105245108M?checkoutMode=10" class="btn-main" style="width: 100%; font-size: 1.4rem;">SÍ! DAME TODO POR $9</a>
                 </div>
             </div>
         </section>
 
+        <!-- PRUEBA SOCIAL (DORLOR EXTREMO) -->
         <section class="section-py max-w">
-            <h2 style="text-align: center; margin-bottom: 40px; font-size: 2rem;">VOCES DEL <span class="gold">CENTINELA</span></h2>
+            <h2 style="text-align: center; margin-bottom: 50px;">VOCES QUE <span class="gold">TOMARON EL MANDO</span></h2>
             <div class="grid-2">
-                <div class="pain-card" style="font-style: italic; font-size: 0.9rem;">"Usé el Diccionario de Oro y la calma regresó en minutos."<p style="margin-top: 10px; font-weight: 900; color: var(--gold);">- Marcela G. ⭐⭐⭐⭐⭐</p></div>
-                <div class="pain-card" style="font-style: italic; font-size: 0.9rem;">"Ciencia pura al servicio de la gente."<p style="margin-top: 10px; font-weight: 900; color: var(--gold);">- Ricardo J. ⭐⭐⭐⭐⭐</p></div>
+                <div class="pain-card">
+                    <p style="font-style: italic; font-size: 0.95rem;">"Estaba viendo a mi pareja hundirse en un ataque de ansiedad y yo solo podía mirar. Me sentía el peor compañero por no saber qué decir. Este protocolo eliminó esa impotencia."</p>
+                    <p style="margin-top: 15px; font-weight: 900; color: var(--gold);">- Juan P. ⭐⭐⭐⭐⭐</p>
+                </div>
+                <div class="pain-card">
+                    <p style="font-style: italic; font-size: 0.95rem;">"Mis hijos se estaban distanciando porque nuestras charlas terminaban en gritos o silencio total. Ahora soy su ancla. Mi casa es un lugar seguro, no un campo de batalla."</p>
+                    <p style="margin-top: 15px; font-weight: 900; color: var(--gold);">- Elena M. ⭐⭐⭐⭐⭐</p>
+                </div>
+                <div class="pain-card">
+                    <p style="font-style: italic; font-size: 0.95rem;">"Antes me paralizaba el llanto de mi hija. Usé el Diccionario de Oro y la calma regresó en minutos. Es ciencia pura al servicio del amor."</p>
+                    <p style="margin-top: 15px; font-weight: 900; color: var(--gold);">- Marcela G. ⭐⭐⭐⭐⭐</p>
+                </div>
+                <div class="pain-card">
+                    <p style="font-style: italic; font-size: 0.95rem;">"Como líder, las crisis emocionales eran mi punto débil. El Abrazo Invisible me dio una estructura técnica que funciona."</p>
+                    <p style="margin-top: 15px; font-weight: 900; color: var(--gold);">- Ricardo J. ⭐⭐⭐⭐⭐</p>
+                </div>
             </div>
         </section>
 
+        <!-- PREGUNTAS FRECUENTES (RESTAURADO) -->
         <section class="section-py max-w">
-            <h2 style="text-align: center; margin-bottom: 30px; font-size: 2rem;">DUDAS <span class="gold">FRECUENTES</span></h2>
-            <details><summary>¿Es un pago único? <span>▼</span></summary><div style="padding: 20px; opacity: 0.8; font-size: 0.9rem;">Sí. Pagas $9 una vez y tienes acceso de por vida.</div></details>
+            <h2 style="text-align: center; margin-bottom: 40px;">DUDAS <span class="gold">FRECUENTES</span></h2>
+            <details><summary>¿Es un pago único o mensual? <span>▼</span></summary><div style="padding:20px; opacity:0.8;">Es un pago único de $9. Tienes acceso de por vida al material y a todas sus actualizaciones futuras.</div></details>
+            <details><summary>¿Cuándo recibo el material tras la compra? <span>▼</span></summary><div style="padding:20px; opacity:0.8;">Inmediatamente. Hotmart te enviará un correo con tus credenciales de acceso apenas se confirme el pago.</div></details>
+            <details><summary>¿Necesito conocimientos previos en psicología? <span>▼</span></summary><div style="padding:20px; opacity:0.8;">No. El protocolo está diseñado con lenguaje simple y pasos tácticos que cualquier persona puede aplicar hoy mismo.</div></details>
+            <details><summary>¿Qué pasa si no me funciona? <span>▼</span></summary><div style="padding:20px; opacity:0.8;">Tienes 7 días de garantía total. Si sientes que no es para ti, pides el reembolso y se te devuelve el 100% de tu dinero sin preguntas.</div></details>
         </section>
 
+        <!-- FOOTER & DISCLAIMER MEJORADO -->
         <footer>
-            <img src="hotmart_brand.svg" alt="Hotmart" width="130" height="30" style="margin-bottom: 20px;" loading="lazy">
-            <br>© 2026 aprendia.net • Todos los derechos reservados.
-            <div style="font-size: 0.65rem; opacity: 0.7; margin-top: 20px; line-height: 1.4;">Este sitio no es parte de Meta ni de Meta Platforms Inc. Producto vendido a través de Hotmart.</div>
+            <img src="hotmart_brand.svg" alt="Hotmart" width="150" height="35" style="margin-bottom: 20px;" loading="lazy">
+            <p>© 2026 aprendia.net • Todos los derechos reservados.</p>
+            <div class="disclaimer">
+                <strong>DESCARGO DE RESPONSABILIDAD:</strong> Este sitio no es parte del sitio web de Facebook o de Meta Platforms, Inc. Además, este sitio NO está respaldado por Facebook de ninguna manera. FACEBOOK es una marca registrada de Meta Platforms, Inc. Al adquirir este producto, el comprador declara conocer que los resultados pueden variar según la aplicación del método. Este material tiene fines educativos y no sustituye la atención médica o psicológica profesional de un especialista. La plataforma Hotmart no realiza un control editorial previo de los productos vendidos, por lo que la calidad y el contenido son responsabilidad exclusiva de sus creadores.
+            </div>
         </footer>
     </main>
 
@@ -172,7 +185,6 @@
                 })
             });
         }
-
         window.addEventListener('scroll', loadTrackers, {once: true});
         window.addEventListener('touchstart', loadTrackers, {once: true});
         setTimeout(loadTrackers, 5000); 
